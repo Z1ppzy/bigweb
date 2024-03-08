@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
 import picture from '../assets/slide1.png';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 
 export default function Home() {
   return (
@@ -7,10 +13,16 @@ export default function Home() {
       <div className='font-montserrat min-h-screen '>
         <div className='md:grid grid-cols-2'>
           <div className=''>
-            <img src={picture} alt='' className='border-2 border-purple-700 md:w-96 h-96' />
+            <img
+              src={picture}
+              alt=''
+              className='border-2 border-purple-700 md:w-96 h-96'
+            />
           </div>
           <div className='mx-10 mt-5'>
-            <h1 className='font-semibold text-center text-xl'>Начните свою историю в нашей виртуальной песочнице!</h1>
+            <h1 className='font-semibold text-center text-xl'>
+              Начните свою историю в нашей виртуальной песочнице!
+            </h1>
             <p className='text-center'>
               Приветствуем Вас на нашем сервере Minecraft! Откройте для себя
               мир, где каждый шаг - это приключение. Уникальные плагины обогатят
@@ -29,6 +41,30 @@ export default function Home() {
               </Link>
             </div>
           </div>
+        </div>
+        <div className='px-8 mt-10'>
+          <Accordion type='single' collapsible className='w-full'>
+            <AccordionItem value='item-1'>
+              <AccordionTrigger>Is it accessible?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It adheres to the WAI-ARIA design pattern.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value='item-2'>
+              <AccordionTrigger>Is it styled?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It comes with default styles that matches the other
+                components&apos; aesthetic.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value='item-3'>
+              <AccordionTrigger>Is it animated?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It's animated by default, but you can disable it if you
+                prefer.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </div>
     </>
