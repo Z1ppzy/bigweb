@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -16,7 +16,7 @@ import { Input } from '@/components/ui/input';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { Checkbox } from '@/components/ui/checkbox';
-import img from '../components/logo.png';
+
 
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
