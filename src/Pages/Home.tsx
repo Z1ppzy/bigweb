@@ -23,7 +23,7 @@ export default function ()  {
             Craft — и пусть каждый ваш шаг будет началом чего-то удивительного.
             Вперед, к приключениям! 🚀✨
           </p>
-         <Link to='start' className='mt-20 bg-black px-4 w-60 h-30 py-4 rounded-md text-white text-center border-2 border-purple-400 hover:text-purple-400'>GOGOGO</Link>
+         <Link to='/register' className='mt-20 bg-black px-4 w-60 h-30 py-4 rounded-md text-white text-center border-2 border-purple-400 hover:text-purple-400'>GOGOGO</Link>
         </div>
       </div>
     </div>
