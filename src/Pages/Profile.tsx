@@ -15,7 +15,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 export default function Profile() {
   return (
     <>
-      <div className='mt-52'>
+      <div className='mt-52 font-montserrat'>
         <div className='flex flex-row align-middle justify-center gap-5'>
           <div className='w-10 border h-10'>1</div>
           <div className='border rounded-md text-xl py-4'>

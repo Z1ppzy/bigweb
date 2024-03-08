@@ -64,11 +64,11 @@ export default function Register() {
   }
 
   return (
-    <div className=' md:w-96 m-auto '>
+    <div className=' md:w-96 m-auto font-montserrat'>
       <Link to='/'>
         <img src='logo.png' className='float-end animate-bounce' alt='' />
       </Link>
-      <p className='text-center mt-20 mb-28 font-bold text-2xl'>
+      <p className='text-center mt-20 mb-28 font-bold text-2xl font-montserrat'>
         Создать учетную запись HW
       </p>
       <Form {...form}>
@@ -84,8 +84,7 @@ export default function Register() {
                 </FormControl>
                 <FormDescription>
                   Помните, что логин должен быть удобным для вас и одновременно
-                  безопасным. Избегайте использования личных данных, таких как
-                  ваше реальное имя или дата рождения.
+                  безопасным.
                 </FormDescription>
                 <FormMessage />
               </FormItem>

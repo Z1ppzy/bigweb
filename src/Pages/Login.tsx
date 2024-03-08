@@ -60,7 +60,7 @@ export default function Login() {
   }
 
   return (
-    <div className='w-96 m-auto'>
+    <div className='w-96 m-auto font-montserrat'>
       <Link to='/'>
         <img src='logo.png' className='float-end animate-bounce' alt='' />
       </Link>
