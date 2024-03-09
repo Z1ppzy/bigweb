@@ -15,8 +15,5 @@ npm run dev
 
 3. Demo project 
 
-```
-https://bigweb.vercel.app/
-```
-
+https://bigweb.vercel.app
 
