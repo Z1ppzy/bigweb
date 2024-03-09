@@ -1,29 +1,25 @@
 import { Link } from 'react-router-dom';
-import picture from '../assets/slide1.png';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import SliderImg from '@/components/SliderImg';
 
 export default function Home() {
   return (
     <>
       <div className='font-montserrat min-h-screen '>
         <div className='md:grid grid-cols-2'>
-          <div className=''>
-            <img
-              src={picture}
-              alt=''
-              className='border-2 border-purple-700 md:w-96 h-96'
-            />
+          <div className='mt-3 md:mt-8'>
+            <SliderImg />
           </div>
-          <div className='mx-10 mt-5'>
-            <h1 className='font-semibold text-center text-xl'>
+          <div className='mx-10 md:mt-20'>
+            <h1 className='font-semibold text-center text-xl '>
               Начните свою историю в нашей виртуальной песочнице!
             </h1>
-            <p className='text-center'>
+            <p className='text-center mt-2 mx-2 md:mx-12'>
               Приветствуем Вас на нашем сервере Minecraft! Откройте для себя
               мир, где каждый шаг - это приключение. Уникальные плагины обогатят
               ваш игровой процесс, предоставляя возможности для творчества и
@@ -42,26 +38,46 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className='px-8 mt-10'>
+        <div className='px-8 mt-10 mx-4 lg:mx-40'>
           <Accordion type='single' collapsible className='w-full'>
             <AccordionItem value='item-1'>
-              <AccordionTrigger>Is it accessible?</AccordionTrigger>
+              <AccordionTrigger>Как подключиться к серверу?</AccordionTrigger>
               <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
+                Для подключения к нашему серверу убедитесь в актуальности версии
+                Minecraft. Находясь уже в клиенте Minecraft перейдите во вкладку
+                «Сетевая игра», после чего щелкните по «Добавить сервер» и
+                введите нужный IP-адрес(mc.heavenlyweiner.ru)
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-2'>
-              <AccordionTrigger>Is it styled?</AccordionTrigger>
+              <AccordionTrigger>
+                Как установить голосовой чат на наш сервер?
+              </AccordionTrigger>
               <AccordionContent>
-                Yes. It comes with default styles that matches the other
-                components&apos; aesthetic.
+                Для этого вам потребуется модифицированная актуальная версия
+                Minecraft Fabric и установить мод{' '}
+                <a
+                  href='https://modrinth.com/plugin/plasmo-voice/versions#all-versions'
+                  className='hover:text-purple-800 font-bold'
+                  target='_blank'
+                >
+                  PlasmoVoice
+                </a>{' '}
+                в корневую папку лаунчера (mods), после чего зайти на сервер и
+                нажать кнопку "V".
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-3'>
-              <AccordionTrigger>Is it animated?</AccordionTrigger>
+              <AccordionTrigger>
+                Какие правила существуют на сервере?
+              </AccordionTrigger>
               <AccordionContent>
-                Yes. It's animated by default, but you can disable it if you
-                prefer.
+                На нашем сервере установлены базовые правила игры, но подробнее
+                с ними можно ознакомиться{' '}
+                <Link to='/rules' className='font-bold hover:text-purple-800'>
+                  тут
+                </Link>
+                .
               </AccordionContent>
             </AccordionItem>
           </Accordion>
