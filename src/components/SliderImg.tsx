@@ -28,24 +28,24 @@ export default function SliderImg() {
   };
 
   return (
-    <Slider {...settings}>
+    <Slider className='mx-7' {...settings}>
       <div>
         <img
-          className='float-right rounded-xl scale-90 '
+          className='float-right rounded-xl scale-100'
           src={image1}
           alt='Slide 1'
         />
       </div>
       <div>
         <img
-          className='float-right rounded-xl scale-90 '
+          className='float-right rounded-xl scale-100'
           src={image2}
           alt='Slide 2'
         />
       </div>
       <div>
         <img
-          className='float-right rounded-xl scale-90 '
+          className='float-right rounded-xl scale-100'
           src={image3}
           alt='Slide 3'
         />

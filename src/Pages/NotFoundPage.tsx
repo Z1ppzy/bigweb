@@ -1,4 +1,5 @@
 
+
 export default function NotFoundPage() {
-  return <div>NotFoundPage</div>;
+  return <div><p>NotFoundPage</p></div>;
 }

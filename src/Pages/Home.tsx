@@ -14,7 +14,7 @@ export default function Home() {
         <div className='md:grid grid-cols-2'>
           <div className='mt-3 md:mt-8'>
             <SliderImg />
-          </div>
+            </div>
           <div className='mx-10 md:mt-20'>
             <h1 className='font-semibold text-center text-xl '>
               Начните свою историю в нашей виртуальной песочнице!
