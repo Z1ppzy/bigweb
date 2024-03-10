@@ -10,7 +10,7 @@ import SliderImg from '@/components/SliderImg';
 export default function Home() {
   return (
     <>
-      <div className='font-montserrat min-h-screen '>
+      <div className=' min-h-screen '>
         <div className='md:grid grid-cols-2'>
           <div className='mt-3 md:mt-8'>
             <SliderImg />
@@ -35,7 +35,6 @@ export default function Home() {
                   Начать играть
                 </button>
               </Link>
-              <div className='font-bold'><p>Сейчас на сервере играет <span className='text-purple-800'>10</span> игроков</p></div>
             </div>
           </div>
         </div>

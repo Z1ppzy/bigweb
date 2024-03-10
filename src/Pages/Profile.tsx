@@ -11,11 +11,21 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Profile() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const token = localStorage.getItem('authToken');
+    if (!token) {
+      navigate('/login');
+    }
+  }, []);
+
   return (
     <>
-      <div className='mt-52 font-montserrat'>
+      <div className='mt-52 h-screen'>
         <div className='flex flex-row align-middle justify-center gap-5'>
           <div className='w-10 border h-10'>1</div>
           <div className='border rounded-md text-xl py-4'>

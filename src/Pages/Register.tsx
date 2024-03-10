@@ -64,11 +64,11 @@ export default function Register() {
   }
 
   return (
-    <div className=' md:w-96 m-auto font-montserrat'>
+    <div className=' md:w-96 m-auto h-screen'>
       <Link to='/'>
         <img src='logo.png' className='float-end animate-bounce' alt='' />
       </Link>
-      <p className='text-center mt-20 mb-28 font-bold text-2xl font-montserrat'>
+      <p className='text-center mt-20 mb-28 font-bold text-2xl'>
         Создать учетную запись HW
       </p>
       <Form {...form}>
@@ -80,7 +80,7 @@ export default function Register() {
               <FormItem>
                 <FormLabel>ЛОГИН</FormLabel>
                 <FormControl>
-                  <Input placeholder='Введите свой логин' {...field} />
+                  <Input type='text' placeholder='Введите свой логин' {...field} />
                 </FormControl>
                 <FormDescription>
                   Помните, что логин должен быть удобным для вас и одновременно
@@ -100,6 +100,7 @@ export default function Register() {
                   <Input
                     placeholder='Введите адрес электронной почты'
                     type='email'
+                    autoComplete='email'
                     {...field}
                   />
                 </FormControl>

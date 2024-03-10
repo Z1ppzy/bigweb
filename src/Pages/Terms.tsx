@@ -2,12 +2,12 @@ import { HiAcademicCap } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
 export default function Terms() {
   return (
-    <div className='mt-48 mx-48'>
+    <div className='mx-10 mt-48 md:mx-48 h-screen'>
       <div className='flex flex-col items-center'>
         <div className='flex flex-col text-4xl hover:text-purple-800'><Link to='/'><HiAcademicCap /></Link></div>
         <div className='flex flex-col'><h1 className='font-bold text-2xl transform transition-transform hover:scale-110'>Условия использования</h1></div>
       </div>
-      <div className='mt-8'>
+      <div className='md:mt-8'>
         <p className='font-semibold text-center'>
           Вы соглашаетесь быть связанными нашими правилами сайта и любыми
           законами, которые могут применяться к этому веб-сайту и вашему

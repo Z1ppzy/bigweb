@@ -16,6 +16,7 @@ import { Input } from '@/components/ui/input';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { Checkbox } from '@/components/ui/checkbox';
+import { useEffect } from 'react';
 
 
 axios.defaults.withCredentials = true;
@@ -33,6 +34,12 @@ const formSchema = z.object({
 
 export default function Login() {
   const navigate = useNavigate();
+  useEffect(() => {
+    const token = localStorage.getItem('authToken')
+    if (token){
+      navigate('/profile')
+    }
+  }, []);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -56,11 +63,12 @@ export default function Login() {
       const res = await axios.post('http://localhost:8000/login', body, config);
       navigate('/profile');
       console.log(res);
+      localStorage.setItem('authToken', res.data.token);
     } catch (err) {}
   }
 
   return (
-    <div className='w-96 m-auto font-montserrat'>
+    <div className='w-96 m-auto h-screen'>
       <Link to='/'>
         <img src='logo.png' className='float-end animate-bounce' alt='' />
       </Link>
@@ -78,6 +86,8 @@ export default function Login() {
                 <FormControl>
                   <Input
                     placeholder='Введите адрес электронной почты'
+                    type='email'
+                    autoComplete='email'
                     {...field}
                   />
                 </FormControl>
@@ -98,7 +108,7 @@ export default function Login() {
                 <FormControl>
                   <Input
                     type='password'
-                    autoComplete='new-password'
+                    autoComplete='password'
                     placeholder='Введите пароль'
                     {...field}
                   />
