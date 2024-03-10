@@ -15,8 +15,8 @@ export default function Home() {
           <div className='mt-3 md:mt-8'>
             <SliderImg />
             </div>
-          <div className='mx-10 md:mt-20'>
-            <h1 className='font-semibold text-center text-xl '>
+          <div className='mx-10 md:mt-20 '>
+            <h1 className='font-semibold text-center text-base md:text-xl '>
               Начните свою историю в нашей виртуальной песочнице!
             </h1>
             <p className='text-center mt-2 mx-2 md:mx-12'>
@@ -35,6 +35,7 @@ export default function Home() {
                   Начать играть
                 </button>
               </Link>
+              <div className='font-bold'><p>Сейчас на сервере играет <span className='text-purple-800'>10</span> игроков</p></div>
             </div>
           </div>
         </div>

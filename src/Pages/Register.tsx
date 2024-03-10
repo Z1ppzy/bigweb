@@ -136,8 +136,8 @@ export default function Register() {
               htmlFor='terms'
               className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 '
             >
-              Я полностью согласен и ознакомлен с{' '}
-              <Link to='/rules'>правилами</Link> HeavenlyWeiner.ru
+              Я прочитал и принимаю {' '}
+              <Link to='/terms'><span className='hover:text-purple-800'>Условия использования.</span></Link>
             </label>
           </div>
 

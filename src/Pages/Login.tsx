@@ -121,7 +121,7 @@ export default function Login() {
           <Button type='submit'>Войти</Button>
         </form>
       </Form>
-      <p className='text-center'><Link to='' className=''>Забыли пароль?</Link></p>
+      <p className='text-center'><Link to='/forgot_password' className='hover:text-purple-800'>Забыли пароль?</Link></p>
     </div>
   );
 }
