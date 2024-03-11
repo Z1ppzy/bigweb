@@ -12,7 +12,7 @@ export default function Footer() {
             <div className='flex flex-row gap-2 text-xl text-white'>
               <a href='https://discord.gg/hBzsDYcGZg'><FaDiscord className='cursor-pointer hover:text-purple-500' /></a>
               <a href='https://vk.com/heavenlyweiner'><FaVk className='cursor-pointer hover:text-purple-500' /></a>
-              <a href='t.me/heavenlyweiner'><FaTelegramPlane className='cursor-pointer hover:text-purple-500' /></a>
+              <a href='https://t.me/heavenlyweiner'><FaTelegramPlane className='cursor-pointer hover:text-purple-500' /></a>
               {/* <a href=''><FaYoutube className='cursor-pointer hover:text-purple-500' /></a> */}
             </div>
           </div>

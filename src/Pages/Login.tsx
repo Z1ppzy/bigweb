@@ -1,4 +1,3 @@
-
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -18,7 +17,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useEffect } from 'react';
 
-
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
 const formSchema = z.object({
@@ -35,9 +33,9 @@ const formSchema = z.object({
 export default function Login() {
   const navigate = useNavigate();
   useEffect(() => {
-    const token = localStorage.getItem('authToken')
-    if (token){
-      navigate('/profile')
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      navigate('/profile');
     }
   }, []);
   const form = useForm<z.infer<typeof formSchema>>({
@@ -72,7 +70,7 @@ export default function Login() {
       <Link to='/'>
         <img src='logo.png' className='float-end animate-bounce' alt='' />
       </Link>
-      <p className='text-center mt-28 mb-28 font-bold text-2xl'>
+      <p className='text-center mt-20 mb-28 font-bold text-2xl'>
         Войти в учетную запись HW
       </p>
       <Form {...form}>
@@ -91,10 +89,7 @@ export default function Login() {
                     {...field}
                   />
                 </FormControl>
-                <FormDescription>
-                  Не используйте адрес электронной почты, в котором указано ваше
-                  реальное имя.
-                </FormDescription>
+                <FormDescription>null</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -131,7 +126,11 @@ export default function Login() {
           <Button type='submit'>Войти</Button>
         </form>
       </Form>
-      <p className='text-center'><Link to='/forgot_password' className='hover:text-purple-800'>Забыли пароль?</Link></p>
+      <p className='text-center'>
+        <Link to='/forgot_password' className='hover:text-purple-800'>
+          Забыли пароль?
+        </Link>
+      </p>
     </div>
   );
 }
