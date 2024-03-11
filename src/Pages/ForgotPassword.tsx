@@ -13,9 +13,18 @@ export default function ForgotPassword() {
         </label>
       </div>
       <div className='mt-2'>
-        <Input type='email' autoComplete='email' placeholder='example@mail.ru' className='w-52 border-black ' />
+        <input
+          type='email'
+          autoComplete='email'
+          placeholder='example@mail.ru'
+          className='px-1 w-60 h-10 border-2 rounded-md border-footer focus:border-purple-700 focus:outline-none'
+        />
       </div>
-      <div className='mt-4'><button className='bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white px-8 py-2 hover:text-purple-900'>Submit</button></div>
+      <div className='mt-4'>
+        <button className='bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white px-8 py-2 hover:text-purple-900'>
+          Submit
+        </button>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { Slide, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Profile() {
@@ -16,6 +16,7 @@ export default function Profile() {
     toast.success('Пароль был успешно изменен', {
       position: 'top-right',
       autoClose: 2500,
+      transition: Slide,
     });
   };
 

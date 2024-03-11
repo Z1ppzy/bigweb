@@ -49,6 +49,11 @@ export default function DropDownMenu() {
                 Terms
               </span>
             </Link>
+            <Link to='/rules' className='flex flex-col'>
+              <span className='text-center text-2xl hover:text-purple-950'>
+                Rules
+              </span>
+            </Link>
           </SheetDescription>
         </SheetHeader>
       </SheetContent>
