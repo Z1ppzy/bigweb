@@ -13,7 +13,22 @@ export default function Profile() {
   }, []);
 
   const handleButtonClick = () => {
-    toast.success('Пароль был успешно изменен', {
+    toast.success('Пароль был успешно изменен!', {
+      position: 'top-right',
+      autoClose: 2500,
+      transition: Slide,
+    });
+  };
+
+  const handleButtonClick2 = () => {
+    toast.success('Почта была успешно изменена!', {
+      position: 'top-right',
+      autoClose: 2500,
+      transition: Slide,
+    });
+  };
+  const handleButtonClick3 = () => {
+    toast.warn('Вы были перенаправлены на qr-code', {
       position: 'top-right',
       autoClose: 2500,
       transition: Slide,
@@ -46,11 +61,37 @@ export default function Profile() {
             </button>
           </div>
         </div>
-        <div className='w-80 h-80 bg-white text-center flex flex-col justify-center text-4xl'>
-          Change Email Address
+
+        <div className='w-80 h-80 bg-white flex flex-col '>
+          <p className='p-4 justify-start text-xl'>Change Email Address</p>
+          <div className='flex flex-col items-center gap-5'>
+            <input
+              placeholder='oldEmail'
+              className='px-1 w-60 h-10 border-2 rounded-md border-footer focus:border-purple-700 focus:outline-none'
+            />
+            <input
+              placeholder='newEmail'
+              className='px-1 w-60 h-10 border-2 rounded-md border-footer focus:border-purple-700 focus:outline-none'
+            />
+            <button
+              onClick={handleButtonClick2}
+              className='bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white px-10 py-2 rounded-xl mb-5'
+            >
+              Confirm
+            </button>
+          </div>
         </div>
-        <div className='w-80 h-80 bg-white text-center flex flex-col justify-center text-4xl'>
-          Two Factor Authentication
+        <div className='w-80 h-80 bg-white flex flex-col '>
+          <p className='p-4 justify-start text-xl'>Two Factor Authentication</p>
+          <div className='flex flex-col items-center'>
+            {' '}
+            <button
+              onClick={handleButtonClick3}
+              className='bg-green-500 text-white px-10 py-2 rounded-xl mb-5'
+            >
+              Confirm
+            </button>
+          </div>
         </div>
         <ToastContainer />
       </div>

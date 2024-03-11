@@ -1,5 +1,3 @@
-import { Input } from '@/components/ui/input';
-
 export default function ForgotPassword() {
   return (
     <div className='flex flex-col items-center mt-52 text-center mx-10 h-screen'>
