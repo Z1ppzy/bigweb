@@ -58,6 +58,7 @@ export default function Register() {
         config
       );
       navigate('/profile');
+      console.log(res)
     } catch (err) {}
   }
 
