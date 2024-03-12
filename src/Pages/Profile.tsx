@@ -42,14 +42,19 @@ export default function Profile() {
           <p className='p-4 justify-start text-xl'>Change Password</p>
           <div className='flex flex-col items-center gap-5'>
             <input
+              type='password'
               placeholder='oldPassword'
               className='px-1 w-60 h-10 border-2 rounded-md border-footer focus:border-purple-700 focus:outline-none'
             />
             <input
+              type='password'
+              autoComplete='new-password'
               placeholder='newPassword'
               className='px-1 w-60 h-10 border-2 rounded-md border-footer focus:border-purple-700 focus:outline-none'
             />
             <input
+              type='password'
+              autoComplete='off'
               placeholder='confirmPassword'
               className='px-1 w-60 h-10 border-2 rounded-md border-footer focus:border-purple-700 focus:outline-none'
             />
@@ -66,10 +71,14 @@ export default function Profile() {
           <p className='p-4 justify-start text-xl'>Change Email Address</p>
           <div className='flex flex-col items-center gap-5'>
             <input
+              type='email'
+              autoComplete='email'
               placeholder='oldEmail'
               className='px-1 w-60 h-10 border-2 rounded-md border-footer focus:border-purple-700 focus:outline-none'
             />
             <input
+              type='email'
+              autoComplete='off'
               placeholder='newEmail'
               className='px-1 w-60 h-10 border-2 rounded-md border-footer focus:border-purple-700 focus:outline-none'
             />
@@ -84,7 +93,6 @@ export default function Profile() {
         <div className='w-80 h-80 bg-white flex flex-col '>
           <p className='p-4 justify-start text-xl'>Two Factor Authentication</p>
           <div className='flex flex-col items-center'>
-            {' '}
             <button
               onClick={handleButtonClick3}
               className='bg-green-500 text-white px-10 py-2 rounded-xl mb-5'

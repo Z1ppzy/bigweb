@@ -138,7 +138,7 @@ export default function Register() {
               className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 '
             >
               Я прочитал и принимаю {' '}
-              <Link to='/terms'><span className='hover:text-purple-800'>Условия использования.</span></Link>
+              <Link to='/terms'><span className='hover:text-purple-800 font-bold'>Условия использования.</span></Link>
             </label>
           </div>
 

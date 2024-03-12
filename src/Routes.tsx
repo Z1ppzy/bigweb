@@ -8,6 +8,7 @@ import Terms from './Pages/Terms';
 import ForgotPassword from './Pages/ForgotPassword';
 import Layout from './components/Layout';
 import Rules from './Pages/Rules';
+import AdminDashboard from './Pages/AdminDashboard';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: '/rules',
         element: <Rules />,
+      },
+      {
+        path: '/admindashboard',
+        element: <AdminDashboard />,
       },
     ],
   },

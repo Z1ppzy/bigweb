@@ -8,13 +8,14 @@ import {
 import SliderImg from '@/components/SliderImg';
 
 export default function Home() {
+
   return (
     <>
       <div className=' min-h-screen '>
         <div className='md:grid grid-cols-2'>
           <div className='mt-3 md:mt-8'>
             <SliderImg />
-            </div>
+          </div>
           <div className='mx-10 md:mt-20 '>
             <h1 className='font-semibold text-center text-base md:text-xl '>
               Начните свою историю в нашей виртуальной песочнице!
