@@ -14,7 +14,6 @@ export default function AdminDashboard() {
     }
     const fetchUser = async () => {
       const user = await axios.get('http://localhost:8000/api/user');
-      console.log(user)
       if (user.data.role == 'player') {
         navigate('/login');
       }

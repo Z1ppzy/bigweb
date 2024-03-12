@@ -52,14 +52,12 @@ export default function Register() {
       };
       const body = JSON.stringify(values);
       await axios.get('http://localhost:8000/sanctum/csrf-cookie');
-      console.log(body);
       const res = await axios.post(
         'http://localhost:8000/register',
         body,
         config
       );
       navigate('/profile');
-      console.log(res);
     } catch (err) {}
   }
 

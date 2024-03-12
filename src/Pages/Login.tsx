@@ -60,7 +60,6 @@ export default function Login() {
 
       const res = await axios.post('http://localhost:8000/login', body, config);
       navigate('/profile');
-      console.log(res);
       localStorage.setItem('authToken', res.data.token);
     } catch (err) {}
   }
