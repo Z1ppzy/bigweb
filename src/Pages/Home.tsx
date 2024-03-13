@@ -7,6 +7,8 @@ import {
 } from '@/components/ui/accordion';
 import SliderImg from '@/components/SliderImg';
 import { GiProcessor } from 'react-icons/gi';
+import { FaPeopleGroup } from 'react-icons/fa6';
+import { LiaChalkboardTeacherSolid } from 'react-icons/lia';
 
 export default function Home() {
   return (
@@ -38,21 +40,33 @@ export default function Home() {
               </Link>
             </div>
           </div>
+
         </div>
-        <h1 className='text-center text-xl'>
+        <h1 className='text-center text-xl mt-10'>
           <b>Почему именно мы?</b>
         </h1>
-        <div className='md:grid grid-cols-3 mx-10 justify-center text-center'>
-          <div className=''>
-            <GiProcessor />{' '}
+        <div className='place-items-center md:grid grid-cols-3 mx-48 text-center mb-10 gap-60'>
+          <div className='flex flex-col items-center mt-3'>
+            <FaPeopleGroup className='text-8xl text-purple-950' />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex,
-              minus fuga? Error corporis dignissimos laborum id ipsum debitis
-              quo itaque.
+              Каждому игроку будет продоставляться качественная поддержка
+              администрации сервера!
             </p>
           </div>
-          <div>2</div>
-          <div>3</div>
+          <div className='flex flex-col items-center mt-3'>
+            <GiProcessor className='text-8xl text-purple-950' />
+            <p>
+              Сервер использует лучшее оборудование, что гарантирует мощность и
+              стабильность нашему прокету!
+            </p>
+          </div>
+          <div className='flex flex-col items-center mt-3'>
+            <LiaChalkboardTeacherSolid className='text-8xl text-purple-950' />
+            <p>
+              Немного о нас. Мы игроки Майнкрафта, что решились сделать своей
+              приятный уголок для игры.
+            </p>
+          </div>
         </div>
         <div className='px-8 mx-4 lg:mx-40 mb-10'>
           <Accordion type='single' collapsible className='w-full'>
