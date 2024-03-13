@@ -6,18 +6,18 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import SliderImg from '@/components/SliderImg';
+import { GiProcessor } from 'react-icons/gi';
 
 export default function Home() {
-
   return (
     <>
-      <div className=' min-h-screen '>
-        <div className='md:grid grid-cols-2'>
-          <div className='mt-3 md:mt-8'>
+      <div className=''>
+        <div className='md:grid grid-cols-2  min-h-screen'>
+          <div className='mt-10 md:mt-8'>
             <SliderImg />
           </div>
-          <div className='mx-10 md:mt-20 '>
-            <h1 className='font-semibold text-center text-base md:text-xl '>
+          <div className='mx-10 mt-9 md:mt-20'>
+            <h1 className='font-semibold text-center text-base md:text-xl'>
               Начните свою историю в нашей виртуальной песочнице!
             </h1>
             <p className='text-center mt-2 mx-2 md:mx-12'>
@@ -39,7 +39,22 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className='px-8 mt-10 mx-4 lg:mx-40'>
+        <h1 className='text-center text-xl'>
+          <b>Почему именно мы?</b>
+        </h1>
+        <div className='md:grid grid-cols-3 mx-10 justify-center text-center'>
+          <div className=''>
+            <GiProcessor />{' '}
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex,
+              minus fuga? Error corporis dignissimos laborum id ipsum debitis
+              quo itaque.
+            </p>
+          </div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <div className='px-8 mx-4 lg:mx-40 mb-10'>
           <Accordion type='single' collapsible className='w-full'>
             <AccordionItem value='item-1'>
               <AccordionTrigger>Как подключиться к серверу?</AccordionTrigger>
