@@ -14,21 +14,27 @@ interface SliderSettings {
   slidesToScroll: number;
   autoplay: boolean;
   autoplaySpeed: number;
+  arrows?: boolean;
+  fade: boolean;
+  waitForAnimate: boolean;
 }
 
 export default function SliderImg() {
   const settings: SliderSettings = {
+    fade: true ,
+    arrows: undefined,
     dots: false,
     infinite: true,
     speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 6000,
+    waitForAnimate: false
   };
 
   return (
-    <Slider className='mx-7' {...settings}>
+    <Slider className='mx-7 ' {...settings}>
       <div>
         <img
           className='float-right rounded-xl scale-100'
