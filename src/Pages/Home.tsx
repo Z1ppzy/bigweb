@@ -52,16 +52,17 @@ export default function Home() {
             <div className='mt-10 md:mt-16 text-center'>
               <Link
                 to='/register'
-                className='bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-lg px-16 py-4 text-white hover:text-teal-400 duration-500'
+                className='bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-lg px-10 md:px-16 py-4 text-white hover:text-teal-400 duration-500'
               >
                 Начать играть
               </Link>
             </div>
           </div>
         </div>
-        <h1 className='text-2xl text-center md:text-4xl'>
-          <b>Почему именно мы?</b>
-        </h1>
+          <h1 className='mt-8 text-2xl text-center md:text-4xl'>
+            <b>Почему именно мы?</b>
+          </h1>
+
         <div className='mx-10 place-items-center md:grid grid-cols-3 md:mx-32 text-center mb-10 gap-20'>
           <div className='flex flex-col items-center mt-5'>
             <GiProcessor className='text-8xl text-purple-950' />
@@ -129,7 +130,10 @@ export default function Home() {
               <AccordionContent>
                 На нашем сервере установлены базовые правила игры, но подробнее
                 с ними можно ознакомиться{' '}
-                <Link to='/rules' className='font-bold hover:text-purple-800 duration-500'>
+                <Link
+                  to='/rules'
+                  className='font-bold hover:text-purple-800 duration-500'
+                >
                   тут
                 </Link>
                 .
