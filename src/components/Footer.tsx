@@ -3,9 +3,9 @@ import { FaDiscord, FaVk, FaTelegramPlane } from 'react-icons/fa';
 export default function Footer() {
   return (
     <footer>
-      <div className='w-full bg-footer flex flex-row justify-center '>
-        <div className='flex flex-col items-center py-5'>
-          <p className='font-bold mt-6 text-white'>
+      <div className='px-5 bg-footer flex flex-row justify-center '>
+        <div className='flex flex-col items-center py-7'>
+          <p className='font-bold text-white'>
             © 2024 HeavenlyWeiner Все права защищены.
           </p>
           <div>
