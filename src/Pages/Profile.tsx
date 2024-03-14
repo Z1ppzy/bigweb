@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Slide, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
