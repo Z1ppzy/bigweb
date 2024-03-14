@@ -52,7 +52,7 @@ export default function Home() {
             <div className='mt-10 md:mt-16 text-center'>
               <Link
                 to='/register'
-                className=' bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-lg px-16 py-4 text-white hover:text-teal-400'
+                className='bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-lg px-16 py-4 text-white hover:text-teal-400 duration-500'
               >
                 Начать играть
               </Link>
@@ -98,7 +98,7 @@ export default function Home() {
                 введите нужный IP-адрес{' '}
                 <span
                   onClick={() => CopyIP('mc.heavenlyweiner.ru')}
-                  className='hover:text-purple-800 font-bold cursor-pointer'
+                  className='hover:text-purple-800 duration-500 font-bold cursor-pointer'
                 >
                   mc.heavenlyweiner.ru
                 </span>
@@ -113,7 +113,7 @@ export default function Home() {
                 Minecraft Fabric и установить мод{' '}
                 <a
                   href='https://modrinth.com/plugin/plasmo-voice/versions#all-versions'
-                  className='hover:text-purple-800 font-bold'
+                  className='hover:text-purple-800 font-bold duration-500'
                   target='_blank'
                 >
                   PlasmoVoice
@@ -129,7 +129,7 @@ export default function Home() {
               <AccordionContent>
                 На нашем сервере установлены базовые правила игры, но подробнее
                 с ними можно ознакомиться{' '}
-                <Link to='/rules' className='font-bold hover:text-purple-800'>
+                <Link to='/rules' className='font-bold hover:text-purple-800 duration-500'>
                   тут
                 </Link>
                 .

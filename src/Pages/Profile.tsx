@@ -1,107 +1,89 @@
-import { useEffect } from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Slide, ToastContainer, toast } from 'react-toastify';
+import { Slide, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { format } from "@formkit/tempo";
+
+axios.defaults.withCredentials = true;
+axios.defaults.withXSRFToken = true;
+
+interface user {
+  name: string;
+  email: string;
+  created_at: string;
+  role: string;
+}
 
 export default function Profile() {
+  const [user, setUser] = useState<user>();
   const navigate = useNavigate();
   useEffect(() => {
     const token = localStorage.getItem('authToken');
     if (!token) {
       navigate('/login');
     }
+    const fetchUser = async () => {
+      const user = await axios.get('http://localhost:8000/api/user');
+      setUser(user.data);
+      // console.log(user);
+    };
+    fetchUser();
   }, []);
 
-  const handleButtonClick = () => {
-    toast.success('Пароль был успешно изменен!', {
-      position: 'top-right',
-      autoClose: 2500,
-      transition: Slide,
-    });
-  };
-
-  const handleButtonClick2 = () => {
-    toast.success('Почта была успешно изменена!', {
-      position: 'top-right',
-      autoClose: 2500,
-      transition: Slide,
-    });
-  };
-  const handleButtonClick3 = () => {
-    toast.warn('Вы были перенаправлены на qr-code', {
-      position: 'top-right',
-      autoClose: 2500,
-      transition: Slide,
-    });
-  };
 
   return (
     <>
-      <div className='py-10 mt-20 h-screen flex flex-col gap-10 justify-center items-center md:flex-row bg-slate-200'>
-        <div className='w-80 h-80 bg-white flex flex-col '>
-          <p className='p-4 justify-start text-xl'>Change Password</p>
-          <div className='flex flex-col items-center gap-5'>
-            <input
-              type='password'
-              placeholder='oldPassword'
-              className='px-1 w-60 h-10 border-2 rounded-md border-footer focus:border-purple-700 focus:outline-none'
-            />
-            <input
-              type='password'
-              autoComplete='new-password'
-              placeholder='newPassword'
-              className='px-1 w-60 h-10 border-2 rounded-md border-footer focus:border-purple-700 focus:outline-none'
-            />
-            <input
-              type='password'
-              autoComplete='off'
-              placeholder='confirmPassword'
-              className='px-1 w-60 h-10 border-2 rounded-md border-footer focus:border-purple-700 focus:outline-none'
-            />
-            <button
-              onClick={handleButtonClick}
-              className='bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white px-10 py-2 rounded-xl mb-5'
-            >
-              Confirm
-            </button>
-          </div>
-        </div>
+      <div>
+        <h1 className='font-bold text-someblack text-3xl p-6 text-center md:text-left'>
+          Приветствуем вас, {user?.name}!
+        </h1>
+        <div className='md:grid grid-cols-2 min-h-screen'>
+          <div className=''>
+            <div className='py-5 px-8 text-left'>
+              {user && (
+                <div className='flex flex-row'>
+                  <Avatar>
+                    <AvatarImage
+                      src='12231231.jpg'
+                      alt='None'
+                    />
+                    <AvatarFallback>None</AvatarFallback>
+                  </Avatar>
+                  <div className='flex flex-col pl-6 text-md text-someblack text-lg'>
+                  <p>Почта: {user.email}</p>
+                  <p>Роль:{user.role}</p>
+                  <p>Аккаунт создан: {format(user.created_at, {date: 'medium'})}</p>
+                  </div>
 
-        <div className='w-80 h-80 bg-white flex flex-col '>
-          <p className='p-4 justify-start text-xl'>Change Email Address</p>
-          <div className='flex flex-col items-center gap-5'>
-            <input
-              type='email'
-              autoComplete='email'
-              placeholder='oldEmail'
-              className='px-1 w-60 h-10 border-2 rounded-md border-footer focus:border-purple-700 focus:outline-none'
-            />
-            <input
-              type='email'
-              autoComplete='off'
-              placeholder='newEmail'
-              className='px-1 w-60 h-10 border-2 rounded-md border-footer focus:border-purple-700 focus:outline-none'
-            />
-            <button
-              onClick={handleButtonClick2}
-              className='bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white px-10 py-2 rounded-xl mb-5'
-            >
-              Confirm
-            </button>
+                </div>
+              )}
+              {!user && <Skeleton className='h-[80px] w-[250px] rounded-xl' />}
+            </div>
+            <div className='flex flex-row'>Смена пароля Активировать промокод</div>
+          </div>
+          <div className='mx-10 '>
+            <div className='bg-gradient-to-r from-sky-500 to-indigo-500 py-5 px-5 rounded-md'>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+              repellat perspiciatis numquam iure autem unde quisquam, adipisci
+              voluptatum dicta rem rerum qui, officia, non iusto reprehenderit
+              repellendus et! Quisquam libero itaque commodi natus odio,
+              voluptatum rerum minus dolorem tempore hic temporibus beatae
+              officia suscipit saepe architecto corrupti dolorum. Numquam,
+              illum.
+            </div>
+            <div className='bg-slate-100 py-5 px-5 mt-5 rounded-md'>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. In
+              fugiat corporis hic accusantium, porro dolor, exercitationem velit
+              rerum impedit odio nihil expedita corrupti temporibus error minus,
+              voluptatum odit nostrum unde sint. Laborum, porro asperiores esse
+              sit perferendis, consequuntur doloremque ad aspernatur debitis
+              accusantium iure dolorum voluptatibus, minus rem ab sint.
+            </div>
           </div>
         </div>
-        <div className='w-80 h-80 bg-white flex flex-col '>
-          <p className='p-4 justify-start text-xl'>Two Factor Authentication</p>
-          <div className='flex flex-col items-center'>
-            <button
-              onClick={handleButtonClick3}
-              className='bg-green-500 text-white px-10 py-2 rounded-xl mb-5'
-            >
-              Confirm
-            </button>
-          </div>
-        </div>
-        <ToastContainer />
       </div>
     </>
   );
