@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { format } from '@formkit/tempo';
+import Promocode from '../components/Promocode';
 
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
@@ -32,12 +33,21 @@ export default function Profile() {
     fetchUser();
   }, []);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
   return (
     <>
       <div>
-        <h1 className='font-bold text-someblack text-3xl p-6 text-center md:text-left'>
-          Приветствуем вас, {user?.name}!
-        </h1>
+        {user && (
+          <h1 className='font-bold text-someblack text-3xl p-6 text-center md:text-left'>
+            Приветствуем вас, {user?.name}!
+          </h1>
+        )}{' '}
+        {!user && <Skeleton className='h-[20px] w-[250px] rounded-xl' />}
         <div className='md:grid grid-cols-2 min-h-screen'>
           <div className=''>
             <div className='py-5 px-8 text-left'>
@@ -59,22 +69,23 @@ export default function Profile() {
               )}
               {!user && <Skeleton className='h-[80px] w-[250px] rounded-xl' />}
             </div>
-            <div className='px-6'>
-              <button className='text-white w-fit bg-black px-2 py-1 rounded-md m-0.5 font-medium'>
+            <div className='px-8'>
+              <button className='text-white w-fit bg-black px-3 py-1 rounded-md m-0.5 font-medium hover:text-purple-800 duration-500'>
                 Смена пароля
               </button>
-              <button className='text-white w-fit bg-black px-2 py-1 rounded-md m-0.5 font-medium'>
+              <button onClick={handleOpenModal} className='text-white w-fit bg-black px-3 py-1 rounded-md m-0.5 font-medium hover:text-purple-800 duration-500'>
                 Активация промокода
               </button>
-              <button className='text-white w-fit bg-black px-2 py-1 rounded-md m-0.5 font-medium'>
+              <button className='text-white w-fit bg-black px-3 py-1 rounded-md m-0.5 font-medium hover:text-purple-800 duration-500'>
                 Подтверждение почты
               </button>
-              <button className='text-white w-fit bg-black px-2 py-1 rounded-md m-0.5 font-medium'>
+              <button className='text-white w-fit bg-black px-3 py-1 rounded-md m-0.5 font-medium hover:text-purple-800 duration-500'>
                 Двухэтапная аутентификация
               </button>
             </div>
           </div>
         </div>
+        {isModalOpen && <Promocode />}
       </div>
     </>
   );
