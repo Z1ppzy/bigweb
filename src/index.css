@@ -93,3 +93,30 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #5838a0; 
 }
+.product-card {
+  
+  position: relative;
+  border: 12px solid transparent;
+  overflow: hidden;
+  border-radius: 24px;
+  transition: transform 0.3s ease;
+  background: 
+/* padding-box, чтобы он не рисовался под рамкой */
+  linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) padding-box,
+/* border-box, чтобы он начинался под рамкой */
+  linear-gradient(
+    45deg,
+    #FF52E5,
+    #F6D242
+  ) border-box;
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* увеличиваем элемент при наведении на 5% */
+}
+
+
+
+
+
+
