@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Routes, Route } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -47,11 +47,9 @@ const products: Product[] = [
 ];
 
 function ProductModal({ product, onClose }: { product: Product; onClose: () => void }) {
-  const navigate = useNavigate(); // Используем хук useNavigate для навигации
-
   const closeProductModal = () => {
     onClose();
-    navigate(-1); // Возвращаемся на предыдущую страницу
+    window.history.back(); // Возвращаемся на предыдущую страницу
   };
 
   return (
@@ -66,18 +64,18 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
   );
 }
 
-export default function Example() {
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+export default function Shop() {
+  const [selectedProduct, setSelectedProduct] = useState<Product>(products[0]);
   const navigate = useNavigate(); // Используем хук useNavigate для навигации
 
   const openProductModal = (product: Product) => {
     setSelectedProduct(product);
-    navigate(product.href); // Обновляем URL при открытии модального окна
+    navigate(`/shop/${product.id}/modal`); // Обновляем URL при открытии модального окна
   };
 
   const closeProductModal = () => {
-    setSelectedProduct(null);
-    navigate(-1); // Возвращаемся на предыдущую страницу при закрытии модального окна
+    setSelectedProduct(products[0]); // Просто устанавливаем первый продукт из массива, либо можно установить null
+    navigate('/shop');
   };
 
   return (
@@ -105,7 +103,9 @@ export default function Example() {
           ))}
         </div>
       </div>
-      {selectedProduct && <ProductModal product={selectedProduct} onClose={closeProductModal} />}
+      <Routes>
+        <Route path="/shop/:id/modal" element={<ProductModal product={selectedProduct} onClose={closeProductModal} />} />
+      </Routes>
     </div>
   );
 }
