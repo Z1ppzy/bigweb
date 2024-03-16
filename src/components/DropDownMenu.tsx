@@ -59,6 +59,11 @@ export default function DropDownMenu() {
                 AdminDashboard
               </span>
             </Link>
+            <Link to='/shop' className='flex flex-col'>
+              <span className='text-center text-2xl hover:text-purple-950'>
+                Shop
+              </span>
+            </Link>
           </SheetDescription>
         </SheetHeader>
       </SheetContent>

@@ -1,12 +1,10 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { format } from '@formkit/tempo';
-
-
 
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
@@ -53,11 +51,15 @@ export default function Profile() {
                     <AvatarFallback>None</AvatarFallback>
                   </Avatar>
                   <div className='flex flex-col pl-6 text-md text-someblack text-lg'>
-                    <p>Почта: {user.email}</p>
-                    <p>Роль:{user.role}</p>
+                    <p>
+                      Почта: <b> {user.email}</b>
+                    </p>
+                    <p>
+                      Роль: <b>{user.role}</b>
+                    </p>
                     <p>
                       Аккаунт создан:{' '}
-                      {format(user.created_at, { date: 'medium' })}
+                      <b>{format(user.created_at, { date: 'medium' })}</b>
                     </p>
                   </div>
                 </div>
@@ -78,6 +80,23 @@ export default function Profile() {
                 Двухэтапная аутентификация
               </button>
             </div>
+          </div>
+          <div className='p-10 md:mx-16 '>
+            <Link to='/shop'>
+              <div className='flex w-full h-40 bg-gradient-to-r from-sky-500 to-indigo-500 mb-2 rounded-lg hover:scale-105 duration-500 cursor-pointer'>
+                <div className='w-1/2 p-4'>
+                  <p className='font-bold text-md md:text-2xl text-center text-iney'>ПОПОЛНИТЬ БАЛАНС</p>
+                  <p className='font-bold text-md md:text-xl mt-3 text-center text-iney'>ТЕКУЩИЙ БАЛАНС:</p>
+                  <p className='font-bold text-xl md:text-2xl text-center text-iney'>9999</p>
+                </div>
+                <div className='w-1/2 p-4'>
+                  {' '}
+                  <p>
+                  </p>{' '}
+                </div>
+              </div>
+            </Link>
+            <div className='w-full h-40 bg-someblack rounded-lg'></div>
           </div>
         </div>
       </div>

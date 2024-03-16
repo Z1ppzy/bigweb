@@ -23,6 +23,7 @@ module.exports = {
       colors: {
         'footer': '#1b1b1b',
         'someblack': '#353535',
+        'iney':'#AFDAFC',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
