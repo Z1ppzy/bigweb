@@ -43,15 +43,15 @@ const products: Product[] = [
     imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
     href: '/shop/4'
   },
-  // More products...
+
 ];
 
 function ProductModal({ product, onClose }: { product: Product; onClose: () => void }) {
-  const navigate = useNavigate(); // Используем хук useNavigate для навигации
+  const navigate = useNavigate(); 
 
   const closeProductModal = () => {
     onClose();
-    navigate(-1); // Возвращаемся на предыдущую страницу
+    navigate(-1); 
   };
 
   return (
@@ -68,16 +68,16 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
 
 export default function Example() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const navigate = useNavigate(); // Используем хук useNavigate для навигации
+  const navigate = useNavigate(); 
 
   const openProductModal = (product: Product) => {
     setSelectedProduct(product);
-    navigate(product.href); // Обновляем URL при открытии модального окна
+    navigate(product.href); 
   };
 
   const closeProductModal = () => {
     setSelectedProduct(null);
-    navigate(-1); // Возвращаемся на предыдущую страницу при закрытии модального окна
+    navigate(-1); 
   };
 
   return (
