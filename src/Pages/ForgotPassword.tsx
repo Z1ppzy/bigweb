@@ -2,12 +2,12 @@ export default function ForgotPassword() {
   return (
     <div className='flex flex-col items-center mt-52 text-center mx-10 h-screen'>
       <div>
-        <h1 className='font-bold text-2xl'>Forgot Password</h1>
+        <h1 className='font-bold text-2xl'>Забыли пароль?</h1>
       </div>
       <div className='mt-2'>
         <label className=''>
-          Please enter your email address so we can send you further
-          instructions on resetting your password.
+          Пожалуйста, введите ваш адрес электронной почты, чтобы мы могли
+          отправить вам дальнейшие инструкции по сбросу пароля.
         </label>
       </div>
       <div className='mt-2'>
