@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, Routes, Route } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -43,21 +43,15 @@ const products: Product[] = [
     imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
     href: '/shop/4'
   },
-
+  // More products...
 ];
 
 function ProductModal({ product, onClose }: { product: Product; onClose: () => void }) {
-<<<<<<< HEAD
-  const closeProductModal = () => {
-    onClose();
-    window.history.back(); // Возвращаемся на предыдущую страницу
-=======
-  const navigate = useNavigate(); 
+  const navigate = useNavigate(); // Используем хук useNavigate для навигации
 
   const closeProductModal = () => {
     onClose();
-    navigate(-1); 
->>>>>>> 4e2638002a685e170484b9364852b13ba9d551b1
+    navigate(-1); // Возвращаемся на предыдущую страницу
   };
 
   return (
@@ -72,33 +66,18 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
   );
 }
 
-<<<<<<< HEAD
-export default function Shop() {
-  const [selectedProduct, setSelectedProduct] = useState<Product>(products[0]);
+export default function Example() {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const navigate = useNavigate(); // Используем хук useNavigate для навигации
 
   const openProductModal = (product: Product) => {
     setSelectedProduct(product);
-    navigate(`/shop/${product.id}/modal`); // Обновляем URL при открытии модального окна
-  };
-
-  const closeProductModal = () => {
-    setSelectedProduct(products[0]); // Просто устанавливаем первый продукт из массива, либо можно установить null
-    navigate('/shop');
-=======
-export default function Example() {
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const navigate = useNavigate(); 
-
-  const openProductModal = (product: Product) => {
-    setSelectedProduct(product);
-    navigate(product.href); 
+    navigate(product.href); // Обновляем URL при открытии модального окна
   };
 
   const closeProductModal = () => {
     setSelectedProduct(null);
-    navigate(-1); 
->>>>>>> 4e2638002a685e170484b9364852b13ba9d551b1
+    navigate(-1); // Возвращаемся на предыдущую страницу при закрытии модального окна
   };
 
   return (
@@ -126,9 +105,7 @@ export default function Example() {
           ))}
         </div>
       </div>
-      <Routes>
-        <Route path="/shop/:id/modal" element={<ProductModal product={selectedProduct} onClose={closeProductModal} />} />
-      </Routes>
+      {selectedProduct && <ProductModal product={selectedProduct} onClose={closeProductModal} />}
     </div>
   );
 }
