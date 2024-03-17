@@ -43,13 +43,21 @@ const products: Product[] = [
     imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
     href: '/shop/4'
   },
-  // More products...
+
 ];
 
 function ProductModal({ product, onClose }: { product: Product; onClose: () => void }) {
+<<<<<<< HEAD
   const closeProductModal = () => {
     onClose();
     window.history.back(); // Возвращаемся на предыдущую страницу
+=======
+  const navigate = useNavigate(); 
+
+  const closeProductModal = () => {
+    onClose();
+    navigate(-1); 
+>>>>>>> 4e2638002a685e170484b9364852b13ba9d551b1
   };
 
   return (
@@ -64,6 +72,7 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
   );
 }
 
+<<<<<<< HEAD
 export default function Shop() {
   const [selectedProduct, setSelectedProduct] = useState<Product>(products[0]);
   const navigate = useNavigate(); // Используем хук useNavigate для навигации
@@ -76,6 +85,20 @@ export default function Shop() {
   const closeProductModal = () => {
     setSelectedProduct(products[0]); // Просто устанавливаем первый продукт из массива, либо можно установить null
     navigate('/shop');
+=======
+export default function Example() {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const navigate = useNavigate(); 
+
+  const openProductModal = (product: Product) => {
+    setSelectedProduct(product);
+    navigate(product.href); 
+  };
+
+  const closeProductModal = () => {
+    setSelectedProduct(null);
+    navigate(-1); 
+>>>>>>> 4e2638002a685e170484b9364852b13ba9d551b1
   };
 
   return (
