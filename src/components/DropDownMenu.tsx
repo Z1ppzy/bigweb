@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/sheet';
 import { TfiAlignRight } from 'react-icons/tfi';
 import { Link } from 'react-router-dom';
+import { ThemeSwitch } from './ThemeSwitch';
 
 export default function DropDownMenu() {
   return (
@@ -64,6 +65,7 @@ export default function DropDownMenu() {
                 Shop
               </span>
             </Link>
+            <ThemeSwitch />
           </SheetDescription>
         </SheetHeader>
       </SheetContent>

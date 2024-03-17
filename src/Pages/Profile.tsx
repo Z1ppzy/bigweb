@@ -67,24 +67,24 @@ export default function Profile() {
               {!user && <Skeleton className='h-[80px] w-[250px] rounded-xl' />}
             </div>
             <div className='px-8'>
-              <button className='w-full text-md md:w-fit border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
+              <button className='w-full md:w-fit border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
                 Смена пароля
               </button>
-              <button className=' w-full md:w-fit border-2 text-md border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
+              <button className='w-full md:w-fit border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
                 Активация промокода
               </button>
-              <button className=' w-full md:w-fit text-md border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
+              <button className=' w-full md:w-fit border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
                 Подтверждение почты
               </button>
-              <button className=' w-full  md:w-fit text-md border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
+              <button className=' w-full  md:w-fit border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
                 Двухэтапная аутентификация
               </button>
             </div>
           </div>
           <div className='p-10 md:mx-16 '>
             <Link to='/shop'>
-              <div className='mb-2 flex w-full h-fit bg-gradient-to-r from-sky-500 to-indigo-500  rounded-lg hover:scale-105 duration-500 cursor-pointer'>
-                <div className='w-1/2 p-4'>
+              <div className='mb-2 flex text-center justify-center w-full h-fit bg-gradient-to-r from-sky-500 to-indigo-500  rounded-lg hover:scale-105 duration-500 cursor-pointer'>
+                <div className=' p-4'>
                   <p className='font-bold text-md md:text-2xl text-center text-iney'>
                     ПОПОЛНИТЬ БАЛАНС
                   </p>
@@ -94,10 +94,6 @@ export default function Profile() {
                   <p className='font-bold text-xl md:text-2xl text-center text-iney'>
                     0
                   </p>
-                </div>
-                <div className='p-4'>
-                  {' '}
-                  <p></p>{' '}
                 </div>
               </div>
             </Link>
