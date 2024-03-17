@@ -6,7 +6,7 @@ interface Product {
   price: string;
   imageSrc: string;
   imageAlt: string;
-  href: string; // Добавляем свойство href для ссылки на продукт
+  href: string; 
 }
 
 const products: Product[] = [
@@ -16,7 +16,7 @@ const products: Product[] = [
     price: '48₽',
     imageSrc: '/public/tn.jpg',
     imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
-    href: '/herald', // Добавляем ссылку на продукт
+    href: '/herald', 
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const products: Product[] = [
     price: '35₽',
     imageSrc: '/public/002.jpg',
     imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
-    href: '/guardian', // Добавляем ссылку на продукт
+    href: '/guardian', 
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const products: Product[] = [
     price: '89₽',
     imageSrc: '/public/003.jpg',
     imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
-    href: '/archong', // Добавляем ссылку на продукт
+    href: '/archong', 
   },
   {
     id: 4,
@@ -40,7 +40,7 @@ const products: Product[] = [
     price: '35₽',
     imageSrc: '/public/004.jpg',
     imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
-    href: '/mechanical-pencil', // Добавляем ссылку на продукт
+    href: '/mechanical-pencil', 
   },
 ];
 
