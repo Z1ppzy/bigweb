@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -7,7 +6,7 @@ interface Product {
   price: string;
   imageSrc: string;
   imageAlt: string;
-  href: string;
+  href: string; // Добавляем свойство href для ссылки на продукт
 }
 
 const products: Product[] = [
@@ -17,7 +16,7 @@ const products: Product[] = [
     price: '48₽',
     imageSrc: '/public/tn.jpg',
     imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
-    href: '/shop/1'
+    href: '/herald', // Добавляем ссылку на продукт
   },
   {
     id: 2,
@@ -25,7 +24,7 @@ const products: Product[] = [
     price: '35₽',
     imageSrc: '/public/002.jpg',
     imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
-    href: '/shop/2'
+    href: '/guardian', // Добавляем ссылку на продукт
   },
   {
     id: 3,
@@ -33,7 +32,7 @@ const products: Product[] = [
     price: '89₽',
     imageSrc: '/public/003.jpg',
     imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
-    href: '/shop/3'
+    href: '/archong', // Добавляем ссылку на продукт
   },
   {
     id: 4,
@@ -41,16 +40,13 @@ const products: Product[] = [
     price: '35₽',
     imageSrc: '/public/004.jpg',
     imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
-    href: '/shop/4'
+    href: '/mechanical-pencil', // Добавляем ссылку на продукт
   },
 ];
 
 function ProductModal({ product, onClose }: { product: Product; onClose: () => void }) {
-  const navigate = useNavigate(); 
-
   const closeProductModal = () => {
     onClose();
-    navigate(-1); 
   };
 
   return (
@@ -67,15 +63,13 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
 
 export default function Shop() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const navigate = useNavigate(); 
+
   const openProductModal = (product: Product) => {
     setSelectedProduct(product);
-    navigate(product.href); 
   };
 
   const closeProductModal = () => {
     setSelectedProduct(null);
-    navigate(-1); 
   };
 
   return (
