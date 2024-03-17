@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 export interface Product {
   id: number;
   name: string;
@@ -7,10 +8,16 @@ export interface Product {
   href: string;
 }
 
-export function ProductModal({ product, onClose }: { product: Product; onClose: () => void }) {
+export function ProductModal({ product, onClose }: { product: Product | null; onClose: () => void }) {
   const closeProductModal = () => {
     onClose();
   };
+
+  if (!product) {
+   
+    return null; 
+ 
+  }
 
   return (
     <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-800 bg-opacity-50">
