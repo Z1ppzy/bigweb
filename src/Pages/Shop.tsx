@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -47,11 +46,8 @@ const products: Product[] = [
 ];
 
 function ProductModal({ product, onClose }: { product: Product; onClose: () => void }) {
-  const navigate = useNavigate(); // Используем хук useNavigate для навигации
-
   const closeProductModal = () => {
     onClose();
-    navigate(-1); // Возвращаемся на предыдущую страницу
   };
 
   return (
@@ -68,16 +64,13 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
 
 export default function Example() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const navigate = useNavigate(); // Используем хук useNavigate для навигации
 
   const openProductModal = (product: Product) => {
     setSelectedProduct(product);
-    navigate(product.href); // Обновляем URL при открытии модального окна
   };
 
   const closeProductModal = () => {
     setSelectedProduct(null);
-    navigate(-1); // Возвращаемся на предыдущую страницу при закрытии модального окна
   };
 
   return (
