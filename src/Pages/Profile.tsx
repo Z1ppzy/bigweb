@@ -50,14 +50,14 @@ export default function Profile() {
                     <AvatarImage src='12231231.jpg' alt='None' />
                     <AvatarFallback>None</AvatarFallback>
                   </Avatar>
-                  <div className='flex flex-col pl-6 text-md text-someblack text-lg'>
-                    <p>
+                  <div className='flex flex-col md:pl-6 text-md text-someblack text-lg'>
+                    <p className='font-medium'>
                       Почта: <b> {user.email}</b>
                     </p>
-                    <p>
+                    <p className='font-medium'>
                       Роль: <b>{user.role}</b>
                     </p>
-                    <p>
+                    <p className='font-medium'>
                       Аккаунт создан:{' '}
                       <b>{format(user.created_at, { date: 'medium' })}</b>
                     </p>
@@ -67,36 +67,50 @@ export default function Profile() {
               {!user && <Skeleton className='h-[80px] w-[250px] rounded-xl' />}
             </div>
             <div className='px-8'>
-              <button className='text-white w-fit bg-black px-3 py-1 rounded-md m-0.5 font-medium hover:text-purple-800 duration-500'>
+              <button className='w-full text-md md:w-fit border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
                 Смена пароля
               </button>
-              <button className='text-white w-fit bg-black px-3 py-1 rounded-md m-0.5 font-medium hover:text-purple-800 duration-500'>
+              <button className=' w-full md:w-fit border-2 text-md border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
                 Активация промокода
               </button>
-              <button className='text-white w-fit bg-black px-3 py-1 rounded-md m-0.5 font-medium hover:text-purple-800 duration-500'>
+              <button className=' w-full md:w-fit text-md border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
                 Подтверждение почты
               </button>
-              <button className='text-white w-fit bg-black px-3 py-1 rounded-md m-0.5 font-medium hover:text-purple-800 duration-500'>
+              <button className=' w-full  md:w-fit text-md border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
                 Двухэтапная аутентификация
               </button>
             </div>
           </div>
           <div className='p-10 md:mx-16 '>
             <Link to='/shop'>
-              <div className='flex w-full h-40 bg-gradient-to-r from-sky-500 to-indigo-500 mb-2 rounded-lg hover:scale-105 duration-500 cursor-pointer'>
+              <div className='mb-2 flex w-full h-fit bg-gradient-to-r from-sky-500 to-indigo-500  rounded-lg hover:scale-105 duration-500 cursor-pointer'>
                 <div className='w-1/2 p-4'>
-                  <p className='font-bold text-md md:text-2xl text-center text-iney'>ПОПОЛНИТЬ БАЛАНС</p>
-                  <p className='font-bold text-md md:text-xl mt-3 text-center text-iney'>ТЕКУЩИЙ БАЛАНС:</p>
-                  <p className='font-bold text-xl md:text-2xl text-center text-iney'>9999</p>
+                  <p className='font-bold text-md md:text-2xl text-center text-iney'>
+                    ПОПОЛНИТЬ БАЛАНС
+                  </p>
+                  <p className='font-bold text-md md:text-xl mt-3 text-center text-iney'>
+                    ТЕКУЩИЙ БАЛАНС:
+                  </p>
+                  <p className='font-bold text-xl md:text-2xl text-center text-iney'>
+                    0
+                  </p>
                 </div>
-                <div className='w-1/2 p-4'>
+                <div className='p-4'>
                   {' '}
-                  <p>
-                  </p>{' '}
+                  <p></p>{' '}
                 </div>
               </div>
             </Link>
-            <div className='w-full h-40 bg-someblack rounded-lg'></div>
+            <Link to='/rewards'>
+              <div className='mt-2 flex flex-col p-10 justify-center items-center w-full h-fit shadow-xl hover:shadow-2xl rounded-lg hover:scale-105 duration-500 cursor-pointer '>
+                <p className='text-iney text-xl text-center font-bold mt-'>
+                  А вы уже забрали свою награду?
+                </p>
+                <p className='text-iney text-lg text-center font-bold mt-2'>
+                  Если нет, то скорее получите ее!!!
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

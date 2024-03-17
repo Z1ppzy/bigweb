@@ -10,6 +10,7 @@ import Layout from './components/Layout';
 import Rules from './Pages/Rules';
 import AdminDashboard from './Pages/AdminDashboard';
 import Shop from './Pages/Shop';
+import Rewards from './Pages/Rewards';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: '/profile',
         element: <Profile />,
+      },
+      {
+        path: '/rewards',
+        element: <Rewards />,
       },
       {
         path: '/shop',
