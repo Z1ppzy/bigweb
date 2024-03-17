@@ -1,78 +1,59 @@
-import { useState } from 'react';
-
-interface Product {
-  id: number;
-  name: string;
-  price: string;
-  imageSrc: string;
-  imageAlt: string;
-  href: string; // Добавляем свойство href для ссылки на продукт
-}
+import { Fragment, useState } from 'react';
+import { Transition,Dialog } from '@headlessui/react';
+import { Product, ProductModal } from './Product';
 
 const products: Product[] = [
-  {
-    id: 1,
-    name: 'Herald',
-    price: '48₽',
-    imageSrc: '/public/tn.jpg',
-    imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
-    href: '/herald', // Добавляем ссылку на продукт
-  },
-  {
-    id: 2,
-    name: 'Guardian',
-    price: '35₽',
-    imageSrc: '/public/002.jpg',
-    imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
-    href: '/guardian', // Добавляем ссылку на продукт
-  },
-  {
-    id: 3,
-    name: 'Archong',
-    price: '89₽',
-    imageSrc: '/public/003.jpg',
-    imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
-    href: '/archong', // Добавляем ссылку на продукт
-  },
-  {
-    id: 4,
-    name: 'Machined Mechanical Pencil',
-    price: '35₽',
-    imageSrc: '/public/004.jpg',
-    imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
-    href: '/mechanical-pencil', // Добавляем ссылку на продукт
-  },
+    {
+      id: 1,
+      name: 'Herald',
+      price: '48₽',
+      imageSrc: '/public/tn.jpg',
+      imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
+      href: '/herald',
+    },
+    {
+      id: 2,
+      name: 'Guardian',
+      price: '35₽',
+      imageSrc: '/public/002.jpg',
+      imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
+      href: '/guardian',
+    },
+    {
+      id: 3,
+      name: 'Archong',
+      price: '89₽',
+      imageSrc: '/public/003.jpg',
+      imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
+      href: '/archong',
+    },
+    {
+      id: 4,
+      name: 'Machined Mechanical Pencil',
+      price: '35₽',
+      imageSrc: '/public/004.jpg',
+      imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
+      href: '/mechanical-pencil',
+    },
+  
 ];
 
-function ProductModal({ product, onClose }: { product: Product; onClose: () => void }) {
-  const closeProductModal = () => {
-    onClose();
-  };
-
-  return (
-    <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-800 bg-opacity-50">
-      <div className="bg-white p-8 rounded-lg">
-        <h2 className="text-xl font-bold mb-4">{product.name}</h2>
-        <img src={product.imageSrc} alt={product.imageAlt} className="w-full mb-4" />
-        <p className="mt-4 text-lg font-medium">{product.price}</p>
-        <button onClick={closeProductModal} className="mt-4 px-4 py-2 bg-gray-600 text-white rounded-lg">Close</button>
-      </div>
-    </div>
-  );
-}
-
 export default function Shop() {
+  const [open, setOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const openProductModal = (product: Product) => {
     setSelectedProduct(product);
+    setOpen(true);
   };
 
   const closeProductModal = () => {
     setSelectedProduct(null);
+    setOpen(false);
   };
 
   return (
+    <>
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Магазин</h1>
@@ -97,7 +78,26 @@ export default function Shop() {
           ))}
         </div>
       </div>
-      {selectedProduct && <ProductModal product={selectedProduct} onClose={closeProductModal} />}
+      <Transition.Root show={open} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={closeProductModal}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 hidden bg-gray-500 bg-opacity-75 transition-opacity md:block" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <ProductModal product={selectedProduct!} onClose={closeProductModal} />
+          </div>
+        </Dialog>
+      </Transition.Root>
     </div>
+    </>
   );
 }
