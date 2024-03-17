@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -42,12 +43,14 @@ const products: Product[] = [
     imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
     href: '/shop/4'
   },
-  // More products...
 ];
 
 function ProductModal({ product, onClose }: { product: Product; onClose: () => void }) {
+  const navigate = useNavigate(); 
+
   const closeProductModal = () => {
     onClose();
+    navigate(-1); 
   };
 
   return (
@@ -62,15 +65,17 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
   );
 }
 
-export default function Example() {
+export default function Shop() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-
+  const navigate = useNavigate(); 
   const openProductModal = (product: Product) => {
     setSelectedProduct(product);
+    navigate(product.href); 
   };
 
   const closeProductModal = () => {
     setSelectedProduct(null);
+    navigate(-1); 
   };
 
   return (
