@@ -89,6 +89,20 @@ export default function Rewards() {
             ></img>
           </button>
         </div>
+        <div className='text-left mx-20'>
+          <h1
+            className='text-2xl font-bold'
+            style={{ borderBottom: '3px solid' }}
+          >
+            О наградах:
+          </h1>
+
+          <p className='mb-4 font-semibold p-4'>
+            Награды были придуманы, чтобы игроки могли получать вознограждение
+            за проявление частой активности. Так же чтобы просто мы могли
+            радовать своих игрков приятными бонусами на любимом сервере :)
+          </p>
+        </div>
       </div>
     </>
   );

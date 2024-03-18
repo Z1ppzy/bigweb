@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
 
-export default function AdminDashboard() {
+export default function AdminDashBoard() {
   const navigate = useNavigate();
   useEffect(() => {
     const token = localStorage.getItem('authToken');

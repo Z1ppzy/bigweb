@@ -1,16 +1,16 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Home from './Pages/Home';
-import Login from './Pages/Login';
-import NotFoundPage from './Pages/NotFoundPage';
-import Profile from './Pages/Profile';
-import Register from './Pages/Register';
-import Terms from './Pages/Terms';
-import ForgotPassword from './Pages/ForgotPassword';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import NotFoundPage from './pages/NotFoundPage';
+import Profile from './pages/Profile';
+import Register from './pages/Register';
+import Terms from './pages/Terms';
+import ForgotPassword from './pages/ForgotPassword';
 import Layout from './components/Layout';
-import Rules from './Pages/Rules';
-import AdminDashboard from './Pages/AdminDashboard';
-import Shop from './Pages/Shop';
-import Rewards from './Pages/Rewards';
+import Rules from './pages/Rules';
+import AdminDashBoard from './pages/AdminDashBoard';
+import Shop from './pages/Shop';
+import Rewards from './pages/Rewards';
 
 const router = createBrowserRouter([
   {
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/admindashboard',
-        element: <AdminDashboard />,
+        element: <AdminDashBoard />,
       },
     ],
   },
