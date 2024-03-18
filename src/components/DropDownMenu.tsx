@@ -22,7 +22,7 @@ export default function DropDownMenu() {
       <SheetContent>
         <SheetHeader>
           <SheetTitle>
-            <span className='text-center'>Навигационное меню</span>
+            <p className='text-center font-bold text-2xl'>Навигационное меню</p>
           </SheetTitle>
           <SheetDescription>
             <Link to='/login' className='flex flex-col'>

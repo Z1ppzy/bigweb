@@ -58,7 +58,7 @@ export default function Register() {
         config
       );
       navigate('/profile');
-      console.log(res)
+      console.log(res);
     } catch (err) {}
   }
 
@@ -79,7 +79,11 @@ export default function Register() {
               <FormItem>
                 <FormLabel>ЛОГИН</FormLabel>
                 <FormControl>
-                  <Input type='text' placeholder='Введите свой логин' {...field} />
+                  <Input
+                    type='text'
+                    placeholder='Введите свой логин'
+                    {...field}
+                  />
                 </FormControl>
                 <FormDescription>
                   Помните, что логин должен быть удобным для вас и одновременно
@@ -136,20 +140,24 @@ export default function Register() {
               htmlFor='terms'
               className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 '
             >
-              Я прочитал и принимаю {' '}
-              <Link to='/terms'><span className='hover:text-purple-800 font-bold'>Условия использования.</span></Link>
+              Я прочитал и принимаю
+              <Link to='/terms' className='hover:text-purple-800 font-bold'>
+                <> Условия использования.</>
+              </Link>
             </label>
           </div>
 
           <Button type='submit'>Войти</Button>
         </form>
       </Form>
-      <p className='text-center'>
-        Уже зарегистрированы?{' '}
-        <Link to='/login' className='font-bold'>
-          Войти
-        </Link>
-      </p>
+      <div>
+        <p className='text-center mt-5'>
+          Уже зарегистрированы?
+          <Link to='/login' className='font-bold'>
+            <> Войти</>
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }

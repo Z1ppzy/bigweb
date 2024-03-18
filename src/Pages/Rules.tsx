@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Rules() {
   return (
     <div className='flex flex-col items-center'>
-      <div className='flex flex-col  bg-black px-6 py-2 rounded-xl w-fit'><Link to='/' ><HiMiniGlobeAsiaAustralia className='hover:hover:text-purple-800 text-5xl text-white' /></Link></div>
+      <div className='flex flex-col bg-black px-6 py-2 rounded-xl w-fit'><Link to='/' ><HiMiniGlobeAsiaAustralia className='hover:hover:text-purple-800 text-5xl text-white' /></Link></div>
       <h1 className='text-center text-2xl font-semibold'>
         Список правил для игры на сервере Minecraft.
       </h1>

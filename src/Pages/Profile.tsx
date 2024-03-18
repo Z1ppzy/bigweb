@@ -47,7 +47,7 @@ export default function Profile() {
     <>
       <div>
         {user && (
-          <h1 className='font-bold text-someblack text-3xl p-6 text-center md:text-left'>
+          <h1 className='font-bold text-someblack text-3xl p-6 text-center md:text-left dark:text-white'>
             {randomGreeting} {user?.name}!
           </h1>
         )}{' '}
@@ -62,13 +62,13 @@ export default function Profile() {
                     <AvatarFallback>None</AvatarFallback>
                   </Avatar>
                   <div className='flex flex-col md:pl-6 text-md text-someblack text-lg'>
-                    <p className='font-medium'>
+                    <p className='font-medium dark:text-white'>
                       Почта: <b> {user.email}</b>
                     </p>
-                    <p className='font-medium'>
+                    <p className='font-medium dark:text-white'>
                       Роль: <b>{user.role}</b>
                     </p>
-                    <p className='font-medium'>
+                    <p className='font-medium dark:text-white'>
                       Аккаунт создан:{' '}
                       <b>{format(user.created_at, { date: 'medium' })}</b>
                     </p>

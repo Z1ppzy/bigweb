@@ -89,7 +89,7 @@ export default function Rewards() {
             ></img>
           </button>
         </div>
-        <div className='text-left mx-20'>
+        <div className='text-left mx-10 md:mx-20'>
           <h1
             className='text-2xl font-bold'
             style={{ borderBottom: '3px solid' }}
