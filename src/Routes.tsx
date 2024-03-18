@@ -8,7 +8,7 @@ import Terms from './Pages/Terms';
 import ForgotPassword from './Pages/ForgotPassword';
 import Layout from './components/Layout';
 import Rules from './Pages/Rules';
-import AdminDashBoard from './Pages/AdminDashBoard';
+import AdminDashboard from './Pages/AdminDashboard';
 import Shop from './Pages/Shop';
 import Rewards from './Pages/Rewards';
 
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/admindashboard',
-        element: <AdminDashBoard />,
+        element: <AdminDashboard />,
       },
     ],
   },
