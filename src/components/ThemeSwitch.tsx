@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { useTheme } from "@/components/Theme-Provider"
+import { useTheme } from "@/components/theme-provider"
 
 export function ThemeSwitch() {
   const { setTheme } = useTheme()
