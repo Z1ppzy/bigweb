@@ -65,6 +65,11 @@ export default function DropDownMenu() {
                 Shop
               </span>
             </Link>
+            <Link to='/rewards' className='flex flex-col'>
+              <span className='text-center text-2xl hover:text-purple-950'>
+                Rewards
+              </span>
+            </Link>
             <ThemeSwitch />
           </SheetDescription>
         </SheetHeader>
