@@ -32,12 +32,23 @@ export default function Profile() {
     fetchUser();
   }, []);
 
+  const phrases = ['Привет,', 'Добро пожаловать,', 'Рады видеть вас,', 'Хола,'];
+
+  function RandomPhrase() {
+    const getRandomPhrase = () =>
+      phrases[Math.floor(Math.random() * phrases.length)];
+    const randomPhrase = getRandomPhrase();
+    return randomPhrase;
+  }
+
+  const randomGreeting = RandomPhrase();
+
   return (
     <>
       <div>
         {user && (
           <h1 className='font-bold text-someblack text-3xl p-6 text-center md:text-left'>
-            Приветствуем вас, {user?.name}!
+            {randomGreeting} {user?.name}!
           </h1>
         )}{' '}
         {!user && <Skeleton className='h-[20px] w-[250px] rounded-xl' />}
@@ -81,32 +92,21 @@ export default function Profile() {
               </button>
             </div>
           </div>
-          <div className='p-10 md:mx-16 '>
-            <Link to='/shop'>
-              <div className='mb-2 flex text-center justify-center w-full h-fit bg-gradient-to-r from-sky-500 to-indigo-500  rounded-lg hover:scale-105 duration-500 cursor-pointer'>
-                <div className=' p-4'>
-                  <p className='font-bold text-md md:text-2xl text-center text-iney'>
-                    ПОПОЛНИТЬ БАЛАНС
-                  </p>
-                  <p className='font-bold text-md md:text-xl mt-3 text-center text-iney'>
-                    ТЕКУЩИЙ БАЛАНС:
-                  </p>
-                  <p className='font-bold text-xl md:text-2xl text-center text-iney'>
-                    0
-                  </p>
-                </div>
-              </div>
-            </Link>
-            <Link to='/rewards'>
-              <div className='mt-2 flex flex-col p-10 justify-center items-center w-full h-fit shadow-xl hover:shadow-2xl rounded-lg hover:scale-105 duration-500 cursor-pointer '>
-                <p className='text-iney text-xl text-center font-bold mt-'>
-                  А вы уже забрали свою награду?
-                </p>
-                <p className='text-iney text-lg text-center font-bold mt-2'>
-                  Если нет, то скорее получите ее!!!
-                </p>
-              </div>
-            </Link>
+          <div className='p-10 md:mx-16 text-iney'>
+            <div className='text-center w-full bg-slate-500 mb-2 p-10 rounded-lg duration-500 hover:scale-110'>
+              <p>Lorem, ipsum dolor.</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptatem, alias!
+              </p>
+            </div>
+            <div className='text-center w-full bg-slate-900 p-10 rounded-lg duration-500 hover:scale-110'>
+              <p>Lorem, ipsum dolor.</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio, saepe lore!
+              </p>
+            </div>
           </div>
         </div>
       </div>
