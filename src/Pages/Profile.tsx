@@ -90,6 +90,9 @@ export default function Profile() {
               <button className=' w-full  md:w-fit border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
                 Двухэтапная аутентификация
               </button>
+              <button className=' w-full  md:w-fit border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
+                Персонализация
+              </button>
             </div>
           </div>
           <div className='p-10 md:mx-16 text-iney'>

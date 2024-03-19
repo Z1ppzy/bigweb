@@ -23,7 +23,7 @@ export default function Home() {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: 'light',
+      theme: 'dark',
       transition: Slide,
     });
   };
