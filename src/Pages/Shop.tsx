@@ -1,10 +1,17 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react'; // Импортируем useState
 import { Product } from './Product';
-import ProductDetail from './'; // Импортируем компонент с деталями товара
-
-import { useHistory } from 'react-router-dom';
 
 const products: Product[] = [
+  {
+    id: 1,
+    name: 'Herald',
+    price: '48₽',
+    imageSrc: '/public/tn.jpg',
+    imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
+    href: '/herald',
+    description: "df"
+  },
   {
     id: 1,
     name: 'Herald',
@@ -44,34 +51,37 @@ const products: Product[] = [
 ];
 
 export default function Shop() {
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null); // Состояние для отслеживания выбранного товара
-  const [showModal, setShowModal] = useState(false); // Состояние для отображения модального окна
-  const history = useHistory(); // Используем useHistory для изменения URL
+  const [, setSelectedProductId] = useState<number | null>(null); // Указываем тип для selectedProductId
 
-  // Функция для открытия модального окна и установки выбранного товара
-  const handleCardClick = (product: Product) => {
-    setSelectedProduct(product); // Устанавливаем выбранный товар
-    setShowModal(true); // Открываем модальное окно
-  };
-
-  // Функция для закрытия модального окна
-  const closeModal = () => {
-    setShowModal(false); // Закрываем модальное окно
-    setSelectedProduct(null); // Сбрасываем выбранный товар
-  };
-
-  // Функция для перехода на страницу с выбранным товаром
-  const goToProductPage = (productId: number) => {
-    history.push(`/shop/${productId}`); // Изменяем URL
+  const handleCardClick = (productId: number) => { // Указываем тип для параметра productId
+    setSelectedProductId(productId); // Устанавливаем ID выбранного товара
   };
 
   return (
-    <>
-      {/* Ваш контент магазина здесь */}
-      {/* Пример использования модального окна */}
-      {selectedProduct && (
-        <ProductDetail product={selectedProduct} onClose={closeModal} />
-      )}
-    </>
+    <div className="bg-white">
+      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">Магазин</h1>
+        <h2 className="sr-only">Товары</h2>
+        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          {products.map((product) => (
+            <div key={product.id} className="group relative">
+              <Link to={`/shop/${product.id}`} className="group relative">
+                <div onClick={() => handleCardClick(product.id)} className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg product-card">
+                  <img
+                    src={product.imageSrc}
+                    alt={product.imageAlt}
+                    className="h-full w-full object-cover object-center group-hover:opacity-75"
+                  />
+                  <div className="flex flex-col items-center mt-4">
+                    <h3 className="text-sm text-gray-700">{product.name}</h3>
+                    <p className="mt-1 text-lg font-medium text-gray-900">{product.price}</p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
