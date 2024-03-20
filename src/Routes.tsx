@@ -1,5 +1,5 @@
 
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, } from 'react-router-dom';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
 import NotFoundPage from './Pages/NotFoundPage';
@@ -11,6 +11,10 @@ import Layout from './components/Layout';
 import Rules from './Pages/Rules';
 import AdminDashboard from './Pages/AdminDashboard';
 import Shop from './Pages/Shop';
+
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -37,7 +41,11 @@ const router = createBrowserRouter([
         path: '/shop',
         element: <Shop />,
       },
-      
+      {
+        path: '/shop/:productid', 
+        element: <Shop />,
+      },
+
       {
         path: '/terms',
         element: <Terms />,
