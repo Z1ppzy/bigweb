@@ -45,7 +45,7 @@ export default function Profile() {
 
   return (
     <>
-      <div>
+      <div className='py-4'>
         {user && (
           <h1 className='font-bold text-someblack text-3xl p-6 text-center md:text-left dark:text-white'>
             {randomGreeting} {user?.name}!

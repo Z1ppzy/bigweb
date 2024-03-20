@@ -9,6 +9,7 @@ import {
 import { TfiAlignRight } from 'react-icons/tfi';
 import { Link } from 'react-router-dom';
 import { ThemeSwitch } from './ThemeSwitch';
+import Logout from './Logout';
 
 export default function DropDownMenu() {
   return (
@@ -71,6 +72,7 @@ export default function DropDownMenu() {
               </span>
             </Link>
             <ThemeSwitch />
+            <Logout />
           </SheetDescription>
         </SheetHeader>
       </SheetContent>
