@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react'; // Импортируем useState
+import { useState } from 'react'; 
 import { Product } from './Product';
 
 const products: Product[] = [
@@ -49,12 +49,12 @@ const products: Product[] = [
     description: "df"
   },
 ];
-
+//yty
 export default function Shop() {
-  const [, setSelectedProductId] = useState<number | null>(null); // Указываем тип для selectedProductId
+  const [, setSelectedProductId] = useState<number | null>(null); 
 
-  const handleCardClick = (productId: number) => { // Указываем тип для параметра productId
-    setSelectedProductId(productId); // Устанавливаем ID выбранного товара
+  const handleCardClick = (productId: number) => { 
+    setSelectedProductId(productId); 
   };
 
   return (
