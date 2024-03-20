@@ -10,7 +10,7 @@ import Layout from './components/Layout';
 import Rules from './Pages/Rules';
 import AdminDashboard from './Pages/AdminDashboard';
 import Shop from './Pages/Shop';
-import ProductDetail from './Pages/ProductDetail'; // Импортируем компонент ProductDetail
+import ProductDetail from './Pages/info'; // Импортируем компонент ProductDetail
 import { useHistory } from 'react-router-dom';
 
 const router = createBrowserRouter([

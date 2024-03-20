@@ -1,7 +1,6 @@
-import { Link} from 'react-router-dom';
 import { useState } from 'react'; // Импортируем useState
 import { Product } from './Product';
-import ProductDetail from 'src\Pages\ProductDetail.jsx'; // Импортируем компонент с деталями товара
+import ProductDetail from './'; // Импортируем компонент с деталями товара
 
 import { useHistory } from 'react-router-dom';
 
