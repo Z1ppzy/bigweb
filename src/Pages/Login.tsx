@@ -84,7 +84,6 @@ export default function Login() {
                   <Input
                     placeholder='Введите адрес электронной почты'
                     type='email'
-                    autoComplete='email'
                     {...field}
                   />
                 </FormControl>
@@ -102,7 +101,6 @@ export default function Login() {
                 <FormControl>
                   <Input
                     type='password'
-                    autoComplete='password'
                     placeholder='Введите пароль'
                     {...field}
                   />
