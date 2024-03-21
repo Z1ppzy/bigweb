@@ -108,10 +108,10 @@ export default function AdminDashBoard() {
                           <SelectValue placeholder='Выбрать'/>
                         </SelectTrigger>
                         <SelectContent position='popper'>
-                          <SelectItem value='next'>Ивент</SelectItem>
-                          <SelectItem value='sveltekit'>Новость</SelectItem>
-                          <SelectItem value='astro'>Обновление</SelectItem>
-                          <SelectItem value='nuxt'>
+                          <SelectItem value='event'>Ивент</SelectItem>
+                          <SelectItem value='news'>Новость</SelectItem>
+                          <SelectItem value='update'>Обновление</SelectItem>
+                          <SelectItem value='maintenance'>
                             Технические работы
                           </SelectItem>
                         </SelectContent>
