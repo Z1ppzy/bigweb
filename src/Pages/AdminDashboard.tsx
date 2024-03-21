@@ -76,7 +76,7 @@ export default function AdminDashBoard() {
     <>
       <div className=''>
         <h1
-          className='text-center font-bold text-2xl mx-10 bg-clip-text text-transparent bg-gradient-to-r from-pink-900 to-purple-500'
+          className='text-center md:text-left font-bold text-2xl mx-10 bg-clip-text text-transparent bg-gradient-to-r from-pink-900 to-purple-500'
           style={{ borderBottom: '3px solid', borderColor: '#6b46c1' }}
         >
           Панель управления-админа
