@@ -1,27 +1,58 @@
-// import axios from 'axios';
-// import { useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
+import { useState } from 'react';
+import { format } from '@formkit/tempo';
 
-// axios.defaults.withCredentials = true;
-// axios.defaults.withXSRFToken = true;
+axios.defaults.withCredentials = true;
+axios.defaults.withXSRFToken = true;
+
+interface user {
+  name: string;
+  email: string;
+  created_at: string;
+  role: string;
+}
 
 export default function AdminDashBoard() {
-  // const navigate = useNavigate();
-  // useEffect(() => {
-  //   const token = localStorage.getItem('authToken');
-  //   if (!token) {
-  //     navigate('/login');
-  //   }
-  //   const fetchUser = async () => {
-  //     const user = await axios.get('http://localhost:8000/api/user');
-  //     if (user.data.role == 'player') {
-  //       navigate('/');
-  //     }
-  //   };
-  //   fetchUser();
-  // }, []);
+  const navigate = useNavigate();
+  useEffect(() => {
+    const token = localStorage.getItem('authToken');
+    if (!token) {
+      navigate('/login');
+    }
+    const fetchUser = async () => {
+      const user = await axios.get('http://localhost:8000/api/user');
+      if (user.data.role == 'player') {
+        navigate('/');
+      }
+    };
+    fetchUser();
+  }, []);
+  const [name, setName] = useState('');
+  const [user, setUser] = useState<user | null>(null); // Используйте интерфейс User
+  const [notFound, setNotFound] = useState(false);
+
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8000/api/users/search`,
+        { params: { name } }
+      );
+      if (response.data) {
+        setUser(response.data);
+        setNotFound(false);
+      } else {
+        setUser(null); // Указываем null, если пользователь не найден
+        setNotFound(true);
+      }
+    } catch (error) {
+      console.error('Ошибка при поиске пользователя', error);
+      setUser(null); // Также устанавливаем null в случае ошибки
+      setNotFound(true);
+    }
+  };
 
   return (
     <>
@@ -58,28 +89,35 @@ export default function AdminDashBoard() {
             <input
               type='text'
               className='text-black  border-2 rounded-sm w-60 h-8 focus:outline-none px-1'
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder='Введите ник пользователя'
             />
-            <button className='bg-gray-700 w-fit py-1 px-3 rounded-md mt-4'>
+            <button
+              onClick={handleSearch}
+              className='bg-gray-700 w-fit py-1 px-3 rounded-md mt-4'
+            >
               Поиск
             </button>
             <h1 className='font-bold'>Найденный игрок:</h1>
-            <div className='w-fit h-fit bg-black rounded-lg text-white p-8 text-center'>
-              <p>Ник: Test</p>
-              <p>Аккаунт создан: 11.11.11</p>
-              <p>Роль: default</p>
-              <button className='text-white bg-slate-800 w-fit px-4 py-1 rounded-lg'>
-                Открыть профиль
-              </button>
-            </div>
+            {notFound && <div>Пользователь не найден</div>}
+            {user && (
+              <div>
+                <div>Имя: {user.name}</div>
+                <div>Email: {user.email}</div>
+                <div>Дата создания: {format(user.created_at, { date: 'long' })}</div>
+                <div>Роль: {user.role}</div>
+              </div>
+            )}
           </div>
           <div className='flex flex-col items-center'>
             <h1 className='mt-2 text-center font-bold'>Выдать роль</h1>
-            <label htmlFor="">Никнейм</label>
+            <label htmlFor=''>Никнейм</label>
             <input
               type='text'
               className='text-black  border-2 rounded-sm w-60 h-8 focus:outline-none px-1'
             />
-            <label htmlFor="">Выбрать роль</label>
+            <label htmlFor=''>Выбрать роль</label>
             <button className='bg-gray-700 w-fit py-1 px-3 rounded-md mt-4'>
               Готово
             </button>

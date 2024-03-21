@@ -43,7 +43,7 @@ export default function Login() {
     defaultValues: {
       email: '',
       password: '',
-    },
+    },  
   });
 
   // 2. Define a submit handler.
