@@ -17,7 +17,6 @@ export default function DropDownMenu() {
   return (
     <Sheet>
       <SheetTrigger>
-        {' '}
         <div className='text-3xl pr-4 mt-4'>
           <TfiAlignRight />
         </div>
