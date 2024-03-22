@@ -93,19 +93,19 @@ export default function AdminDashBoard() {
               <CardContent>
                 <form>
                   <div className='grid w-full items-center gap-4'>
-                    <div className='flex flex-col space-y-1.5'>
+                    <div className='flex flex-col space-y-2.5'>
                       <Label htmlFor='name'>Заголовок</Label>
                       <Input id='text' placeholder='Название новости' />
                       <Label htmlFor='text'>Содержимое новости</Label>
-                      <Textarea
-                      />
-                      <Input type='file' className='' />
+                      <Textarea placeholder='Содержимое новости' />
+                      <Label htmlFor='file'>Изображение новости</Label>
+                      <Input type='file' />
                     </div>
-                    <div className='flex flex-col space-y-1.5'>
+                    <div className='flex flex-col space-y-2.5'>
                       <Label htmlFor='framework'>Вид новости</Label>
                       <Select>
                         <SelectTrigger id='framework'>
-                          <SelectValue placeholder='Выбрать'/>
+                          <SelectValue placeholder='Выбрать' />
                         </SelectTrigger>
                         <SelectContent position='popper'>
                           <SelectItem value='event'>Ивент</SelectItem>
@@ -136,7 +136,7 @@ export default function AdminDashBoard() {
               <CardContent>
                 <form>
                   <div className='grid w-full items-center gap-4'>
-                    <div className='flex flex-col space-y-1.5'>
+                    <div className='flex flex-col space-y-2.5'>
                       <Label htmlFor='name'>Никнейм</Label>
                       <Input
                         placeholder='Ник игрока'
@@ -144,11 +144,13 @@ export default function AdminDashBoard() {
                         onChange={(e) => setName(e.target.value)}
                       />
                     </div>
-                    <div className='flex flex-col space-y-1.5 text-left'>
-                      <h1 className='font-bold'>Найденный игрок:</h1>
-                      {notFound && <div>Пользователь не найден</div>}
+                    <div className='flex flex-col space-y-2.5 text-left'>
+                      {notFound && (
+                        <p className='text-center'>Пользователь не найден</p>
+                      )}
                       {user && (
                         <div>
+                          <h1 className='font-bold'>Найденный игрок:</h1>
                           <p>Имя: {user.name}</p>
                           <p>Email: {user.email}</p>
                           <div>
@@ -180,11 +182,11 @@ export default function AdminDashBoard() {
               <CardContent>
                 <form>
                   <div className='grid w-full items-center gap-4'>
-                    <div className='flex flex-col space-y-1.5'>
+                    <div className='flex flex-col space-y-2.5'>
                       <Label htmlFor='name'>Никнейм</Label>
                       <Input id='name' placeholder='Ник игрока' />
                     </div>
-                    <div className='flex flex-col space-y-1.5'>
+                    <div className='flex flex-col space-y-2.5'>
                       <Label htmlFor='framework'>Роль</Label>
                       <Select>
                         <SelectTrigger id='framework'>
@@ -208,6 +210,20 @@ export default function AdminDashBoard() {
             </Card>
           </div>
         </div>
+        <p className='p-2'>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur
+          accusamus ea iusto quo quia ipsa doloremque ut suscipit molestiae,
+          expedita voluptate autem, aliquid, veritatis corporis at veniam quos
+          dolorum asperiores dolore? Consectetur id dolorum atque, aperiam
+          provident quos amet neque ad optio corporis est voluptatum
+          perspiciatis sequi? Animi perferendis placeat nobis id aspernatur
+          velit nam earum a magnam, beatae, corrupti doloribus iure! Modi nemo,
+          minus deleniti quia fuga illum cumque et doloremque? Maiores quia
+          eaque omnis, tempore laudantium nesciunt quidem sit placeat culpa
+          tenetur non. Aliquam eaque perferendis doloremque, at quia consequatur
+          mollitia distinctio exercitationem architecto laudantium nobis cumque!
+          Deleniti?
+        </p>
       </div>
     </>
   );
