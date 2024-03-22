@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <>
       <div className=''>
-        <div className='md:grid grid-cols-2  min-h-screen'>
+        <div className='md:grid grid-cols-2 min-h-screen'>
           <div className='mt-10 md:mt-8'>
             <SliderImg />
           </div>

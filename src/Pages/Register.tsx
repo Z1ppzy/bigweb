@@ -41,7 +41,6 @@ export default function Register() {
     },
   });
 
-  // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       const config = {
@@ -67,7 +66,7 @@ export default function Register() {
       <Link to='/'>
         <img src='logo.png' className='float-end animate-bounce' alt='' />
       </Link>
-      <p className='text-center mt-20 mb-28 font-bold text-2xl'>
+      <p className='text-center mt-20 md:mt-10 mb-16 font-bold text-2xl'>
         Создать учетную запись HW
       </p>
       <Form {...form}>

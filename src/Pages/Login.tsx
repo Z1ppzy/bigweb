@@ -67,9 +67,9 @@ export default function Login() {
   return (
     <div className='w-96 m-auto h-screen'>
       <Link to='/'>
-        <img src='logo.png' className='float-end animate-bounce' alt='' />
+        <img src='logo.png' className='float-end animate-bounce  duration-1000' alt='' />
       </Link>
-      <p className='text-center mt-20 mb-28 font-bold text-2xl'>
+      <p className='text-center mt-10 mb-16 font-bold text-2xl'>
         Войти в учетную запись HW
       </p>
       <Form {...form}>
@@ -87,7 +87,7 @@ export default function Login() {
                     {...field}
                   />
                 </FormControl>
-                <FormDescription>null</FormDescription>
+                <FormDescription>Введите адрес электронной почты, который использовали при регистрации </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
