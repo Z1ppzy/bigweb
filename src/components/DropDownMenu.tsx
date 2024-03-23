@@ -29,16 +29,6 @@ export default function DropDownMenu() {
           <SheetDescription>
               <LoginButton />
               <RegisterButton />
-            <Link to='/login' className='flex flex-col'>
-              <span className='text-center text-2xl hover:text-purple-950'>
-                Login
-              </span>
-            </Link>
-            <Link to='/register' className='flex flex-col'>
-              <span className='text-center text-2xl hover:text-purple-950'>
-                Register
-              </span>
-            </Link>
             <Link to='/forgot_password' className='flex flex-col'>
               <span className='text-center text-2xl hover:text-purple-950'>
                 ForgotPassword
