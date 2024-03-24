@@ -11,6 +11,7 @@ import Rules from './Pages/Rules';
 import AdminDashboard from './Pages/AdminDashboard';
 import Shop from './Pages/Shop';
 import Rewards from './Pages/Rewards';
+import UserNotification from './Pages/UserNotification';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: '/forgot_password',
         element: <ForgotPassword />,
+      },
+      {
+        path: '/notification',
+        element: <UserNotification />,
       },
       {
         path: '/rules',
