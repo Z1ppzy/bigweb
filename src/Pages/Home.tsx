@@ -39,7 +39,7 @@ export default function Home() {
             <h1 className='font-semibold text-xl text-center md:text-2xl'>
               Начните свою историю в нашей виртуальной песочнице!
             </h1>
-            <p className='md:text-left text-center text-lg mt-2  '>
+            <p className='text-center text-lg mt-10 md:mt-16'>
               Приветствуем Вас на нашем сервере Minecraft! Откройте для себя
               мир, где каждый шаг - это приключение. Уникальные плагины обогатят
               ваш игровой процесс, предоставляя возможности для творчества и
