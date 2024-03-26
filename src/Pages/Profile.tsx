@@ -48,7 +48,7 @@ export default function Profile() {
   const handleDelete = async () => {
     try {
       const response = await axios.delete(
-        'http://localhost:8000/avatar/delete'
+        'http://localhost:8000/api/avatar/delete'
       );
       console.log(response.data);
     } catch (error) {
@@ -98,10 +98,14 @@ export default function Profile() {
                 <div className='flex flex-col items-center md:flex-row '>
                   <Avatar>
                     <AvatarImage
-                      src={user.avatar ? `/storage/${user.avatar}` : 'public/12231231.jpg'}
+                      src={
+                        user.avatar
+                          ? `/storage/${user.avatar}`
+                          : 'public/12231231.jpg'
+                      }
                       alt='User Avatar'
                     />
-                    <AvatarFallback>None</AvatarFallback>
+                    <AvatarFallback></AvatarFallback>
                   </Avatar>
                   <div className='flex flex-col md:pl-6 text-md text-someblack text-lg'>
                     <p className='font-medium dark:text-white'>
@@ -116,8 +120,14 @@ export default function Profile() {
                     </p>
                     <div className='flex flex-col'>
                       <Input type='file' onChange={handleFileChange}></Input>
-                      <Button onClick={handleUpload}>Обновить</Button>
-                      <Button onClick={handleDelete}>Удалить</Button>
+                      <div className='flex flex-row justify-between'>
+                        <Button onClick={handleDelete} className='w-fit flex'>
+                          Удалить
+                        </Button>
+                        <Button onClick={handleUpload} className='w-fit flex'>
+                          Обновить
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>

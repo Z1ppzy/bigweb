@@ -5,12 +5,10 @@ export default function RegisterButton() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    // Проверяем, есть ли токен авторизации в localStorage
     const token = localStorage.getItem('authToken');
     setIsLoggedIn(!!token);
   }, []);
 
-  // Не отображаем кнопку "Войти", если пользователь уже авторизован
   if (isLoggedIn) {
     return null;
   }

@@ -1,6 +1,6 @@
-import image1 from '../assets/slide1.png';
-import image2 from '../assets/slide2.png';
-import image3 from '../assets/slide3.png';
+import image1 from '@/assets/slide1.png';
+import image2 from '@/assets/slide2.png';
+import image3 from '@/assets/slide3.png';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';

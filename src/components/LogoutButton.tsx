@@ -7,7 +7,6 @@ export default function LogoutButton() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    // Проверяем, есть ли токен авторизации в localStorage
     const token = localStorage.getItem('authToken');
     setIsLoggedIn(!!token);
   }, []);
@@ -17,13 +16,12 @@ export default function LogoutButton() {
       await axios.get('http://localhost:8000/api/logout');
       localStorage.clear();
       navigate('/login');
-      setIsLoggedIn(false); // Обновляем состояние после выхода
+      setIsLoggedIn(false); 
     } catch (error) {
       console.error('Ошибка при выходе', error);
     }
   };
 
-  // Показываем кнопку только если пользователь авторизован
   if (!isLoggedIn) {
     return null;
   }
