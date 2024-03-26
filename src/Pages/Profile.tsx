@@ -100,7 +100,7 @@ export default function Profile() {
                     <AvatarImage
                       src={
                         user.avatar
-                          ? `/storage/${user.avatar}`
+                          ? `http://localhost:8000/storage/${user.avatar}`
                           : 'public/12231231.jpg'
                       }
                       alt='User Avatar'
@@ -119,8 +119,8 @@ export default function Profile() {
                       <b>{format(user.created_at, { date: 'medium' })}</b>
                     </p>
                     <div className='flex flex-col'>
-                      <Input type='file' onChange={handleFileChange}></Input>
-                      <div className='flex flex-row justify-between'>
+                      <Input type='file' className='text-white' onChange={handleFileChange}></Input>
+                      <div className='flex flex-row justify-between mt-2'>
                         <Button onClick={handleDelete} className='w-fit flex'>
                           Удалить
                         </Button>
