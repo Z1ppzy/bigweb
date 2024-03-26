@@ -39,31 +39,31 @@ export default function FormVanilla() {
               />
             </div>
             <div className='grid grid-cols-4 items-center gap-4'>
-              <Label htmlFor='username' className='text-right'>
+              <Label htmlFor='old' className='text-right'>
                 Возраст
               </Label>
               <Input
-                id='username'
+                id='old'
                 autoComplete='off'
                 className='col-span-3'
               />
             </div>
             <div className='grid grid-cols-4 items-center gap-4'>
-              <Label htmlFor='username' className='text-right'>
+              <Label htmlFor='info' className='text-right'>
                 Откуда узнали о сервере?
               </Label>
               <Input
-                id='username'
+                id='info'
                 autoComplete='off'
                 className='col-span-3'
               />
             </div>
             <div className='grid grid-cols-4 items-center gap-4'>
-              <Label htmlFor='username' className='text-right'>
+              <Label htmlFor='exp' className='text-right'>
                 Был ли опыт в подобных серверах
               </Label>
               <Input
-                id='username'
+                id='exp'
                 autoComplete='off'
                 className='col-span-3'
               />
