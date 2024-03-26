@@ -105,7 +105,7 @@ export default function Profile() {
                       }
                       alt='User Avatar'
                     />
-                    <AvatarFallback></AvatarFallback>
+                    <AvatarFallback>None</AvatarFallback>
                   </Avatar>
                   <div className='flex flex-col md:pl-6 text-md text-someblack text-lg'>
                     <p className='font-medium dark:text-white'>
@@ -120,11 +120,11 @@ export default function Profile() {
                     </p>
                     <div className='flex flex-col'>
                       <Input type='file' className='text-white' onChange={handleFileChange}></Input>
-                      <div className='flex flex-row justify-between mt-2'>
-                        <Button onClick={handleDelete} className='w-fit flex'>
+                      <div className='flex flex-row justify-between mt-6'>
+                        <Button onClick={handleDelete} className='w-32 flex'>
                           Удалить
                         </Button>
-                        <Button onClick={handleUpload} className='w-fit flex'>
+                        <Button onClick={handleUpload} className='w-32 flex '>
                           Обновить
                         </Button>
                       </div>
