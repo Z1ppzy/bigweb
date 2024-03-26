@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import Notifications from './Notifications';
+import { FaVk } from 'react-icons/fa';
 
 export default function LoginButton() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -13,7 +13,7 @@ export default function LoginButton() {
 
   // Не отображаем кнопку "Войти", если пользователь уже авторизован
   if (isLoggedIn) {
-    return <Notifications />;
+    return <FaVk />;
   }
   return (
     <Link
