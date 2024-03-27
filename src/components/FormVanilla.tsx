@@ -17,7 +17,7 @@ export default function FormVanilla() {
     <div>
       <Dialog>
         <DialogTrigger asChild>
-          <Button className='px-14'>
+          <Button className=''>
             Верификация на сервер Ваниллы
           </Button>
         </DialogTrigger>
