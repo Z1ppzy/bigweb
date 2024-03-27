@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 
 export default function FormVanilla() {
   return (
@@ -26,62 +27,50 @@ export default function FormVanilla() {
               пройти форму что дана ниже.
             </DialogDescription>
           </DialogHeader>
-          <div className='grid gap-4 py-4'>
-            <div className='grid grid-cols-4 items-center gap-4'>
-              <Label htmlFor='name' className='text-right'>
-                Имя
+          <div className='py-4'>
+            <div className='flex flex-col gap-2'>
+              <div className='flex flex-col gap-2'>
+                <Label htmlFor='name'>Имя</Label>
+                <Input id='name' placeholder='Иван' />
+              </div>
+              <div className='flex flex-col gap-2'>
+                <Label htmlFor='name'>Ваш возраст</Label>
+                <Input id='name' placeholder='16' />
+              </div>
+              <Label htmlFor='info'>Откуда узнали о сервере?</Label>
+              <Input id='info' placeholder='Мониторинг' />
+              <Label>Принимаете ли вы наши правила?</Label>
+              <RadioGroup defaultValue='comfortable' id='rules'>
+                <div className='flex flex-row gap-4'>
+                  <div className='flex flex-row gap-2'>
+                    <RadioGroupItem value='yes' id='r1' />
+                    <Label htmlFor='r1'>Да</Label>
+                  </div>
+                  <div className='flex flex-row gap-2'>
+                    <RadioGroupItem value='no' id='r2' />
+                    <Label htmlFor='r2'>Нет</Label>
+                  </div>
+                </div>
+              </RadioGroup>
+              <Label>
+                Был ли опыт игры на подобных серверах?
               </Label>
-              <Input
-                id='name'
-                autoComplete='off'
-                
-                className='col-span-3'
-              />
-            </div>
-            <div className='grid grid-cols-4 items-center gap-4'>
-              <Label htmlFor='old' className='text-right'>
-                Возраст
-              </Label>
-              <Input
-                id='old'
-                autoComplete='off'
-                className='col-span-3'
-              />
-            </div>
-            <div className='grid grid-cols-4 items-center gap-4'>
-              <Label htmlFor='info' className='text-right'>
-                Откуда узнали о сервере?
-              </Label>
-              <Input
-                id='info'
-                autoComplete='off'
-                className='col-span-3'
-              />
-            </div>
-            <div className='grid grid-cols-4 items-center gap-4'>
-              <Label htmlFor='exp' className='text-right'>
-                Был ли опыт в подобных серверах
-              </Label>
-              <Input
-                id='exp'
-                autoComplete='off'
-                className='col-span-3'
-              />
-            </div>
-            <div className='grid grid-cols-4 items-center gap-4'>
-              <Label htmlFor='username' className='text-right'>
-              Принимаете ли вы наши правила и обещаете их соблюдать?
-              </Label>
-              <Input
-                id='username'
-                autoComplete='off'
-                className='col-span-3'
-              />
+              <RadioGroup defaultValue='comfortable'>
+                <div className='flex flex-row gap-4'>
+                  <div className='flex flex-row gap-2'>
+                    <RadioGroupItem value='yes' id='r1' />
+                    <Label htmlFor='r1'>Да</Label>
+                  </div>
+                  <div className='flex flex-row gap-2'>
+                    <RadioGroupItem value='no' id='r2' />
+                    <Label htmlFor='r2'>Нет</Label>
+                  </div>
+                </div>
+              </RadioGroup>
             </div>
           </div>
-
           <DialogFooter>
-            <Button type='submit'>Отправить заявку</Button>
+            <Button>Отправить заявку</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
