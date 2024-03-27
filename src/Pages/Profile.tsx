@@ -120,7 +120,7 @@ export default function Profile() {
                       <b>{format(user.created_at, { date: 'medium' })}</b>
                     </p>
                     <div className='flex flex-col'>
-                      <Input type='file' className='text-white' onChange={handleFileChange}></Input>
+                      <Input type='file' className='text-white mt-2' onChange={handleFileChange}></Input>
                       <div className='flex flex-row justify-between mt-6'>
                         <Button onClick={handleDelete} className='w-32 flex'>
                           Удалить
