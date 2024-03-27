@@ -66,6 +66,7 @@ export default function DropDownMenu() {
             </Link>
             <Link to='/Notification' className='flex flex-col'><span className='text-center text-2xl hover:text-purple-950'>
               Notification</span></Link>
+
             <ThemeSwitch />
             <LogoutButton />
           </SheetDescription>

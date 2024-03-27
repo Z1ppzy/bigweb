@@ -7,6 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { format } from '@formkit/tempo';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import FormVanilla from '@/components/FormVanilla';
 
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
@@ -134,25 +135,23 @@ export default function Profile() {
               )}
               {!user && <Skeleton className='h-[80px] w-[250px] rounded-xl' />}
             </div>
-            <div className='px-8'>
-              <button className='w-full md:w-fit border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
+            <div className='px-8 flex flex-wrap gap-2'>
+              <Button className='w-full md:w-fit'>
                 Смена пароля
-              </button>
-              <button className='w-full md:w-fit border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
+              </Button>
+              <Button className='w-full md:w-fit'>
                 Активация промокода
-              </button>
-              <button className='w-full md:w-fit border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
+              </Button>
+              <Button className='w-full md:w-fit'>
                 Подтверждение почты
-              </button>
-              <button className='w-full md:w-fit border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
+              </Button>
+              <Button className='w-full md:w-fit'>
                 Двухэтапная аутентификация
-              </button>
-              <button className='w-full md:w-fit border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
+              </Button>
+              <Button className='w-full md:w-fit'>
                 Персонализация
-              </button>
-              <button className='w-full md:w-fit border-2 border-someblack text-purple-600 px-3 py-1 rounded-md m-0.5 font-medium hover:scale-105 hover:text-purple-800 duration-500'>
-                Верификация на сервер Ваниллы
-              </button>
+              </Button>
+              <FormVanilla />
             </div>
           </div>
           <div className='p-10 md:mx-16 text-iney'>

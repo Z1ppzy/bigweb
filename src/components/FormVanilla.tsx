@@ -17,7 +17,9 @@ export default function FormVanilla() {
     <div>
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant='outline'>Edit Profile</Button>
+          <Button className='px-14'>
+            Верификация на сервер Ваниллы
+          </Button>
         </DialogTrigger>
         <DialogContent className='sm:max-w-[425px]'>
           <DialogHeader>
@@ -52,9 +54,7 @@ export default function FormVanilla() {
                   </div>
                 </div>
               </RadioGroup>
-              <Label>
-                Был ли опыт игры на подобных серверах?
-              </Label>
+              <Label>Был ли опыт игры на подобных серверах?</Label>
               <RadioGroup defaultValue='comfortable'>
                 <div className='flex flex-row gap-4'>
                   <div className='flex flex-row gap-2'>

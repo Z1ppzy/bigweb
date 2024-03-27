@@ -57,7 +57,7 @@ export default function Home() {
               >
                 Начать играть
               </Link>
-              <FormVanila />
+              <div><FormVanila /></div>
             </div>
           </div>
         </div>
