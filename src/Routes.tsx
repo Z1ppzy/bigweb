@@ -11,6 +11,7 @@ import Rules from './Pages/Rules';
 import AdminDashboard from './Pages/AdminDashboard';
 import Shop from './Pages/Shop';
 import Rewards from './Pages/Rewards';
+import Notifications from './Pages/Notifications';
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: '/rules',
         element: <Rules />,
+      },
+      {
+        path: '/notifications',
+        element: <Notifications />,
       },
       {
         path: '/admindashboard',

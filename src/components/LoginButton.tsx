@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { FaVk } from 'react-icons/fa';
+import { IoNotifications } from "react-icons/io5";
 
 export default function LoginButton() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -11,7 +11,7 @@ export default function LoginButton() {
   }, []);
 
   if (isLoggedIn) {
-    return <FaVk />;
+    return <><Link to='/notifications'><IoNotifications className='text-2xl text-center' /></Link></>;
   }
   return (
     <Link
