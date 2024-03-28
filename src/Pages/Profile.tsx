@@ -92,7 +92,7 @@ export default function Profile() {
                       src={
                         user.avatar
                           ? `http://localhost:8000/storage/${user.avatar}`
-                          : 'public/12231231.jpg'
+                          : '/12231231.jpg'
                       }
                       alt='User Avatar'
                     />

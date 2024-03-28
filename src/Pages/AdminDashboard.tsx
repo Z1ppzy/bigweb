@@ -34,6 +34,36 @@ interface user {
 }
 
 export default function AdminDashBoard() {
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [type, setType] = useState('');
+  const [image, setImage] = useState<File | null>(null);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      const formData = new FormData();
+      formData.append('title', title);
+      formData.append('content', content);
+      formData.append('type', type);
+      if(image) {
+          formData.append('image', image);
+      }
+
+      try {
+          const response = await axios.post('http://localhost:8000/api/news', formData);
+          if(response.status === 201) {
+              alert('News created successfully');
+          }
+      } catch (error) {
+          console.error('Error creating news', error);
+      }
+  };
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      if (event.target.files && event.target.files.length > 0) {
+          setImage(event.target.files[0]);
+      }
+  };
   const navigate = useNavigate();
   useEffect(() => {
     const token = localStorage.getItem('authToken');
@@ -91,15 +121,15 @@ export default function AdminDashBoard() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className='grid w-full items-center gap-4'>
                     <div className='flex flex-col space-y-2.5'>
                       <Label htmlFor='name'>Заголовок</Label>
-                      <Input id='text' placeholder='Название новости' />
+                      <Input id='text' placeholder='Название новости' value={title} onChange={e => setTitle(e.target.value)} />
                       <Label htmlFor='text'>Содержимое новости</Label>
-                      <Textarea placeholder='Содержимое новости' />
+                      <Textarea placeholder='Содержимое новости' value={content} onChange={e => setContent(e.target.value)} />
                       <Label htmlFor='file'>Изображение новости</Label>
-                      <Input type='file' />
+                      <Input type='file' onChange={handleFileChange} />
                     </div>
                     <div className='flex flex-col space-y-2.5'>
                       <Label htmlFor='framework'>Вид новости</Label>
@@ -107,22 +137,22 @@ export default function AdminDashBoard() {
                         <SelectTrigger id='framework'>
                           <SelectValue placeholder='Выбрать' />
                         </SelectTrigger>
-                        <SelectContent position='popper'>
-                          <SelectItem value='event'>Ивент</SelectItem>
-                          <SelectItem value='news'>Новость</SelectItem>
-                          <SelectItem value='update'>Обновление</SelectItem>
-                          <SelectItem value='maintenance'>
-                            Технические работы
-                          </SelectItem>
+                        <SelectContent position='item-aligned'>
+                          <SelectItem value='event' onClick={() => setType('event')}>Ивент</SelectItem>
+                          <SelectItem value='news' onClick={() => setType('news')}>Новость</SelectItem>
+                          <SelectItem value='update' onClick={() => setType('update')}>Обновление</SelectItem>
+                          <SelectItem value='maintenance' onClick={() => setType('maintenance')}>Технические работы</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                   </div>
-                </form>
+                  <Button type="submit" className='flex justify-center'>Опубликовать</Button>
+                  </form>
               </CardContent>
               <CardFooter className='flex justify-center'>
-                <Button>Опубликовать</Button>
+
               </CardFooter>
+              
             </Card>
           </div>
           <div className='flex flex-col items-center '>
