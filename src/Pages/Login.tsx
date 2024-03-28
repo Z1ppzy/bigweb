@@ -46,7 +46,6 @@ export default function Login() {
     },  
   });
 
-  // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       const config = {
