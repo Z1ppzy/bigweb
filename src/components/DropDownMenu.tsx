@@ -25,11 +25,11 @@ export default function DropDownMenu() {
           <SheetTitle>
             <p className='text-center font-bold text-2xl'>Навигационное меню</p>
           </SheetTitle>
+          <div className='flex flex-row justify-between px-2'>
+            <LoginButton />
+            <RegisterButton />
+          </div>
           <SheetDescription>
-            <div className='flex flex-row justify-between'>
-              <LoginButton />
-              <RegisterButton />
-            </div>
             <Link to='/forgot_password' className='flex flex-col'>
               <span className='text-center text-2xl hover:text-purple-950'>
                 ForgotPassword
