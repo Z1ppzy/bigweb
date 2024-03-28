@@ -12,19 +12,19 @@ export default function Notifications() {
           </p>
         </div>
         <div className='md:pr-52'>
-          <div className='bg-white w-full h-20 rounded-lg mt-2 text-black'>
+          <div className='bg-white w-full h-14 rounded-lg mt-2 text-black'>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est,
             asperiores.
           </div>
-          <div className='bg-white w-full h-20 rounded-lg mt-2 text-black'>
+          <div className='bg-white w-full h-14 rounded-lg mt-2 text-black'>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
             officia!
           </div>
-          <div className='bg-white w-full h-20 rounded-lg mt-2 text-black'>
+          <div className='bg-white w-full h-14 rounded-lg mt-2 text-black'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro,
             atque?
           </div>
-          <div className='bg-white w-full h-20 rounded-lg mt-2 text-black'>
+          <div className='bg-white w-full h-14 rounded-lg mt-2 text-black'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita,
             repellat?
           </div>
