@@ -36,11 +36,11 @@ export default function Home() {
           <div className='mt-10 md:mt-8'>
             <SliderImg />
           </div>
-          <div className='px-10 mt-10'>
+          <div className='px-10 mt-2 md:mt-10'>
             <h1 className='font-semibold text-xl text-center md:text-2xl'>
               Начните свою историю в нашей виртуальной песочнице!
             </h1>
-            <p className='text-center text-lg mt-10 md:mt-16'>
+            <p className='text-center text-lg mt-4 md:mt-16'>
               Приветствуем Вас на нашем сервере Minecraft! Откройте для себя
               мир, где каждый шаг - это приключение. Уникальные плагины обогатят
               ваш игровой процесс, предоставляя возможности для творчества и

@@ -13,7 +13,6 @@ import LogoutButton from './LogoutButton';
 import LoginButton from './LoginButton';
 import RegisterButton from './RegisterButton';
 
-
 export default function DropDownMenu() {
   return (
     <Sheet>
