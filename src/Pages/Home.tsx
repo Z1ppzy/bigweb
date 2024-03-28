@@ -67,7 +67,7 @@ export default function Home() {
 
         <div className='mx-10 place-items-center md:grid grid-cols-3 md:mx-32 text-center mb-10 gap-20'>
           <div className='flex flex-col items-center mt-5'>
-            <GiProcessor className='text-8xl text-purple-950' />
+            <GiProcessor className='text-8xl text-purple-950 ' />
             <p>
               Мы тщательно оптимизируем сервер для обеспечения плавного и
               быстрого геймплея, даже на больших дистанциях и при большом

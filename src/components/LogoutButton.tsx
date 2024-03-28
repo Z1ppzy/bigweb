@@ -13,7 +13,7 @@ export default function LogoutButton() {
 
   const handleLogout = async () => {
     try {
-      await axios.get('http://localhost:8000/api/logout');
+      await axios.post('http://localhost:8000/api/logout');
       localStorage.clear();
       navigate('/login');
       setIsLoggedIn(false); 
