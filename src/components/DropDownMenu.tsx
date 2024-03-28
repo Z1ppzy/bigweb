@@ -9,7 +9,6 @@ import {
 import { TfiAlignRight } from 'react-icons/tfi';
 import { Link } from 'react-router-dom';
 import { ThemeSwitch } from './ThemeSwitch';
-import LogoutButton from './LogoutButton';
 import LoginButton from './LoginButton';
 import RegisterButton from './RegisterButton';
 
@@ -27,8 +26,10 @@ export default function DropDownMenu() {
             <p className='text-center font-bold text-2xl'>Навигационное меню</p>
           </SheetTitle>
           <SheetDescription>
+            <div className='flex flex-row justify-between'>
               <LoginButton />
               <RegisterButton />
+            </div>
             <Link to='/forgot_password' className='flex flex-col'>
               <span className='text-center text-2xl hover:text-purple-950'>
                 ForgotPassword
@@ -64,11 +65,7 @@ export default function DropDownMenu() {
                 Rewards
               </span>
             </Link>
-            <Link to='/Notification' className='flex flex-col'><span className='text-center text-2xl hover:text-purple-950'>
-              Notification</span></Link>
-
             <ThemeSwitch />
-            <LogoutButton />
           </SheetDescription>
         </SheetHeader>
       </SheetContent>

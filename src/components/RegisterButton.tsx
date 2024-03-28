@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react'
+import LogoutButton from './LogoutButton';
 
 export default function RegisterButton() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -10,7 +11,7 @@ export default function RegisterButton() {
   }, []);
 
   if (isLoggedIn) {
-    return null;
+    return <LogoutButton />;
   }
   return (
     <Link
