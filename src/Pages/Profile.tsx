@@ -137,7 +137,6 @@ export default function Profile() {
                 Двухэтапная аутентификация
               </Button>
               <Button className='w-full md:w-fit'>Персонализация</Button>
-              <FormVanilla />
             </div>
           </div>
           <div className='p-10 md:mx-16 text-iney'>

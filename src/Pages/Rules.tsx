@@ -15,7 +15,7 @@ export default function Rules() {
       </div>
       <div className='px-10 pb-10'>
         <h1 className='font-bold text-xl'>1 Общее положение правил</h1>
-        <ul className='font-normal pl-3 space-y-1'>
+        <ul className='font-medium pl-3 space-y-1'>
           <li>
             <strong>1.1</strong> Незнание правил не освобождают от
             ответственности
@@ -51,7 +51,7 @@ export default function Rules() {
           </li>
         </ul>
         <h1 className='font-bold text-xl mt-2'>2 Администрация проекта</h1>
-        <ul className='font-normal pl-3 space-y-1'>
+        <ul className='font-medium pl-3 space-y-1'>
           <li>
             <strong>2.1</strong> Администрация и модерация проекта может сама
             определять тяжесть и тип нарушения и также на основе своего мнения
@@ -99,7 +99,7 @@ export default function Rules() {
           </li>
         </ul>
         <h1 className='mt-2 text-lg font-bold'>3 Чат и коммуникация</h1>
-        <ul className='font-normal pl-3 space-y-1'>
+        <ul className='font-medium pl-3 space-y-1'>
           <li>
             3.1 На сервере запрещен флуд и спам в местный и глобальный чат
           </li>
