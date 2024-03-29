@@ -11,7 +11,7 @@ import { FaPeopleGroup } from 'react-icons/fa6';
 import { IoMdSettings } from 'react-icons/io';
 import { Slide, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import FormVanila from '@/components/FormVanilla';
+
 
 export default function Home() {
   const CopyIP = async (text: string) => {
@@ -57,7 +57,6 @@ export default function Home() {
               >
                 Начать играть
               </Link>
-              <div><FormVanila /></div>
             </div>
           </div>
         </div>

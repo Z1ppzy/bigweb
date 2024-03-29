@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { IoNotifications } from "react-icons/io5";
+import FormVanila from '@/components/FormVanilla';
 
 export default function LoginButton() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -11,7 +12,7 @@ export default function LoginButton() {
   }, []);
 
   if (isLoggedIn) {
-    return <><Link to='/notifications'><IoNotifications className='text-2xl text-center' /></Link></>;
+    return <><Link to='/notifications'><IoNotifications className='text-2xl text-center' /></Link><FormVanila /></>;
   }
   return (
     <Link

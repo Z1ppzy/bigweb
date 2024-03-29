@@ -17,8 +17,8 @@ export default function FormVanilla() {
     <div>
       <Dialog>
         <DialogTrigger asChild>
-          <Button className=''>
-            Верификация на сервер Ваниллы
+          <Button>
+            Заявка
           </Button>
         </DialogTrigger>
         <DialogContent className='sm:max-w-[425px]'>

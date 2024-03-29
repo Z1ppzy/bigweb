@@ -12,6 +12,7 @@ import { ThemeSwitch } from './ThemeSwitch';
 import LoginButton from './LoginButton';
 import RegisterButton from './RegisterButton';
 
+
 export default function DropDownMenu() {
   return (
     <Sheet>
@@ -25,7 +26,7 @@ export default function DropDownMenu() {
           <SheetTitle>
             <p className='text-center font-bold text-2xl'>Навигационное меню</p>
           </SheetTitle>
-          <div className='flex flex-row justify-between px-2'>
+          <div className='flex flex-row justify-between '>
             <LoginButton />
             <RegisterButton />
           </div>
