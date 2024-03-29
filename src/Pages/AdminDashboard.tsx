@@ -36,7 +36,7 @@ interface user {
 export default function AdminDashBoard() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [type, setType] = useState('');
+  // const [type, setType] = useState('');
   const [image, setImage] = useState<File | null>(null);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -133,7 +133,7 @@ export default function AdminDashBoard() {
                     </div>
                     <div className='flex flex-col space-y-2.5'>
                       <Label htmlFor='framework'>Вид новости</Label>
-                      <Select>
+                      {/* <Select>
                         <SelectTrigger id='framework'>
                           <SelectValue placeholder='Выбрать' />
                         </SelectTrigger>
@@ -143,7 +143,7 @@ export default function AdminDashBoard() {
                           <SelectItem value='update' onClick={() => setType('update')}>Обновление</SelectItem>
                           <SelectItem value='maintenance' onClick={() => setType('maintenance')}>Технические работы</SelectItem>
                         </SelectContent>
-                      </Select>
+                      </Select> */}
                     </div>
                   </div>
                   <Button type="submit" className='flex justify-center'>Опубликовать</Button>
