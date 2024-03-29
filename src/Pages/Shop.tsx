@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react'; 
+import  { useState } from 'react';
 import { Product } from './Product';
-
+import Modal from './Modal';
 const products: Product[] = [
   {
     id: 1,
@@ -49,12 +48,21 @@ const products: Product[] = [
     description: "df"
   },
 ];
-//yty
 export default function Shop() {
-  const [, setSelectedProductId] = useState<number | null>(null); 
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
 
-  const handleCardClick = (productId: number) => { 
-    setSelectedProductId(productId); 
+  const handleCardClick = (product: Product) => {
+    setSelectedProduct(product);
+    setModalOpen(true);
+    
+    window.history.pushState({}, '', `/shop${product.href}`);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    
+    window.history.pushState({}, '', '/shop');
   };
 
   return (
@@ -65,23 +73,27 @@ export default function Shop() {
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {products.map((product) => (
             <div key={product.id} className="group relative">
-              <Link to={`/shop/${product.id}`} className="group relative">
-                <div onClick={() => handleCardClick(product.id)} className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg product-card">
-                  <img
-                    src={product.imageSrc}
-                    alt={product.imageAlt}
-                    className="h-full w-full object-cover object-center group-hover:opacity-75"
-                  />
-                  <div className="flex flex-col items-center mt-4">
-                    <h3 className="text-sm text-gray-700">{product.name}</h3>
-                    <p className="mt-1 text-lg font-medium text-gray-900">{product.price}</p>
-                  </div>
+              <div onClick={() => handleCardClick(product)} className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg product-card">
+                <img
+                  src={product.imageSrc}
+                  alt={product.imageAlt}
+                  className="h-full w-full object-cover object-center group-hover:opacity-75"
+                />
+                <div className="flex flex-col items-center mt-4">
+                  <h3 className="text-sm text-gray-700">{product.name}</h3>
+                  <p className="mt-1 text-lg font-medium text-gray-900">{product.price}</p>
                 </div>
-              </Link>
+              </div>
             </div>
           ))}
         </div>
       </div>
+      {modalOpen && selectedProduct && (
+        <Modal onClose={handleCloseModal}>
+          <h2>{selectedProduct.name}</h2>
+          <p>{selectedProduct.description}</p>
+        </Modal>
+      )}
     </div>
   );
 }
