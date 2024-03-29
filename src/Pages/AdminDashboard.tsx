@@ -44,7 +44,7 @@ export default function AdminDashBoard() {
       const formData = new FormData();
       formData.append('title', title);
       formData.append('content', content);
-      formData.append('type', type);
+      // formData.append('type', type);
       if(image) {
           formData.append('image', image);
       }
