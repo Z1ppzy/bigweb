@@ -1,18 +1,18 @@
 # BigWeb Project
 
-Welcome to the BigWeb project, a modern web application built with the latest technologies.
+Добро пожаловать в проект BigWeb. Это овременное веб-приложение, созданное с использованием новейших технологий.
 
-## Setup
+## Установка
 
-To get started with BigWeb, follow these simple setup instructions.
+Чтобы начать работу с BigWeb, следуйте этим простым инструкциям по настройке.
 
-### Prerequisites
+### Необходимые компоненты 
 
-Before you begin, ensure you have installed Node.js on your system. You can download Node.js from [here](https://nodejs.org/).
+Прежде чем начать, убедитесь, что вы установили Node.js в своей системе. Вы можете загрузить Node.js [Клик](https://nodejs.org/).
 
-### Installation
+### Первые шаги
 
-Clone the repository to your local machine and install the dependencies using npm.
+Клонируйте репозиторий на свой локальный компьютер и устанавливайте зависимости с помощью npm.
 
 ```bash
 git clone https://github.com/yourusername/bigweb.git
@@ -20,15 +20,15 @@ cd bigweb
 npm install
 ```
 
-### BigWeb Project
+### Запуск
 
-Once the dependencies are installed, you can run the project in development mode with the following command:
+Как только зависимости установлены, вы можете запустить проект в режиме разработки с помощью следующей команды:
 
 ```bash
 npm run dev
 ```
-This will start the development server, and you should be able to access the application by navigating to http://localhost:3000 in your web browser.
+Это запустит сервер разработки, и вы сможете получить доступ к приложению, перейдя по ссылке http://localhost:3000 в вашем веб-браузере.
 
 
-### Demo
-To see BigWeb in action, visit the live [demo](https://bigweb.vercel.app)
+### Демо
+Чтобы увидеть BigWeb в действии, посетите демо версию [demo](https://bigweb.vercel.app)
