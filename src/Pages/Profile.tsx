@@ -7,7 +7,6 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { format } from '@formkit/tempo';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import FormVanilla from '@/components/FormVanilla';
 import Greeting from '@/components/Greeting';
 
 axios.defaults.withCredentials = true;
