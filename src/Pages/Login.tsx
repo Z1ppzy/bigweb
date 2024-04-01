@@ -43,7 +43,7 @@ export default function Login() {
     defaultValues: {
       email: '',
       password: '',
-    },  
+    },
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
@@ -66,7 +66,11 @@ export default function Login() {
   return (
     <div className='w-96 m-auto h-screen'>
       <Link to='/'>
-        <img src='logo.png' className='float-end animate-bounce  duration-1000' alt='' />
+        <img
+          src='logo.png'
+          className='float-end animate-bounce  duration-1000'
+          alt=''
+        />
       </Link>
       <p className='text-center mt-10 mb-16 font-bold text-2xl'>
         Войти в учетную запись HW
@@ -86,7 +90,10 @@ export default function Login() {
                     {...field}
                   />
                 </FormControl>
-                <FormDescription>Введите адрес электронной почты, который использовали при регистрации </FormDescription>
+                <FormDescription>
+                  Введите адрес электронной почты, который использовали при
+                  регистрации{' '}
+                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -113,13 +120,14 @@ export default function Login() {
             <Checkbox id='terms' />
             <label
               htmlFor='terms'
-              className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              className='text-base  leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
             >
               Запомнить вход с этого устройства
             </label>
           </div>
-
-          <Button type='submit'>Войти</Button>
+          <div className='flex justify-start'>
+            <Button type='submit'>Войти</Button>
+          </div>
         </form>
       </Form>
       <p className='text-center'>

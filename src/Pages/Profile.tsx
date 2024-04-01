@@ -115,7 +115,7 @@ export default function Profile() {
                         onChange={handleFileChange}
                       ></Input>
                       <div className='flex flex-row justify-between mt-6'>
-                        <Button onClick={handleDelete} className='w-32 flex'>
+                        <Button onClick={handleDelete} className='w-32 flex' variant={'destructive'}>
                           Удалить
                         </Button>
                         <Button onClick={handleUpload} className='w-32 flex '>

@@ -27,5 +27,5 @@ export default function LogoutButton() {
     return null;
   }
 
-  return <Button className='font-bold' onClick={handleLogout}>Выход</Button>;
+  return <Button variant={'outline'} className='font-bold' onClick={handleLogout}>Выход</Button>;
 }

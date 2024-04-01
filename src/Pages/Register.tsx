@@ -137,22 +137,23 @@ export default function Register() {
             <Checkbox id='terms' required />
             <label
               htmlFor='terms'
-              className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 '
+              className='text-sm text-center font-light leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 '
             >
-              Я прочитал и принимаю
-              <Link to='/terms' className='hover:text-purple-800 font-bold'>
+              Я принимаю
+              <Link to='/terms' className='hover:text-purple-800 font-medium'>
                 <> Условия использования.</>
               </Link>
             </label>
           </div>
-
-          <Button type='submit'>Войти</Button>
+          <div className='flex justify-start'>
+            <Button type='submit'>Зарегистрироваться</Button>
+          </div>
         </form>
       </Form>
       <div>
-        <p className='text-center mt-5'>
+        <p className='text-center font-light mt-5'>
           Уже зарегистрированы?
-          <Link to='/login' className='font-bold'>
+          <Link to='/login' className='font-medium hover:text-purple-800'>
             <> Войти</>
           </Link>
         </p>
