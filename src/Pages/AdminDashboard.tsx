@@ -22,6 +22,8 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
@@ -34,6 +36,9 @@ interface user {
 }
 
 export default function AdminDashBoard() {
+  const notify = (message: string) => {
+    toast(message);
+  };
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   // const [type, setType] = useState('');
@@ -55,7 +60,7 @@ export default function AdminDashBoard() {
         formData
       );
       if (response.status === 201) {
-        alert('News created successfully');
+        notify('Новость была опубликована');
       }
     } catch (error) {
       console.error('Error creating news', error);
@@ -261,6 +266,7 @@ export default function AdminDashBoard() {
             </Card>
           </div>
         </div>
+        <ToastContainer />
       </div>
     </>
   );
