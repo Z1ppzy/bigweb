@@ -11,6 +11,7 @@ import { FaPeopleGroup } from 'react-icons/fa6';
 import { IoMdSettings } from 'react-icons/io';
 import { Slide, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SuggestionBox from '@/components/SuggestionBox';
 
 
 export default function Home() {
@@ -143,6 +144,7 @@ export default function Home() {
           </Accordion>
         </div>
         <ToastContainer />
+        <SuggestionBox />
       </div>
     </>
   );

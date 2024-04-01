@@ -223,10 +223,14 @@ export default function AdminDashBoard() {
                           <SelectValue placeholder='Выбрать' />
                         </SelectTrigger>
                         <SelectContent position='popper'>
-                          <SelectItem value='next'>Next.js</SelectItem>
-                          <SelectItem value='sveltekit'>SvelteKit</SelectItem>
-                          <SelectItem value='astro'>Astro</SelectItem>
-                          <SelectItem value='nuxt'>Nuxt.js</SelectItem>
+                          <SelectItem value='Avenger'>Avenger</SelectItem>
+                          <SelectItem value='Elder'>Elder</SelectItem>
+                          <SelectItem value='Enigma'>Enigma</SelectItem>
+                          <SelectItem value='Phantom'>Phantom</SelectItem>
+                          <SelectItem value='Sponsor'>Sponsor</SelectItem>
+                          <SelectItem value='Arcane'>Arcane</SelectItem>
+                          <SelectItem value='Legend'>Legend</SelectItem>
+                          <SelectItem value='Titan'>Titan</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -240,20 +244,6 @@ export default function AdminDashBoard() {
             </Card>
           </div>
         </div>
-        <p className='p-2'>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur
-          accusamus ea iusto quo quia ipsa doloremque ut suscipit molestiae,
-          expedita voluptate autem, aliquid, veritatis corporis at veniam quos
-          dolorum asperiores dolore? Consectetur id dolorum atque, aperiam
-          provident quos amet neque ad optio corporis est voluptatum
-          perspiciatis sequi? Animi perferendis placeat nobis id aspernatur
-          velit nam earum a magnam, beatae, corrupti doloribus iure! Modi nemo,
-          minus deleniti quia fuga illum cumque et doloremque? Maiores quia
-          eaque omnis, tempore laudantium nesciunt quidem sit placeat culpa
-          tenetur non. Aliquam eaque perferendis doloremque, at quia consequatur
-          mollitia distinctio exercitationem architecto laudantium nobis cumque!
-          Deleniti?
-        </p>
       </div>
     </>
   );
