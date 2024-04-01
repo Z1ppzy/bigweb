@@ -1,9 +1,14 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import LogoutButton from './LogoutButton';
 import { Button } from './ui/button';
 
 export default function RegisterButton() {
+  const navigate = useNavigate();
+
+  const registerClick = () => {
+    navigate('/register');
+  };
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -15,8 +20,8 @@ export default function RegisterButton() {
     return <LogoutButton />;
   }
   return (
-    <Link to='/register'>
-      <Button variant={'outline'}>Зарегистрироваться</Button>
-    </Link>
+
+      <Button onClick={registerClick} variant={'outline'}>Зарегистрироваться</Button>
+
   );
 }
