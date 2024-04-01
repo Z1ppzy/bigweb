@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import LogoutButton from './LogoutButton';
+import { Button } from './ui/button';
 
 export default function RegisterButton() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -14,11 +15,8 @@ export default function RegisterButton() {
     return <LogoutButton />;
   }
   return (
-    <Link
-      to='/register'
-      className='bg-someblack w-fit px-4 py-1 rounded-md text-iney font-bold dark:bg-white'
-    >
-      Зарегистрироваться
+    <Link to='/register'>
+      <Button variant={'outline'}>Зарегистрироваться</Button>
     </Link>
   );
 }

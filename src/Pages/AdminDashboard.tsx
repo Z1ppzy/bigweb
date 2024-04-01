@@ -40,29 +40,32 @@ export default function AdminDashBoard() {
   const [image, setImage] = useState<File | null>(null);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      const formData = new FormData();
-      formData.append('title', title);
-      formData.append('content', content);
-      // formData.append('type', type);
-      if(image) {
-          formData.append('image', image);
-      }
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('content', content);
+    // formData.append('type', type);
+    if (image) {
+      formData.append('image', image);
+    }
 
-      try {
-          const response = await axios.post('http://localhost:8000/api/news', formData);
-          if(response.status === 201) {
-              alert('News created successfully');
-          }
-      } catch (error) {
-          console.error('Error creating news', error);
+    try {
+      const response = await axios.post(
+        'http://localhost:8000/api/news',
+        formData
+      );
+      if (response.status === 201) {
+        alert('News created successfully');
       }
+    } catch (error) {
+      console.error('Error creating news', error);
+    }
   };
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      if (event.target.files && event.target.files.length > 0) {
-          setImage(event.target.files[0]);
-      }
+    if (event.target.files && event.target.files.length > 0) {
+      setImage(event.target.files[0]);
+    }
   };
   const navigate = useNavigate();
   useEffect(() => {
@@ -106,7 +109,7 @@ export default function AdminDashBoard() {
     <>
       <div className=''>
         <h1
-          className='text-center md:text-left font-bold text-2xl mx-10 bg-clip-text text-transparent bg-gradient-to-r from-pink-900 to-purple-500'
+          className='p-6 text-center md:text-left font-bold text-2xl mx-10 bg-clip-text text-transparent bg-gradient-to-r from-pink-900 to-purple-500'
           style={{ borderBottom: '3px solid', borderColor: '#6b46c1' }}
         >
           Панель управления-админа
@@ -125,15 +128,25 @@ export default function AdminDashBoard() {
                   <div className='grid w-full items-center gap-4'>
                     <div className='flex flex-col space-y-2.5'>
                       <Label htmlFor='name'>Заголовок</Label>
-                      <Input id='text' placeholder='Название новости' value={title} onChange={e => setTitle(e.target.value)} />
+                      <Input
+                        id='text'
+                        autoComplete='off'
+                        placeholder='Название новости'
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                      />
                       <Label htmlFor='text'>Содержимое новости</Label>
-                      <Textarea placeholder='Содержимое новости' value={content} onChange={e => setContent(e.target.value)} />
+                      <Textarea
+                        placeholder='Содержимое новости'
+                        value={content}
+                        onChange={(e) => setContent(e.target.value)}
+                      />
                       <Label htmlFor='file'>Изображение новости</Label>
                       <Input type='file' onChange={handleFileChange} />
                     </div>
-                    <div className='flex flex-col space-y-2.5'>
+                    {/* <div className='flex flex-col space-y-2.5'>
                       <Label htmlFor='framework'>Вид новости</Label>
-                      {/* <Select>
+                      <Select>
                         <SelectTrigger id='framework'>
                           <SelectValue placeholder='Выбрать' />
                         </SelectTrigger>
@@ -143,16 +156,15 @@ export default function AdminDashBoard() {
                           <SelectItem value='update' onClick={() => setType('update')}>Обновление</SelectItem>
                           <SelectItem value='maintenance' onClick={() => setType('maintenance')}>Технические работы</SelectItem>
                         </SelectContent>
-                      </Select> */}
-                    </div>
+                      </Select>
+                    </div> */}
                   </div>
-                  <Button type="submit" className='flex justify-center'>Опубликовать</Button>
-                  </form>
+                  <div className='flex flex-col items-center mt-4'>
+                    <Button type='submit'>Опубликовать</Button>
+                  </div>
+                </form>
               </CardContent>
-              <CardFooter className='flex justify-center'>
-
-              </CardFooter>
-              
+              <CardFooter className='flex justify-center'></CardFooter>
             </Card>
           </div>
           <div className='flex flex-col items-center '>
@@ -170,6 +182,7 @@ export default function AdminDashBoard() {
                       <Label htmlFor='name'>Никнейм</Label>
                       <Input
                         placeholder='Ник игрока'
+                        autoComplete='off'
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                       />
@@ -214,7 +227,11 @@ export default function AdminDashBoard() {
                   <div className='grid w-full items-center gap-4'>
                     <div className='flex flex-col space-y-2.5'>
                       <Label htmlFor='name'>Никнейм</Label>
-                      <Input id='name' placeholder='Ник игрока' />
+                      <Input
+                        id='name'
+                        autoComplete='off'
+                        placeholder='Ник игрока'
+                      />
                     </div>
                     <div className='flex flex-col space-y-2.5'>
                       <Label htmlFor='framework'>Роль</Label>
@@ -235,12 +252,12 @@ export default function AdminDashBoard() {
                       </Select>
                     </div>
                   </div>
+                  <div className='flex justify-between mt-6'>
+                    <Button variant='outline'>Проверить</Button>
+                    <Button>Готово</Button>
+                  </div>
                 </form>
               </CardContent>
-              <CardFooter className='flex justify-between'>
-                <Button variant='outline'>Проверить</Button>
-                <Button>Готово</Button>
-              </CardFooter>
             </Card>
           </div>
         </div>
