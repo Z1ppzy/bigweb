@@ -64,6 +64,7 @@ export default function AdminDashBoard() {
       }
     } catch (error) {
       console.error('Error creating news', error);
+      notify('Новость не опубликована');
     }
   };
 
@@ -266,7 +267,18 @@ export default function AdminDashBoard() {
             </Card>
           </div>
         </div>
-        <ToastContainer />
+        <ToastContainer
+          position='top-right'
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme='dark'
+        />
       </div>
     </>
   );
