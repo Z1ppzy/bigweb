@@ -6,9 +6,9 @@ export default function SuggestionBox() {
     <div className='w-full h-fit text-center p-6'>
       <div className='gap-3 flex flex-col items-center'>   
         <h1 className='font-bold text-xl'>Предложить идею по улучшению сервера</h1>
-        <p className='font-light md:dark:font-extralight text-sm mt-0 '>Идея должна быть адекватной и правильно выраженной!</p>
-        <Textarea className='max-w-xl' placeholder='Снять зипзи с админа' />
-        <Button className='w-fit'>Отправить</Button>
+        <p className='font-light md:dark:font-extralight text-sm mt-0'>Идея должна быть адекватной и правильно выраженной!</p>
+        <Textarea className='w-80' placeholder='Снять зипзи с админа' />
+        <Button variant={'secondary'}>Отправить</Button>
       </div>
     </div>
   );
