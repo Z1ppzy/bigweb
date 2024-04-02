@@ -192,20 +192,22 @@ export default function AdminDashBoard() {
                     </div>
                     <div className='flex flex-col space-y-2.5 text-left'>
                       {notFound && (
-                        <p className='text-center'>Пользователь не найден</p>
+                        <p className='text-center font-medium'>
+                          Пользователь не найден
+                        </p>
                       )}
                       {user && (
                         <div>
-                          <h1 className='font-bold'>Найденный игрок:</h1>
-                          <p>Имя: {user.name}</p>
-                          <p>Email: {user.email}</p>
-                          <div>
+                          <h1 className='font-medium text-lg'>Найденный игрок:</h1>
+                          <div className='font-medium text-sm'>
+                            <p>Имя: {user.name}</p>
+                            <p>Email: {user.email}</p>
                             <p>
                               Дата создания:{' '}
                               {format(user.created_at, { date: 'long' })}
                             </p>
+                            <p>Роль: {user.role}</p>
                           </div>
-                          <p>Роль: {user.role}</p>
                         </div>
                       )}
                     </div>
