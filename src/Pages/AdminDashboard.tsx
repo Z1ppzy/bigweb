@@ -36,9 +36,6 @@ interface user {
 }
 
 export default function AdminDashBoard() {
-  const notify = (message: string) => {
-    toast(message);
-  };
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   // const [type, setType] = useState('');
@@ -60,11 +57,11 @@ export default function AdminDashBoard() {
         formData
       );
       if (response.status === 201) {
-        notify('Новость была опубликована');
+        toast.success('Новость была опубликована');
       }
     } catch (error) {
       console.error('Error creating news', error);
-      notify('Новость не опубликована');
+      toast.warn('Новость не опубликована');
     }
   };
 
