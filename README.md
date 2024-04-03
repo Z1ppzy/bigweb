@@ -15,7 +15,7 @@
 Клонируйте репозиторий на свой локальный компьютер и устанавливайте зависимости с помощью npm.
 
 ```bash
-git clone https://github.com/yourusername/bigweb.git
+git clone https://github.com/Z1ppzy/bigweb.git
 cd bigweb
 npm install
 ```
