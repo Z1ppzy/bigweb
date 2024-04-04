@@ -7,13 +7,15 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { TfiAlignRight } from 'react-icons/tfi';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ThemeSwitch } from './ThemeSwitch';
 import LoginButton from './LoginButton';
 import RegisterButton from './RegisterButton';
 
 
 export default function DropDownMenu() {
+  const location = useLocation();
+  const isActiveLink = (path: string) => location.pathname === path;
   return (
     <Sheet>
       <SheetTrigger>
@@ -31,38 +33,43 @@ export default function DropDownMenu() {
             <RegisterButton />
           </div>
           <SheetDescription>
-            <Link to='/forgot_password' className='flex flex-col'>
-              <span className='text-center text-2xl hover:text-purple-950'>
+          <Link to='/' className={`flex flex-col text-center text-2xl ${isActiveLink('/') ? 'text-purple-800' : ''}`}>
+              <span>
+                Home
+              </span>
+            </Link>
+            <Link to='/forgot_password' className={`flex flex-col text-center text-2xl ${isActiveLink('/forgot_password') ? 'text-purple-800' : ''}`}>
+              <span>
                 ForgotPassword
               </span>
             </Link>
-            <Link to='/profile' className='flex flex-col'>
-              <span className='text-center text-2xl hover:text-purple-950'>
+            <Link to='/profile' className={`flex flex-col text-center text-2xl ${isActiveLink('/profile') ? 'text-purple-800' : ''}`}>
+              <span>
                 Profile
               </span>
             </Link>
-            <Link to='/terms' className='flex flex-col'>
-              <span className='text-center text-2xl hover:text-purple-950'>
+            <Link to='/terms' className={`flex flex-col text-center text-2xl ${isActiveLink('/terms') ? 'text-purple-800' : ''}`}>
+              <span>
                 Terms
               </span>
             </Link>
-            <Link to='/rules' className='flex flex-col'>
-              <span className='text-center text-2xl hover:text-purple-950'>
+            <Link to='/rules' className={`flex flex-col text-center text-2xl ${isActiveLink('/rules') ? 'text-purple-800' : ''}`}>
+              <span >
                 Rules
               </span>
             </Link>
-            <Link to='/admindashboard' className='flex flex-col'>
-              <span className='text-center text-2xl hover:text-purple-950'>
+            <Link to='/admindashboard' className={`flex flex-col text-center text-2xl ${isActiveLink('/admindashboard') ? 'text-purple-800' : ''}`}>
+              <span>
                 AdminDashboard
               </span>
             </Link>
-            <Link to='/shop' className='flex flex-col'>
-              <span className='text-center text-2xl hover:text-purple-950'>
+            <Link to='/shop' className={`flex flex-col text-center text-2xl ${isActiveLink('/shop') ? 'text-purple-800' : ''}`}>
+              <span>
                 Shop
               </span>
             </Link>
-            <Link to='/rewards' className='flex flex-col'>
-              <span className='text-center text-2xl hover:text-purple-950'>
+            <Link to='/rewards' className={`flex flex-col text-center text-2xl ${isActiveLink('/rewards ') ? 'text-purple-800' : ''}`}>
+              <span>
                 Rewards
               </span>
             </Link>
