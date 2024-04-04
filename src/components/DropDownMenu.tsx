@@ -68,7 +68,7 @@ export default function DropDownMenu() {
                 Shop
               </span>
             </Link>
-            <Link to='/rewards' className={`flex flex-col text-center text-2xl ${isActiveLink('/rewards ') ? 'text-purple-800' : ''}`}>
+            <Link to='/rewards' className={`flex flex-col text-center text-2xl ${isActiveLink('/rewards') ? 'text-purple-800' : ''}`}>
               <span>
                 Rewards
               </span>

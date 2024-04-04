@@ -8,6 +8,9 @@ import { format } from '@formkit/tempo';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Greeting from '@/components/Greeting';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
@@ -35,14 +38,15 @@ export default function Profile() {
       formData.append('avatar', selectedFile);
 
       try {
-        const response = await axios.post(
-          'http://localhost:8000/api/avatar/upload',
-          formData
-        );
+        const response = await axios.post('http://localhost:8000/api/avatar/upload', formData);
         console.log(response.data);
+        toast.success("Аватар успешно обновлен!"); 
       } catch (error) {
         console.error(error);
+        toast.error("Ошибка при обновлении аватара."); 
       }
+    } else {
+      toast.warn("Вы не выбрали файл!"); 
     }
   };
 
@@ -52,6 +56,7 @@ export default function Profile() {
         'http://localhost:8000/api/avatar/delete'
       );
       console.log(response.data);
+      toast.success("Аватар успешно удален!"); 
     } catch (error) {
       console.error(error);
     }
@@ -155,6 +160,18 @@ export default function Profile() {
             </div>
           </div>
         </div>
+        <ToastContainer
+          position='top-right'
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme='dark'
+        />
       </div>
     </>
   );
