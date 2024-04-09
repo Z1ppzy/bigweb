@@ -24,3 +24,4 @@ export default function LoginButton() {
       <Button onClick={loginClick}>Войти</Button>
   );
 }
+

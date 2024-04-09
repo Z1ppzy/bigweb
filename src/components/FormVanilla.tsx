@@ -42,7 +42,7 @@ export default function FormVanilla() {
               <Label htmlFor='info'>Откуда узнали о сервере?</Label>
               <Input id='info' placeholder='Мониторинг' />
               <Label>Принимаете ли вы наши правила?</Label>
-              <RadioGroup defaultValue='comfortable' id='rules'>
+              <RadioGroup name='rules' id='rules'>
                 <div className='flex flex-row gap-4'>
                   <div className='flex flex-row gap-2'>
                     <RadioGroupItem value='yes' id='r1' />
@@ -55,7 +55,7 @@ export default function FormVanilla() {
                 </div>
               </RadioGroup>
               <Label>Был ли опыт игры на подобных серверах?</Label>
-              <RadioGroup defaultValue='comfortable'>
+              <RadioGroup name='experience'>
                 <div className='flex flex-row gap-4'>
                   <div className='flex flex-row gap-2'>
                     <RadioGroupItem value='yes' id='r1' />
