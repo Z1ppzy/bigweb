@@ -6,7 +6,7 @@ export default function WhyWe() {
   return (
     <div>
       <div className='text-center'>
-        <h1 className='mt-8 text-2xl md:text-4xl'>
+        <h1 className='mt-8 text-2xl'>
           <b>Почему именно мы?</b>
         </h1>
         <div className='mx-10 place-items-center md:grid grid-cols-3 md:mx-32 mb-10 gap-20'>

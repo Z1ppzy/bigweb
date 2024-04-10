@@ -15,7 +15,7 @@ export default function Home() {
           <div className='mt-10 md:mt-8'>
             <SliderImg />
           </div>
-          <div className='px-10 mt-2 md:mt-10'>
+          <div className='px-5 md:px-10 mt-2 md:mt-10'>
             <h1 className='font-semibold text-xl text-center md:text-2xl'>
               Начните свою историю в нашей виртуальной песочнице!
             </h1>
