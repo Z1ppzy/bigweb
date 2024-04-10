@@ -7,7 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SuggestionBox from '@/components/SuggestionBox';
 import AccordionServer from '@/components/AccordionServer';
-
+import ServerInfo from '@/components/ServerInfo';
 
 export default function Home() {
   return (
@@ -41,9 +41,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-          <h1 className='mt-8 text-2xl text-center md:text-4xl'>
-            <b>Почему именно мы?</b>
-          </h1>
+        <div className='px-8 mx-4 md:mx-10 mb-10'>
+          <ServerInfo />
+        </div>
+        <h1 className='mt-8 text-2xl text-center md:text-4xl'>
+          <b>Почему именно мы?</b>
+        </h1>
 
         <div className='mx-10 place-items-center md:grid grid-cols-3 md:mx-32 text-center mb-10 gap-20'>
           <div className='flex flex-col items-center mt-5'>

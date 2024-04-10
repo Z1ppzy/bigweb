@@ -1,10 +1,8 @@
-import background from '@/assets/slide2.png';
-
 export default function Rules() {
   return (
     <div>
       <div className='relative border-b-2 border-purple-600'>
-        <img src={background} className='object-cover w-full h-96' alt='' />
+        <img src='/header-background.jpg' className='object-cover w-full h-96' alt='' />
         <h1 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-2xl text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-purple-900'>
           Соблюдайте правила сервера
         </h1>
