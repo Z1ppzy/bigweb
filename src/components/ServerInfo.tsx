@@ -14,6 +14,7 @@ export default function ServerInfo() {
             позволяет развивать экономику на сервере и стимулирует
             взаимодействие между игроками.
           </p>
+          <img src='/semi-classic.png' alt="" />
         </div>
         <div className='px-10 text-center'>
           <h1 className='font-bold text-2xl'>Survival</h1>
@@ -25,6 +26,7 @@ export default function ServerInfo() {
             беспокоясь о внешних угрозах. Мы гордимся дружелюбным и активным
             сообществом, где вы сможете найти себе новых друзей.
           </p>
+          <img src='/survival-minigames-image.jpg' alt="" />
         </div>
       </div>
     </div>
