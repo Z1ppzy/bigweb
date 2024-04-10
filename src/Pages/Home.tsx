@@ -39,7 +39,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className='px-8 mx-4 md:mx-10 mb-10'>
+        <div>
           <ServerInfo />
         </div>
         <div>
