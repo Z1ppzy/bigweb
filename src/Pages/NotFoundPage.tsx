@@ -20,7 +20,7 @@ export default function NotFoundPage() {
         <Button
           onClick={navigateToHome}
           variant={'secondary'}
-          className='py-2 px-4  sm:py-3 md:px-8 md:py-3 font-medium text-md sm:text-lg'
+          className='py-2 px-4 md:px-8 md:py-3 font-medium text-md sm:text-lg'
         >
           Перейти на главную
         </Button>
