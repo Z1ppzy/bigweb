@@ -5,7 +5,7 @@ export default function NotFoundPage() {
   const navigate = useNavigate();
 
   const navigateToHome = () => {
-    navigate('/'); // Если предполагается перенаправление на страницу регистрации, убедитесь, что это корректно. Возможно, вы хотели использовать '/' для главной страницы.
+    navigate('/'); 
   };
 
   return (
