@@ -15,7 +15,7 @@ export default function ServerInfo() {
             экономику на сервере и стимулирует взаимодействие между игроками.
           </p>
         </div>
-        <div>
+        <div className='mt-2'>
           <img src='/survival-minigames-image.jpg' className='rounded-tr-3xl rounded-bl-3xl ' />
         </div>
       </div>
@@ -32,7 +32,7 @@ export default function ServerInfo() {
             сообществом, где вы сможете найти себе новых друзей.
           </p>
         </div>
-        <div>
+        <div className='mt-2'>
           <img
             src='/survival-minigames-image.jpg'
             className='rounded-tr-3xl rounded-bl-3xl'
