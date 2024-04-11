@@ -20,7 +20,7 @@ export default function SuggestionBox() {
   };
   return (
     <div className='px-10 py-10 md:px-32'>
-      <div className='md:px-80'>
+      <div className='lg:px-80'>
         <form
           className='flex flex-col items-center gap-6'
           onSubmit={handleSubmit}
