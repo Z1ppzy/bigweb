@@ -35,42 +35,42 @@ export default function DropDownMenu() {
           <SheetDescription>
           <Link to='/' className={`flex flex-col text-center text-2xl ${isActiveLink('/') ? 'text-purple-800' : ''}`}>
               <span>
-                Home
+                Главная
               </span>
             </Link>
             <Link to='/forgot_password' className={`flex flex-col text-center text-2xl ${isActiveLink('/forgot_password') ? 'text-purple-800' : ''}`}>
               <span>
-                ForgotPassword
+                Забыли пароль
               </span>
             </Link>
             <Link to='/profile' className={`flex flex-col text-center text-2xl ${isActiveLink('/profile') ? 'text-purple-800' : ''}`}>
               <span>
-                Profile
+                Профиль
               </span>
             </Link>
             <Link to='/terms' className={`flex flex-col text-center text-2xl ${isActiveLink('/terms') ? 'text-purple-800' : ''}`}>
               <span>
-                Terms
+                Условия использования
               </span>
             </Link>
             <Link to='/rules' className={`flex flex-col text-center text-2xl ${isActiveLink('/rules') ? 'text-purple-800' : ''}`}>
               <span >
-                Rules
+                Правила 
               </span>
             </Link>
             <Link to='/admindashboard' className={`flex flex-col text-center text-2xl ${isActiveLink('/admindashboard') ? 'text-purple-800' : ''}`}>
               <span>
-                AdminDashboard
+                Панель управления
               </span>
             </Link>
             <Link to='/shop' className={`flex flex-col text-center text-2xl ${isActiveLink('/shop') ? 'text-purple-800' : ''}`}>
               <span>
-                Shop
+                Магазин 
               </span>
             </Link>
             <Link to='/rewards' className={`flex flex-col text-center text-2xl ${isActiveLink('/rewards') ? 'text-purple-800' : ''}`}>
               <span>
-                Rewards
+                Награды
               </span>
             </Link>
             <ThemeSwitch />
