@@ -10,16 +10,15 @@ import WhyWe from '@/components/WhyWe';
 export default function Home() {
   return (
     <>
-      <div className=''>
-        <div className='md:grid grid-cols-2 min-h-screen'>
-          <div className='mt-10 md:mt-8'>
+        <div className='md:grid grid-cols-2 min-h-screen mt-16'>
+          <div>
             <SliderImg />
           </div>
-          <div className='px-5 md:px-10 mt-2 md:mt-10'>
+          <div className='px-5 md:px-10 '>
             <h1 className='font-semibold text-xl text-center md:text-2xl'>
               Начните свою историю в нашей виртуальной песочнице!
             </h1>
-            <p className='text-center font-extralight text-lg mt-4 md:mt-3'>
+            <p className='text-center font-light text-lg mt-4 md:mt-3'>
               Приветствуем Вас на нашем сервере Minecraft! Откройте для себя
               мир, где каждый шаг - это приключение. Уникальные плагины обогатят
               ваш игровой процесс, предоставляя возможности для творчества и
@@ -50,7 +49,6 @@ export default function Home() {
         </div>
         <ToastContainer />
         <SuggestionBox />
-      </div>
     </>
   );
 }

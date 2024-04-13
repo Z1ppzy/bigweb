@@ -29,7 +29,7 @@ export default function SuggestionBox() {
             <h1 className='text-center font-bold text-2xl'>
               Предложить идею по улучшению сервера
             </h1>
-            <p className='font-light md:dark:font-extralight text-sm mt-0'>
+            <p className='font-light md:dark:font-extralight  mt-0'>
               Идея должна быть адекватной и правильно выраженной!
             </p>
           </div>
