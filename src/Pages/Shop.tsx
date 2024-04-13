@@ -77,7 +77,7 @@ export default function Shop() {
                 <img
                   src={product.imageSrc}
                   alt={product.imageAlt}
-                  className="h-full w-full object-cover object-center group-hover:opacity-75"
+                  className="h-full w-full object-cover object-center group-hover:opacity-75 rounded-3xl"
                 />
                 <div className="flex flex-col items-center mt-4">
                   <h3 className="text-sm text-gray-700">{product.name}</h3>
