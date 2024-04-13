@@ -9,7 +9,7 @@ const products: Product[] = [
     imageSrc: '/public/tn.jpg',
     imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
     href: '/herald',
-    description: "df"
+    description: "123"
   },
   {
     id: 1,
@@ -18,7 +18,7 @@ const products: Product[] = [
     imageSrc: '/public/tn.jpg',
     imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
     href: '/herald',
-    description: "df"
+    description: "321"
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const products: Product[] = [
     imageSrc: '/public/002.jpg',
     imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
     href: '/guardian',
-    description: "df"
+    description: "111"
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const products: Product[] = [
     imageSrc: '/public/003.jpg',
     imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
     href: '/archong',
-    description: "df"
+    description: "222"
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const products: Product[] = [
     imageSrc: '/public/004.jpg',
     imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
     href: '/mechanical-pencil',
-    description: "df"
+    description: "333"
   },
 ];
 export default function Shop() {
