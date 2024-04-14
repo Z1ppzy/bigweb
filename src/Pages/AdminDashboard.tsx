@@ -1,6 +1,4 @@
 import axios from 'axios';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { format } from '@formkit/tempo';
@@ -24,6 +22,9 @@ import {
 import { Textarea } from '@/components/ui/textarea';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useCheckRole from '@/hooks/useCheckRole';
+import useCheckAuth from '@/hooks/useCheckAuth';
+import Loader from '@/components/Loader';
 
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
@@ -70,20 +71,6 @@ export default function AdminDashBoard() {
       setImage(event.target.files[0]);
     }
   };
-  const navigate = useNavigate();
-  useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    if (!token) {
-      navigate('/login');
-    }
-    const fetchUser = async () => {
-      const user = await axios.get('http://localhost:8000/api/user');
-      if (user.data.role == 'player') {
-        navigate('/');
-      }
-    };
-    fetchUser();
-  }, []);
   const [name, setName] = useState('');
   const [user, setUser] = useState<user | null>(null);
   const [notFound, setNotFound] = useState(false);
@@ -107,6 +94,13 @@ export default function AdminDashBoard() {
       setNotFound(true);
     }
   };
+  const isLoadingAuth = useCheckAuth();
+  const isLoadingRole = useCheckRole('admin');
+
+
+  if (isLoadingAuth || isLoadingRole) {
+    return <Loader />;
+  }
 
   return (
     <>

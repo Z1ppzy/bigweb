@@ -77,7 +77,7 @@ export default function Profile() {
     const isLoading = useCheckAuth();
   
     if (isLoading) {
-      return <Loader />;  // Показываем индикатор загрузки, пока идет проверка
+      return <Loader />;  
     }
 
   return (
