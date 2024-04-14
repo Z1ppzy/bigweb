@@ -15,8 +15,18 @@ export default function useCheckAuth() {
         setIsLoading(false);
       } catch (error) {
         const axiosError = error as AxiosError;
-        if (axiosError.response && axiosError.response.status === 401) {
-          navigate('/login');
+        if (axiosError.isAxiosError) {
+          if (axiosError.response) {
+            if (axiosError.response.status === 401) {
+              navigate('/login');
+            } else {
+              navigate('/error');
+            }
+          } else {
+            navigate('/login');
+          }
+        } else {
+          navigate('/error');
         }
         setIsLoading(false);
       }
