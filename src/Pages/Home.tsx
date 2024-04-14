@@ -37,6 +37,7 @@ export default function Home() {
                 Начать играть
               </Link>
             </div>
+            <CopyIP />
           </div>
         </div>
         <div>
