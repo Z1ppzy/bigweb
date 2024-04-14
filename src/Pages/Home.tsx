@@ -6,15 +6,16 @@ import SuggestionBox from '@/components/SuggestionBox';
 import AccordionServer from '@/components/AccordionServer';
 import ServerInfo from '@/components/ServerInfo';
 import WhyWe from '@/components/WhyWe';
+import CopyIP from '@/components/CopyIP';
 
 export default function Home() {
   return (
     <>
-        <div className='md:grid grid-cols-2 min-h-screen mt-16'>
+        <div className='lg:grid grid-cols-2 min-h-screen mt-16'>
           <div>
             <SliderImg />
           </div>
-          <div className='px-5 md:px-10 '>
+          <div className='px-5 md:px-10 mt-10 md:mt-0'>
             <h1 className='font-semibold text-xl text-center md:text-2xl'>
               Начните свою историю в нашей виртуальной песочнице!
             </h1>

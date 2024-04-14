@@ -1,6 +1,6 @@
 export default function ServerInfo() {
   return (
-    <div className='md:grid grid-cols-2 mt-10 md:px-10 px-4 gap-4'>
+    <div className='md:grid grid-cols-2 mt-10 md:px-10 px-4 gap-20'>
       <div className='flex flex-col'>
         <h1 className='font-bold text-left text-2xl'>Semi-Classic</h1>
         <p className='bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 py-0.5 px-20 w-fit rounded-lg'></p>
@@ -18,7 +18,7 @@ export default function ServerInfo() {
         <div className='w-full md:h-52'>
           <img
             src='/survival-minigames-image.jpg'
-            className='rounded-tr-3xl rounded-bl-3xl w-full h-auto md:h-52 object-cover mt-2'
+            className='rounded-tr-3xl rounded-bl-3xl w-full h-auto md:h-52 object-cover mt-4'
           />
         </div>
       </div>
@@ -38,7 +38,7 @@ export default function ServerInfo() {
         <div className='w-full md:h-52'>
           <img
             src='/survival-minigames-image.jpg'
-            className='rounded-tr-3xl rounded-bl-3xl w-full h-auto md:h-52 object-cover mt-2'
+            className='rounded-tr-3xl rounded-bl-3xl w-full h-auto md:h-52 object-cover mt-4'
           />
         </div>
       </div>
