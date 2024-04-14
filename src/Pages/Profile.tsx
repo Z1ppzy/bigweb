@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -10,6 +9,8 @@ import { Input } from '@/components/ui/input';
 import Greeting from '@/components/Greeting';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loader from '@/components/Loader';
+import useCheckAuth from '@/hooks/useCheckAuth';
 
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
@@ -65,12 +66,7 @@ export default function Profile() {
   };
 
   const [user, setUser] = useState<user>();
-  const navigate = useNavigate();
   useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    if (!token) {
-      navigate('/login');
-    }
     const fetchUser = async () => {
       const user = await axios.get('http://localhost:8000/api/user');
       setUser(user.data);
@@ -78,6 +74,11 @@ export default function Profile() {
     };
     fetchUser();
   }, []);
+    const isLoading = useCheckAuth();
+  
+    if (isLoading) {
+      return <Loader />;  // Показываем индикатор загрузки, пока идет проверка
+    }
 
   return (
     <>
