@@ -1,14 +1,24 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import useCheckAuth from '@/hooks/useCheckAuth';
+import { Loader } from 'lucide-react';
+
+interface Notification {
+  id: number;
+  message: string;
+}
 
 export default function Notifications() {
-  const navigate = useNavigate();
-  useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    if (!token) {
-      navigate('/login');
-    }
-  }, []);
+  const isLoading = useCheckAuth();
+  const [notifications, setNotifications] = useState<Notification[]>([
+
+    // { id: 1, message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, asperiores.' },
+    // { id: 2, message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, asperiores.' },
+  ]);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <div className='h-screen'>
       <div className='p-4 md:p-10'>
@@ -24,30 +34,17 @@ export default function Notifications() {
           </p>
         </div>
         <div className='md:pr-52 mt-8'>
-          <div className='bg-white w-full h-16 rounded-lg mt-2 text-black hover:bg-slate-300 duration-500 cursor-pointer'>
-            <p className='p-2'>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est,
-              asperiores.
-            </p>
-          </div>
-          <div className='bg-white w-full h-16 rounded-lg mt-2 text-black hover:bg-slate-300 duration-500 cursor-pointer'>
-            <p className='p-2'>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est,
-              asperiores.
-            </p>
-          </div>
-          <div className='bg-white w-full h-16 rounded-lg mt-2 text-black hover:bg-slate-300 duration-500 cursor-pointer'>
-            <p className='p-2'>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est,
-              asperiores.
-            </p>
-          </div>
-          <div className='bg-white w-full h-16 rounded-lg mt-2 text-black hover:bg-slate-300 duration-500 cursor-pointer'>
-            <p className='p-2'>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est,
-              asperiores.
-            </p>
-          </div>
+          {notifications.length === 0 ? (
+            <p className='font-bold text-2xl text-center md:text-left'>У вас нет уведомлений.</p>
+          ) : (
+            notifications.map(notification => (
+              <div key={notification.id} className='bg-white w-full h-16 rounded-lg mt-2 text-black hover:bg-slate-300 duration-500 cursor-pointer'>
+                <p className='p-2'>
+                  {notification.message}
+                </p>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </div>
