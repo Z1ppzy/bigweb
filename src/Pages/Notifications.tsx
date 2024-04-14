@@ -9,7 +9,7 @@ interface Notification {
 
 export default function Notifications() {
   const isLoading = useCheckAuth();
-  const [notifications, setNotifications] = useState<Notification[]>([
+  const [notifications] = useState<Notification[]>([
 
     // { id: 1, message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, asperiores.' },
     // { id: 2, message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, asperiores.' },
