@@ -228,7 +228,7 @@ export default function Rules() {
           </li>
         </ul>
         <h1 className='mt-2 text-lg font-bold'>6 Инвентарь и снаряжение</h1>
-        <ul>
+        <ul className='font-medium pl-3 space-y-1'>
           <li>
             <strong>6.1</strong> Администрация не возвращает инвентарь, если вы
             потеряли его во время стандартного игрового процесса или в
@@ -246,7 +246,7 @@ export default function Rules() {
           </li>
         </ul>
         <h1 className='mt-2 text-lg font-bold'>7 Кланы</h1>
-        <ul>
+        <ul className='font-medium pl-3 space-y-1'>
           <li>
             <strong>7.1</strong> Создание клана с оскорбительным, провокационным
             или неадекватным названием запрещено. В случае если ваш клан будет
@@ -266,7 +266,7 @@ export default function Rules() {
           </li>
         </ul>
         <h1 className='mt-2 text-lg font-bold'>8 Наказания и амнистия</h1>
-        <ul>
+        <ul className='font-medium pl-3 space-y-1'>
           <li>
             <strong>8.1</strong> Все выданные наказания не подлежат обсуждению в
             негативном ключе или злорадству со стороны окружающих

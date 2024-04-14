@@ -44,7 +44,7 @@ export default function Home() {
         <div>
           <WhyWe />
         </div>
-        <div className='px-8 mx-4 lg:mx-40 mb-10'>
+        <div>
           <AccordionServer />
         </div>
         <ToastContainer />

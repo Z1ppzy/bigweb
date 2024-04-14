@@ -8,7 +8,7 @@ export default function WhyWe() {
         <h1 className='mt-8 text-2xl'>
           <b>Почему именно мы?</b>
         </h1>
-        <div className='mx-20 place-items-center md:grid grid-cols-3 mb-10 gap-20'>
+        <div className='mx-6 lg:mx-20 place-items-center md:grid grid-cols-3 mb-10 gap-20'>
           <div className='flex flex-col items-center mt-5'>
             <GiProcessor className='text-8xl text-purple-950 ' />
             <p className='font-light'>

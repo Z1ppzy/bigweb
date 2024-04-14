@@ -19,8 +19,8 @@ export default function SuggestionBox() {
     setText(event.target.value);
   };
   return (
-    <div className='px-10 py-10 md:px-32'>
-      <div className='lg:px-80'>
+    <div className='px-10 py-10'>
+      <div className='max-w-md lg:max-w-xl mx-auto'>
         <form
           className='flex flex-col items-center gap-6'
           onSubmit={handleSubmit}
@@ -37,6 +37,7 @@ export default function SuggestionBox() {
             placeholder='Снять зипзи с админа...'
             value={text}
             onChange={handleChange}
+            className='w-full'
           />
           <Button className='w-fit' type='submit'>
             Отправить
