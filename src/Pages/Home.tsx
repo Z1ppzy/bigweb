@@ -6,7 +6,6 @@ import SuggestionBox from '@/components/SuggestionBox';
 import AccordionServer from '@/components/AccordionServer';
 import ServerInfo from '@/components/ServerInfo';
 import WhyWe from '@/components/WhyWe';
-import CopyIP from '@/components/CopyIP';
 
 export default function Home() {
   return (
@@ -37,7 +36,6 @@ export default function Home() {
                 Начать играть
               </Link>
             </div>
-            <CopyIP />
           </div>
         </div>
         <div>

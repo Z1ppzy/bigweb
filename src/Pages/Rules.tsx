@@ -11,7 +11,7 @@ export default function Rules() {
         <h1 className='font-bold text-2xl'>Правила</h1>
         <p className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 py-1 px-20 w-fit rounded-lg'></p>
       </div>
-      <div className='px-10 pb-10'>
+      <div className='px-10 pb-10 max-w-4xl mx-auto'>
         <h1 className='font-bold text-xl'>1 Общее положение правил</h1>
         <ul className='font-medium pl-3 space-y-1'>
           <li>
