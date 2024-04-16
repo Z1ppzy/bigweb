@@ -25,7 +25,6 @@ interface user {
 
 export default function Profile() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
       setSelectedFile(event.target.files[0]);
@@ -44,6 +43,8 @@ export default function Profile() {
         );
         console.log(response.data);
         toast.success('Аватар успешно обновлен!');
+        const user = await axios.get('http://localhost:8000/api/user');
+        setUser(user.data);
       } catch (error) {
         console.error(error);
         toast.error('Ошибка при обновлении аватара.');
@@ -60,6 +61,8 @@ export default function Profile() {
       );
       console.log(response.data);
       toast.success('Аватар успешно удален!');
+      const user = await axios.get('http://localhost:8000/api/user');
+      setUser(user.data);
     } catch (error) {
       console.error(error);
     }
@@ -74,11 +77,11 @@ export default function Profile() {
     };
     fetchUser();
   }, []);
-    const isLoading = useCheckAuth();
-  
-    if (isLoading) {
-      return <Loader />;  
-    }
+  const isLoading = useCheckAuth();
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <>
