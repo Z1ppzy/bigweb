@@ -50,9 +50,9 @@ export default function Register() {
         },
       };
       const body = JSON.stringify(values);
-      await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+      await axios.get(import.meta.env.VITE_BACKEND_URL + '/sanctum/csrf-cookie');
       const res = await axios.post(
-        'http://localhost:8000/register',
+        import.meta.env.VITE_BACKEND_URL + '/register',
         body,
         config
       );

@@ -55,9 +55,9 @@ export default function Login() {
         },
       };
       const body = JSON.stringify(values);
-      await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+      await axios.get(import.meta.env.VITE_BACKEND_URL + '/sanctum/csrf-cookie');
 
-      const res = await axios.post('http://localhost:8000/login', body, config);
+      const res = await axios.post(import.meta.env.VITE_BACKEND_URL + '/login', body, config);
       navigate('/profile');
       localStorage.setItem('authToken', res.data.token);
     } catch (err) {}

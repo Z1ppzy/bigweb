@@ -11,6 +11,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export function ChangePassword() {
   const [currentPassword, setCurrentPassword] = useState('');
@@ -19,7 +20,7 @@ export function ChangePassword() {
 
   const handleSubmit = async () => {
     if (newPassword !== confirmPassword) {
-      alert('Новые пароли не совпадают!');
+      toast.error('Новые пароли не совпадают!');
       return;
     }
 
@@ -31,9 +32,9 @@ export function ChangePassword() {
           newPassword,
         }
       );
-      alert('Пароль успешно изменен!');
+      toast.success('Пароль успешно изменен!');
     } catch (error) {
-      alert('Произошла ошибка при изменении пароля!');
+      toast.error('Произошла ошибка при изменении пароля!');
     }
   };
   return (
