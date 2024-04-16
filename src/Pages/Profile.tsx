@@ -39,12 +39,14 @@ export default function Profile() {
 
       try {
         const response = await axios.post(
-          'http://localhost:8000/api/avatar/upload',
+          import.meta.env.VITE_BACKEND_URL + '/api/avatar/upload',
           formData
         );
         console.log(response.data);
         toast.success('Аватар успешно обновлен!');
-        const user = await axios.get('http://localhost:8000/api/user');
+        const user = await axios.get(
+          import.meta.env.VITE_BACKEND_URL + '/api/user'
+        );
         setUser(user.data);
       } catch (error) {
         console.error(error);
@@ -58,11 +60,13 @@ export default function Profile() {
   const handleDelete = async () => {
     try {
       const response = await axios.delete(
-        'http://localhost:8000/api/avatar/delete'
+        import.meta.env.VITE_BACKEND_URL + '/api/avatar/delete'
       );
       console.log(response.data);
       toast.success('Аватар успешно удален!');
-      const user = await axios.get('http://localhost:8000/api/user');
+      const user = await axios.get(
+        import.meta.env.VITE_BACKEND_URL + '/api/user'
+      );
       setUser(user.data);
     } catch (error) {
       console.error(error);
@@ -72,7 +76,9 @@ export default function Profile() {
   const [user, setUser] = useState<user>();
   useEffect(() => {
     const fetchUser = async () => {
-      const user = await axios.get('http://localhost:8000/api/user');
+      const user = await axios.get(
+        import.meta.env.VITE_BACKEND_URL + '/api/user'
+      );
       setUser(user.data);
       // console.log();
     };
