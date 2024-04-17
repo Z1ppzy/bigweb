@@ -6,7 +6,7 @@ import ConfirmEmail from './ConfirmEmail';
 
 export function ProfileTabs() {
   return (
-    <Tabs defaultValue='account' className='w-[400px]'>
+    <Tabs defaultValue='changepswd' className='w-[400px]'>
       <TabsList className=''>
         <TabsTrigger value='changepswd'>Смена пароля</TabsTrigger>
         <TabsTrigger value='changeavatar'>Персонализация</TabsTrigger>
