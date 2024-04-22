@@ -150,7 +150,9 @@ export default function Profile() {
               )}
               {!user && <Skeleton className='h-[80px] w-[250px] rounded-xl' />}
             </div>
+            <div className=''>
             <ProfileTabs />
+            </div>
           </div>
           <div className='p-10 md:mx-16'>
             <div className='text-center w-full bg-slate-500 mb-2 p-10 rounded-lg duration-500 hover:scale-110'>
