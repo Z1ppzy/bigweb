@@ -2,10 +2,10 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useCheckRole from '@/hooks/useCheckRole';
 import useCheckAuth from '@/hooks/useCheckAuth';
-import Loader from '@/components/Loader';
-import RoleChangeCard from '@/components/RoleChangeCard';
-import { NewsCard } from '@/components/NewsCard';
-import { PlayerSearchCard } from '@/components/PlayerSearchCard';
+import Loader from '@/components/Global/Loader';
+import RoleChangeCard from '@/components/AdminDashBoard/RoleChangeCard';
+import { NewsCard } from '@/components/AdminDashBoard/NewsCard';
+import { PlayerSearchCard } from '@/components/AdminDashBoard/PlayerSearchCard';
 
 
 export default function AdminDashBoard() {

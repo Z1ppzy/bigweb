@@ -6,12 +6,12 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { format } from '@formkit/tempo';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import Greeting from '@/components/Greeting';
+import Greeting from '@/components/Profile/Greeting';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Loader from '@/components/Loader';
+import Loader from '@/components/Global/Loader';
 import useCheckAuth from '@/hooks/useCheckAuth';
-import { ProfileTabs } from '@/components/ProfileTabs';
+import { ProfileTabs } from '@/components/Profile/ProfileTabs';
 
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;

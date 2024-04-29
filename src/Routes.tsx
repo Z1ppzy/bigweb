@@ -6,7 +6,7 @@ import Profile from './Pages/Profile';
 import Register from './Pages/Register';
 import Terms from './Pages/Terms';
 import ForgotPassword from './Pages/ForgotPassword';
-import Layout from './components/Layout';
+import Layout from './components/Global/Layout';
 import Rules from './Pages/Rules';
 import AdminDashboard from './Pages/AdminDashboard';
 import Shop from './Pages/Shop';
