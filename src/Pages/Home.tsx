@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import SliderImg from '@/components/SliderImg';
+import SliderImg from '@/components/Home/SliderImg';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import SuggestionBox from '@/components/SuggestionBox';
-import AccordionServer from '@/components/AccordionServer';
-import ServerInfo from '@/components/ServerInfo';
-import WhyWe from '@/components/WhyWe';
+import SuggestionBox from '@/components/Home/SuggestionBox';
+import AccordionServer from '@/components/Home/AccordionServer';
+import ServerInfo from '@/components/Home/ServerInfo';
+import WhyWe from '@/components/Home/WhyWe';
 
 export default function Home() {
   return (

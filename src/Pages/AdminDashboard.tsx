@@ -2,10 +2,11 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useCheckRole from '@/hooks/useCheckRole';
 import useCheckAuth from '@/hooks/useCheckAuth';
-import Loader from '@/components/Loader';
-import RoleChangeCard from '@/components/RoleChangeCard';
-import { NewsCard } from '@/components/NewsCard';
-import { PlayerSearchCard } from '@/components/PlayerSearchCard';
+import Loader from '@/components/Default/Loader';
+import RoleChangeCard from '@/components/Admin/RoleChangeCard';
+import { NewsCard } from '@/components/Admin/NewsCard';
+import { PlayerSearchCard } from '@/components/Admin/PlayerSearchCard';
+import SuggestionBoxList from '@/components/Admin/SuggestionBoxList';
 
 
 export default function AdminDashBoard() {
@@ -34,6 +35,9 @@ export default function AdminDashBoard() {
           </div>
           <div className='flex flex-col items-center'>
             <RoleChangeCard />
+          </div>
+          <div className='flex flex-col items-center'>
+            <SuggestionBoxList />
           </div>
         </div>
         <ToastContainer
