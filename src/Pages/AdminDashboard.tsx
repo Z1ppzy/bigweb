@@ -36,8 +36,9 @@ export default function AdminDashBoard() {
           <div className='flex flex-col items-center'>
             <RoleChangeCard />
           </div>
+          {/* test */}
           <div className='flex flex-col items-center'>
-            <SuggestionBoxList />
+            <SuggestionBoxList /> 
           </div>
         </div>
         <ToastContainer
