@@ -12,7 +12,6 @@ import { ThemeSwitch } from './ThemeSwitch';
 import LoginButton from './LoginButton';
 import RegisterButton from './RegisterButton';
 
-
 export default function DropDownMenu() {
   const location = useLocation();
   const isActiveLink = (path: string) => location.pathname === path;
@@ -33,45 +32,125 @@ export default function DropDownMenu() {
             <RegisterButton />
           </div>
           <SheetDescription>
-          <Link to='/' className={`flex flex-col text-center text-2xl ${isActiveLink('/') ? 'text-purple-800' : ''}`}>
-              <span>
-                Главная
-              </span>
+            <Link
+              to='/'
+              className={`flex flex-col text-center text-2xl relative group ${
+                isActiveLink('/') ? 'active' : ''
+              }`}
+            >
+              <span>Главная</span>
+              <div
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
+                  isActiveLink('/')
+                    ? 'bg-purple-800'
+                    : 'group-hover:bg-purple-800'
+                }`}
+              ></div>
             </Link>
-            <Link to='/forgot_password' className={`flex flex-col text-center text-2xl ${isActiveLink('/forgot_password') ? 'text-purple-800' : ''}`}>
-              <span>
-                Забыли пароль
-              </span>
+            <Link
+              to='/forgot_password'
+              className={`flex flex-col text-center text-2xl relative group ${
+                isActiveLink('/forgot_password') ? 'active' : ''
+              }`}
+            >
+              <span>Забыли пароль</span>
+              <div
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
+                  isActiveLink('/forgot_password')
+                    ? 'bg-purple-800'
+                    : 'group-hover:bg-purple-800'
+                }`}
+              ></div>
             </Link>
-            <Link to='/profile' className={`flex flex-col text-center text-2xl ${isActiveLink('/profile') ? 'text-purple-800' : ''}`}>
-              <span>
-                Профиль
-              </span>
+            <Link
+              to='/profile'
+              className={`flex flex-col text-center text-2xl relative group ${
+                isActiveLink('/profile') ? 'active' : ''
+              }`}
+            >
+              <span>Профиль</span>
+              <div
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
+                  isActiveLink('/profile')
+                    ? 'bg-purple-800'
+                    : 'group-hover:bg-purple-800'
+                }`}
+              ></div>
             </Link>
-            <Link to='/terms' className={`flex flex-col text-center text-2xl ${isActiveLink('/terms') ? 'text-purple-800' : ''}`}>
-              <span>
-                Условия использования
-              </span>
+            <Link
+              to='/terms'
+              className={`flex flex-col text-center text-2xl relative group ${
+                isActiveLink('/terms') ? 'active' : ''
+              }`}
+            >
+              <span>Условия использования</span>
+              <div
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
+                  isActiveLink('/terms')
+                    ? 'bg-purple-800'
+                    : 'group-hover:bg-purple-800'
+                }`}
+              ></div>
             </Link>
-            <Link to='/rules' className={`flex flex-col text-center text-2xl ${isActiveLink('/rules') ? 'text-purple-800' : ''}`}>
-              <span >
-                Правила 
-              </span>
+            <Link
+              to='/rules'
+              className={`flex flex-col text-center text-2xl relative group ${
+                isActiveLink('/rules') ? 'active' : ''
+              }`}
+            >
+              <span>Правила</span>
+              <div
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
+                  isActiveLink('/rules')
+                    ? 'bg-purple-800'
+                    : 'group-hover:bg-purple-800'
+                }`}
+              ></div>
             </Link>
-            <Link to='/admindashboard' className={`flex flex-col text-center text-2xl ${isActiveLink('/admindashboard') ? 'text-purple-800' : ''}`}>
-              <span>
-                Панель управления
-              </span>
+            <Link
+              to='/admindashboard'
+              className={`flex flex-col text-center text-2xl relative group ${
+                isActiveLink('/admindashboard') ? 'active' : ''
+              }`}
+            >
+              <span>Панель управления</span>
+              <div
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
+                  isActiveLink('/admindashboard')
+                    ? 'bg-purple-800'
+                    : 'group-hover:bg-purple-800'
+                }`}
+              ></div>
             </Link>
-            <Link to='/shop' className={`flex flex-col text-center text-2xl ${isActiveLink('/shop') ? 'text-purple-800' : ''}`}>
-              <span>
-                Магазин 
-              </span>
+            <Link
+              to='/shop'
+              className={`flex flex-col text-center text-2xl relative group ${
+                isActiveLink('/shop') ? 'active' : ''
+              }`}
+            >
+              <span>Магазин</span>
+              <div
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
+                  isActiveLink('/shop')
+                    ? 'bg-purple-800'
+                    : 'group-hover:bg-purple-800'
+                }`}
+              ></div>
             </Link>
-            <Link to='/rewards' className={`flex flex-col text-center text-2xl ${isActiveLink('/rewards') ? 'text-purple-800' : ''}`}>
-              <span>
-                Награды
-              </span>
+            <Link
+              to='/rewards'
+              className={`flex flex-col text-center text-2xl relative group ${
+                isActiveLink('/rewards') ? 'active' : ''
+              }`}
+            >
+              <span>Награды</span>
+              <div
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
+                  isActiveLink('/rewards')
+                    ? 'bg-purple-800'
+                    : 'group-hover:bg-purple-800'
+                }`}
+              ></div>
             </Link>
             <ThemeSwitch />
           </SheetDescription>
