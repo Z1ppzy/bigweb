@@ -39,13 +39,13 @@ export default function DropDownMenu() {
               }`}
             >
               <span>Главная</span>
-              <div
+              <span
                 className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
                   isActiveLink('/')
                     ? 'bg-purple-800'
                     : 'group-hover:bg-purple-800'
                 }`}
-              ></div>
+              ></span>
             </Link>
             <Link
               to='/forgot_password'
@@ -54,13 +54,13 @@ export default function DropDownMenu() {
               }`}
             >
               <span>Забыли пароль</span>
-              <div
+              <span
                 className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
                   isActiveLink('/forgot_password')
                     ? 'bg-purple-800'
                     : 'group-hover:bg-purple-800'
                 }`}
-              ></div>
+              ></span>
             </Link>
             <Link
               to='/profile'
@@ -69,13 +69,13 @@ export default function DropDownMenu() {
               }`}
             >
               <span>Профиль</span>
-              <div
+              <span
                 className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
                   isActiveLink('/profile')
                     ? 'bg-purple-800'
                     : 'group-hover:bg-purple-800'
                 }`}
-              ></div>
+              ></span>
             </Link>
             <Link
               to='/terms'
@@ -84,13 +84,13 @@ export default function DropDownMenu() {
               }`}
             >
               <span>Условия использования</span>
-              <div
+              <span
                 className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
                   isActiveLink('/terms')
                     ? 'bg-purple-800'
                     : 'group-hover:bg-purple-800'
                 }`}
-              ></div>
+              ></span>
             </Link>
             <Link
               to='/rules'
@@ -99,13 +99,13 @@ export default function DropDownMenu() {
               }`}
             >
               <span>Правила</span>
-              <div
+              <span
                 className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
                   isActiveLink('/rules')
                     ? 'bg-purple-800'
                     : 'group-hover:bg-purple-800'
                 }`}
-              ></div>
+              ></span>
             </Link>
             <Link
               to='/admindashboard'
@@ -114,13 +114,13 @@ export default function DropDownMenu() {
               }`}
             >
               <span>Панель управления</span>
-              <div
+              <span
                 className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
                   isActiveLink('/admindashboard')
                     ? 'bg-purple-800'
                     : 'group-hover:bg-purple-800'
                 }`}
-              ></div>
+              ></span>
             </Link>
             <Link
               to='/shop'
@@ -129,13 +129,13 @@ export default function DropDownMenu() {
               }`}
             >
               <span>Магазин</span>
-              <div
+              <span
                 className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
                   isActiveLink('/shop')
                     ? 'bg-purple-800'
                     : 'group-hover:bg-purple-800'
                 }`}
-              ></div>
+              ></span>
             </Link>
             <Link
               to='/rewards'
@@ -144,13 +144,13 @@ export default function DropDownMenu() {
               }`}
             >
               <span>Награды</span>
-              <div
+              <span
                 className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
                   isActiveLink('/rewards')
                     ? 'bg-purple-800'
                     : 'group-hover:bg-purple-800'
                 }`}
-              ></div>
+              ></span>
             </Link>
             <ThemeSwitch />
           </SheetDescription>
