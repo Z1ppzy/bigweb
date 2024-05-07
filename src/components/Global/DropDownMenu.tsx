@@ -34,16 +34,15 @@ export default function DropDownMenu() {
           <SheetDescription>
             <Link
               to='/'
-              className={`flex flex-col text-center text-2xl relative group ${
-                isActiveLink('/') ? 'active' : ''
+              className={`flex flex-col text-center text-2xl relative group 
               }`}
             >
               <span>Главная</span>
               <span
-                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-500 ease-in-out ${
                   isActiveLink('/')
-                    ? 'bg-purple-800'
-                    : 'group-hover:bg-purple-800'
+                    ? 'bg-purple-800 scale-x-100'
+                    : 'scale-x-0 group-hover:bg-purple-800 group-hover:scale-x-100'
                 }`}
               ></span>
             </Link>
@@ -55,10 +54,10 @@ export default function DropDownMenu() {
             >
               <span>Забыли пароль</span>
               <span
-                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-500 ease-in-out ${
                   isActiveLink('/forgot_password')
-                    ? 'bg-purple-800'
-                    : 'group-hover:bg-purple-800'
+                    ? 'bg-purple-800 scale-x-100'
+                    : 'scale-x-0 group-hover:bg-purple-800 group-hover:scale-x-100'
                 }`}
               ></span>
             </Link>
@@ -70,10 +69,10 @@ export default function DropDownMenu() {
             >
               <span>Профиль</span>
               <span
-                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-500 ease-in-out ${
                   isActiveLink('/profile')
-                    ? 'bg-purple-800'
-                    : 'group-hover:bg-purple-800'
+                    ? 'bg-purple-800 scale-x-100'
+                    : 'scale-x-0 group-hover:bg-purple-800 group-hover:scale-x-100'
                 }`}
               ></span>
             </Link>
@@ -85,10 +84,10 @@ export default function DropDownMenu() {
             >
               <span>Условия использования</span>
               <span
-                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-500 ease-in-out ${
                   isActiveLink('/terms')
-                    ? 'bg-purple-800'
-                    : 'group-hover:bg-purple-800'
+                    ? 'bg-purple-800 scale-x-100'
+                    : 'scale-x-0 group-hover:bg-purple-800 group-hover:scale-x-100'
                 }`}
               ></span>
             </Link>
@@ -100,10 +99,10 @@ export default function DropDownMenu() {
             >
               <span>Правила</span>
               <span
-                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-500 ease-in-out ${
                   isActiveLink('/rules')
-                    ? 'bg-purple-800'
-                    : 'group-hover:bg-purple-800'
+                    ? 'bg-purple-800 scale-x-100'
+                    : 'scale-x-0 group-hover:bg-purple-800 group-hover:scale-x-100'
                 }`}
               ></span>
             </Link>
@@ -115,10 +114,10 @@ export default function DropDownMenu() {
             >
               <span>Панель управления</span>
               <span
-                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-500 ease-in-out ${
                   isActiveLink('/admindashboard')
-                    ? 'bg-purple-800'
-                    : 'group-hover:bg-purple-800'
+                    ? 'bg-purple-800 scale-x-100'
+                    : 'scale-x-0 group-hover:bg-purple-800 group-hover:scale-x-100'
                 }`}
               ></span>
             </Link>
@@ -130,10 +129,10 @@ export default function DropDownMenu() {
             >
               <span>Магазин</span>
               <span
-                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-500 ease-in-out ${
                   isActiveLink('/shop')
-                    ? 'bg-purple-800'
-                    : 'group-hover:bg-purple-800'
+                    ? 'bg-purple-800 scale-x-100'
+                    : 'scale-x-0 group-hover:bg-purple-800 group-hover:scale-x-100'
                 }`}
               ></span>
             </Link>
@@ -145,10 +144,10 @@ export default function DropDownMenu() {
             >
               <span>Награды</span>
               <span
-                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-300 ease-in-out ${
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/4 h-1 rounded-full transition-all duration-500 ease-in-out ${
                   isActiveLink('/rewards')
-                    ? 'bg-purple-800'
-                    : 'group-hover:bg-purple-800'
+                    ? 'bg-purple-800 scale-x-100'
+                    : 'scale-x-0 group-hover:bg-purple-800 group-hover:scale-x-100'
                 }`}
               ></span>
             </Link>
