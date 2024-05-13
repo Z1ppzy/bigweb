@@ -154,7 +154,7 @@ export default function Profile() {
             <ProfileTabs />
             </div>
           </div>
-          <div className='p-10 md:mx-16'>
+          {/* <div className='p-10 md:mx-16'>
             <div className='text-center w-full bg-slate-500 mb-2 p-10 rounded-lg duration-500 hover:scale-110'>
               <h1 className='text-2xl font-bold'>
                 Перейдите по баннеру для покупки донатика :)
@@ -167,7 +167,7 @@ export default function Profile() {
                 Distinctio, saepe lore!
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
         <ToastContainer
           position='top-right'
