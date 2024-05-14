@@ -40,7 +40,7 @@ export function ChangePassword() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle></CardTitle>
+        <CardTitle>Изменение пароля</CardTitle>
         <CardDescription>
           Измените свой пароль здесь. После сохранения вы выйдете из системы.
         </CardDescription>

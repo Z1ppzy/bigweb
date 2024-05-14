@@ -2,16 +2,14 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { format } from '@formkit/tempo';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import Greeting from '@/components/Profile/Greeting';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from '@/components/Global/Loader';
 import useCheckAuth from '@/hooks/useCheckAuth';
 import { ProfileTabs } from '@/components/Profile/ProfileTabs';
+import UserAvatar from '@/components/Profile/UserAvatar';
 
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
@@ -25,54 +23,6 @@ interface user {
 }
 
 export default function Profile() {
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files && event.target.files[0]) {
-      setSelectedFile(event.target.files[0]);
-    }
-  };
-
-  const handleUpload = async () => {
-    if (selectedFile) {
-      const formData = new FormData();
-      formData.append('avatar', selectedFile);
-
-      try {
-        const response = await axios.post(
-          import.meta.env.VITE_BACKEND_URL + '/api/avatar/upload',
-          formData
-        );
-        console.log(response.data);
-        toast.success('Аватар успешно обновлен!');
-        const user = await axios.get(
-          import.meta.env.VITE_BACKEND_URL + '/api/user'
-        );
-        setUser(user.data);
-      } catch (error) {
-        console.error(error);
-        toast.error('Ошибка при обновлении аватара.');
-      }
-    } else {
-      toast.warn('Вы не выбрали файл!');
-    }
-  };
-
-  const handleDelete = async () => {
-    try {
-      const response = await axios.delete(
-        import.meta.env.VITE_BACKEND_URL + '/api/avatar/delete'
-      );
-      console.log(response.data);
-      toast.success('Аватар успешно удален!');
-      const user = await axios.get(
-        import.meta.env.VITE_BACKEND_URL + '/api/user'
-      );
-      setUser(user.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   const [user, setUser] = useState<user>();
   useEffect(() => {
     const fetchUser = async () => {
@@ -80,7 +30,6 @@ export default function Profile() {
         import.meta.env.VITE_BACKEND_URL + '/api/user'
       );
       setUser(user.data);
-      // console.log();
     };
     fetchUser();
   }, []);
@@ -94,27 +43,17 @@ export default function Profile() {
     <>
       <div className='py-4'>
         {user && (
-          <h1 className='font-bold text-someblack text-3xl px-8 text-center md:text-left dark:text-white'>
+          <h1 className='font-bold text-someblack text-3xl px-8 text-center dark:text-white'>
             <Greeting /> {user?.name}!
           </h1>
         )}{' '}
         {!user && <Skeleton className='h-[20px] w-[250px] rounded-xl' />}
-        <div className='md:grid grid-cols-2 min-h-screen'>
-          <div className=''>
+        <div className='flex flex-row justify-center'>
+          <div className='md:flex flex-col min-h-screen '>
             <div className='py-5 px-8 text-left'>
               {user && (
                 <div className='flex flex-col items-center md:flex-row '>
-                  <Avatar>
-                    <AvatarImage
-                      src={
-                        user.avatar
-                          ? `http://localhost:8000/storage/${user.avatar}`
-                          : '/12231231.jpg'
-                      }
-                      alt='User Avatar'
-                    />
-                    <AvatarFallback>None</AvatarFallback>
-                  </Avatar>
+                  <UserAvatar />
                   <div className='flex flex-col md:pl-6 text-md text-someblack text-lg'>
                     <p className='font-medium dark:text-white'>
                       Почта: <b> {user.email}</b>
@@ -126,7 +65,7 @@ export default function Profile() {
                       Аккаунт создан:{' '}
                       <b>{format(user.created_at, { date: 'medium' })}</b>
                     </p>
-                    <div className='flex flex-col'>
+                    {/* <div className='flex flex-col'>
                       <Input
                         type='file'
                         className='text-white mt-2'
@@ -144,7 +83,7 @@ export default function Profile() {
                           Обновить
                         </Button>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               )}
