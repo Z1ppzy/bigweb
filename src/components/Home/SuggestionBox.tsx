@@ -2,22 +2,41 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { Button } from '../ui/button';
 import { Textarea } from '../ui/textarea';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 export default function SuggestionBox() {
   const [text, setText] = useState<string>('');
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     if (text === '') {
       toast.warn('Пожалуйста, заполните содержимое');
     } else {
-      toast.success('Успешно отправлено');
+      try {
+        const response = await axios.post(
+          import.meta.env.VITE_BACKEND_URL + '/api/suggestions',
+          {
+            suggestion: text,
+          }
+        );
+        if (response.status === 200) {
+          toast.success('Успешно отправлено');
+          setText('');
+        }
+      } catch (error) {
+        if (axios.isAxiosError(error) && error.response?.status === 401) {
+          toast.error('Пожалуйста, авторизуйтесь, чтобы оставить предложение.');
+        } else {
+          toast.error('Произошла ошибка при отправке');
+        }
+      }
     }
   };
 
   const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setText(event.target.value);
   };
+
   return (
     <div className='px-10 py-10'>
       <div className='max-w-md lg:max-w-xl mx-auto'>
