@@ -14,7 +14,7 @@ import axios from 'axios';
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
 
-interface user {
+interface User {
   name: string;
   email: string;
   created_at: string;
@@ -22,9 +22,10 @@ interface user {
   avatar: string;
 }
 
-
 export function ChangeAvatar() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [user, setUser] = useState<User>();
+
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
       setSelectedFile(event.target.files[0]);
@@ -43,10 +44,10 @@ export function ChangeAvatar() {
         );
         console.log(response.data);
         toast.success('Аватар успешно обновлен!');
-        const user = await axios.get(
+        const fetchedUser = await axios.get(
           import.meta.env.VITE_BACKEND_URL + '/api/user'
         );
-        setUser(user.data);
+        setUser(fetchedUser.data);
       } catch (error) {
         console.error(error);
         toast.error('Ошибка при обновлении аватара.');
@@ -55,13 +56,13 @@ export function ChangeAvatar() {
       toast.warn('Вы не выбрали файл!');
     }
   };
-  const [user, setUser] = useState<user>();
+
   useEffect(() => {
     const fetchUser = async () => {
-      const user = await axios.get(
+      const fetchedUser = await axios.get(
         import.meta.env.VITE_BACKEND_URL + '/api/user'
       );
-      setUser(user.data);
+      setUser(fetchedUser.data);
     };
     fetchUser();
   }, []);
@@ -73,14 +74,16 @@ export function ChangeAvatar() {
       );
       console.log(response.data);
       toast.success('Аватар успешно удален!');
-      const user = await axios.get(
+      const fetchedUser = await axios.get(
         import.meta.env.VITE_BACKEND_URL + '/api/user'
       );
-      setUser(user.data);
+      setUser(fetchedUser.data);
     } catch (error) {
       console.error(error);
+      toast.error('Ошибка при удалении аватара.');
     }
   };
+
   return (
     <Card>
       <CardHeader>
