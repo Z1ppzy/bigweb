@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Skeleton } from '@/components/ui/skeleton';
 import { format } from '@formkit/tempo';
 import Greeting from '@/components/Profile/Greeting';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from '@/components/Global/Loader';
 import useCheckAuth from '@/hooks/useCheckAuth';
@@ -65,25 +65,6 @@ export default function Profile() {
                       Аккаунт создан:{' '}
                       <b>{format(user.created_at, { date: 'medium' })}</b>
                     </p>
-                    {/* <div className='flex flex-col'>
-                      <Input
-                        type='file'
-                        className='text-white mt-2'
-                        onChange={handleFileChange}
-                      ></Input>
-                      <div className='flex flex-row justify-between mt-6'>
-                        <Button
-                          onClick={handleDelete}
-                          className='w-32 flex'
-                          variant={'destructive'}
-                        >
-                          Удалить
-                        </Button>
-                        <Button onClick={handleUpload} className='w-32 flex '>
-                          Обновить
-                        </Button>
-                      </div>
-                    </div> */}
                   </div>
                 </div>
               )}
@@ -93,20 +74,6 @@ export default function Profile() {
             <ProfileTabs />
             </div>
           </div>
-          {/* <div className='p-10 md:mx-16'>
-            <div className='text-center w-full bg-slate-500 mb-2 p-10 rounded-lg duration-500 hover:scale-110'>
-              <h1 className='text-2xl font-bold'>
-                Перейдите по баннеру для покупки донатика :)
-              </h1>
-            </div>
-            <div className='text-center w-full bg-slate-900 p-10 rounded-lg duration-500 hover:scale-110'>
-              <p>Lorem, ipsum dolor.</p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio, saepe lore!
-              </p>
-            </div>
-          </div> */}
         </div>
         <ToastContainer
           position='top-right'

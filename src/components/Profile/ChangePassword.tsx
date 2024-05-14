@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
@@ -18,9 +18,37 @@ export function ChangePassword() {
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+  const [isLengthValid, setIsLengthValid] = useState(false);
+  const [hasUpperCase, setHasUpperCase] = useState(false);
+  const [hasLowerCase, setHasLowerCase] = useState(false);
+  const [hasNumber, setHasNumber] = useState(false);
+  const [hasSpecialChar, setHasSpecialChar] = useState(false);
+
+  const [isPasswordInputStarted, setIsPasswordInputStarted] = useState(false);
+
+  useEffect(() => {
+    setIsLengthValid(newPassword.length >= 8);
+    setHasUpperCase(/[A-Z]/.test(newPassword));
+    setHasLowerCase(/[a-z]/.test(newPassword));
+    setHasNumber(/\d/.test(newPassword));
+    setHasSpecialChar(/[!@#$%^&*(),.?":{}|<>]/.test(newPassword));
+  }, [newPassword]);
+
+  const handleNewPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNewPassword(e.target.value);
+    if (!isPasswordInputStarted) {
+      setIsPasswordInputStarted(true);
+    }
+  };
+
   const handleSubmit = async () => {
     if (newPassword !== confirmPassword) {
       toast.error('Новые пароли не совпадают!');
+      return;
+    }
+
+    if (!isLengthValid || !hasUpperCase || !hasLowerCase || !hasNumber || !hasSpecialChar) {
+      toast.error('Пароль не соответствует всем требованиям!');
       return;
     }
 
@@ -37,6 +65,7 @@ export function ChangePassword() {
       toast.error('Произошла ошибка при изменении пароля!');
     }
   };
+
   return (
     <Card>
       <CardHeader>
@@ -61,7 +90,7 @@ export function ChangePassword() {
             id='newpswd'
             type='password'
             value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
+            onChange={handleNewPasswordChange}
           />
         </div>
         <div className='space-y-1'>
@@ -73,6 +102,28 @@ export function ChangePassword() {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
+        {isPasswordInputStarted && (
+          <div className='mt-4'>
+            <p>Пароль должен соответствовать следующим требованиям:</p>
+            <ul className='list-disc ml-5 mt-2'>
+              <li className='flex items-center'>
+                {isLengthValid ? '✔️' : '❌'} Минимум 8 символов
+              </li>
+              <li className='flex items-center'>
+                {hasUpperCase ? '✔️' : '❌'} Содержит заглавную букву
+              </li>
+              <li className='flex items-center'>
+                {hasLowerCase ? '✔️' : '❌'} Содержит строчную букву
+              </li>
+              <li className='flex items-center'>
+                {hasNumber ? '✔️' : '❌'} Содержит цифру
+              </li>
+              <li className='flex items-center'>
+                {hasSpecialChar ? '✔️' : '❌'} Содержит специальный символ (например, !@#$%^&*)
+              </li>
+            </ul>
+          </div>
+        )}
       </CardContent>
       <CardFooter>
         <Button onClick={handleSubmit}>Сохранить изменения</Button>
