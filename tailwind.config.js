@@ -19,6 +19,7 @@ module.exports = {
     extend: {
       fontFamily:{
         "montserrat": ['Montserrat', 'sans-serif'],
+        "Logo": ['IBM Plex Mono', 'sans-serif'],
       },
       colors: {
         'footer': '#1b1b1b',
