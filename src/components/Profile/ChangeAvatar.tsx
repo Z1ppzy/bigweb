@@ -24,7 +24,7 @@ interface User {
 
 export function ChangeAvatar() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [user, setUser] = useState<User>();
+  const [user, setUser] = useState<User | null>(null);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
@@ -44,10 +44,11 @@ export function ChangeAvatar() {
         );
         console.log(response.data);
         toast.success('Аватар успешно обновлен!');
+        
         const fetchedUser = await axios.get(
           import.meta.env.VITE_BACKEND_URL + '/api/user'
         );
-        setUser(fetchedUser.data);
+        setUser(fetchedUser.data); 
       } catch (error) {
         console.error(error);
         toast.error('Ошибка при обновлении аватара.');
@@ -62,7 +63,7 @@ export function ChangeAvatar() {
       const fetchedUser = await axios.get(
         import.meta.env.VITE_BACKEND_URL + '/api/user'
       );
-      setUser(fetchedUser.data);
+      setUser(fetchedUser.data); 
     };
     fetchUser();
   }, []);
@@ -74,10 +75,11 @@ export function ChangeAvatar() {
       );
       console.log(response.data);
       toast.success('Аватар успешно удален!');
+      
       const fetchedUser = await axios.get(
         import.meta.env.VITE_BACKEND_URL + '/api/user'
       );
-      setUser(fetchedUser.data);
+      setUser(fetchedUser.data);  
     } catch (error) {
       console.error(error);
       toast.error('Ошибка при удалении аватара.');
@@ -99,6 +101,11 @@ export function ChangeAvatar() {
             className='text-white mt-2'
             onChange={handleFileChange}
           ></Input>
+          {user && (
+            <div className='mt-4'>
+              <img src={`http://localhost:8000/storage/${user.avatar}`} alt='User Avatar' className='w-32 h-32 rounded-full' />
+            </div>
+          )}
           <div className='flex flex-row justify-between mt-6'>
             <Button
               onClick={handleDelete}
