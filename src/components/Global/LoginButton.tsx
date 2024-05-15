@@ -18,7 +18,7 @@ export default function LoginButton() {
   }, []);
 
   if (isLoggedIn) {
-    return <><Link to='/notifications'><HiMail className='text-2xl text-center' /></Link><FormVanila /></>;
+    return <><Link to='/notifications'><HiMail className='text-2xl text-center' /></Link><div>Баланс: ?</div></>;
   }
   return (
       <Button onClick={loginClick}>Войти</Button>

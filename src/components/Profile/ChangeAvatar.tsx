@@ -8,23 +8,15 @@ import {
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { toast } from 'react-toastify';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
 
-interface User {
-  name: string;
-  email: string;
-  created_at: string;
-  role: string;
-  avatar: string;
-}
 
 export function ChangeAvatar() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [user, setUser] = useState<User | null>(null);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
@@ -44,11 +36,6 @@ export function ChangeAvatar() {
         );
         console.log(response.data);
         toast.success('Аватар успешно обновлен!');
-        
-        const fetchedUser = await axios.get(
-          import.meta.env.VITE_BACKEND_URL + '/api/user'
-        );
-        setUser(fetchedUser.data); 
       } catch (error) {
         console.error(error);
         toast.error('Ошибка при обновлении аватара.');
@@ -58,16 +45,6 @@ export function ChangeAvatar() {
     }
   };
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const fetchedUser = await axios.get(
-        import.meta.env.VITE_BACKEND_URL + '/api/user'
-      );
-      setUser(fetchedUser.data); 
-    };
-    fetchUser();
-  }, []);
-
   const handleDelete = async () => {
     try {
       const response = await axios.delete(
@@ -75,11 +52,6 @@ export function ChangeAvatar() {
       );
       console.log(response.data);
       toast.success('Аватар успешно удален!');
-      
-      const fetchedUser = await axios.get(
-        import.meta.env.VITE_BACKEND_URL + '/api/user'
-      );
-      setUser(fetchedUser.data);  
     } catch (error) {
       console.error(error);
       toast.error('Ошибка при удалении аватара.');
@@ -101,11 +73,6 @@ export function ChangeAvatar() {
             className='text-white mt-2'
             onChange={handleFileChange}
           ></Input>
-          {user && (
-            <div className='mt-4'>
-              <img src={`http://localhost:8000/storage/${user.avatar}`} alt='User Avatar' className='w-32 h-32 rounded-full' />
-            </div>
-          )}
           <div className='flex flex-row justify-between mt-6'>
             <Button
               onClick={handleDelete}
@@ -123,3 +90,4 @@ export function ChangeAvatar() {
     </Card>
   );
 }
+
