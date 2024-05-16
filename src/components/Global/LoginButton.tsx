@@ -1,7 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { HiMail } from "react-icons/hi";
-import FormVanila from '@/components/Profile/FormVanilla';
 import { Button } from '../ui/button';
 
 export default function LoginButton() {

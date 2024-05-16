@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -47,6 +47,8 @@ export default function ConfirmEmail() {
             <Input
               id='email'
               type='email'
+              placeholder='example@mail.ru'
+              autoComplete='email'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
