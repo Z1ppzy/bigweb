@@ -28,8 +28,8 @@ export function ChangePassword() {
 
   useEffect(() => {
     setIsLengthValid(newPassword.length >= 8);
-    setHasUpperCase(/[A-Z]/.test(newPassword));
-    setHasLowerCase(/[a-z]/.test(newPassword));
+    setHasUpperCase(/[A-Z], [А-Я]/.test(newPassword));
+    setHasLowerCase(/[a-z], [а-я]/.test(newPassword));
     setHasNumber(/\d/.test(newPassword));
     setHasSpecialChar(/[!@#$%^&*(),.?":{}|<>]/.test(newPassword));
   }, [newPassword]);
