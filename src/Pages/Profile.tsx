@@ -10,6 +10,8 @@ import Loader from '@/components/Global/Loader';
 import useCheckAuth from '@/hooks/useCheckAuth';
 import { ProfileTabs } from '@/components/Profile/ProfileTabs';
 import UserAvatar from '@/components/Profile/UserAvatar';
+import { Badge } from "@/components/ui/badge"
+
 
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
@@ -56,14 +58,15 @@ export default function Profile() {
                   <UserAvatar />
                   <div className='flex flex-col md:pl-6 text-md text-someblack text-lg'>
                     <p className='font-medium dark:text-white'>
-                      Почта: <b> {user.email}</b>
+                      Почта: <Badge variant="outline" className='border-purple-500'>{user.email}</Badge>
                     </p>
                     <p className='font-medium dark:text-white'>
-                      Роль: <b>{user.role}</b>
+                      Роль: <Badge variant="outline" className='border-purple-500'>{user.role}</Badge>
+
                     </p>
                     <p className='font-medium dark:text-white'>
                       Аккаунт создан:{' '}
-                      <b>{format(user.created_at, { date: 'medium' })}</b>
+                      <Badge variant="outline" className='border-purple-500'>{format(user.created_at, { date: 'medium' })}</Badge>
                     </p>
                   </div>
                 </div>
