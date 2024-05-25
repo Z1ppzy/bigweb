@@ -9,7 +9,7 @@ export default function useCheckAuth() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        await axios.get('http://localhost:8000/api/user', {
+        await axios.get(import.meta.env.VITE_BACKEND_URL + '/api/user', {
           withCredentials: true,
         });
         setIsLoading(false);

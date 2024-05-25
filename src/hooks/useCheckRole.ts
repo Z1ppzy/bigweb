@@ -9,7 +9,7 @@ export default function useCheckRole(requiredRole: string): boolean {
   useEffect(() => {
     const fetchUserRole = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/user', { withCredentials: true });
+        const response = await axios.get(import.meta.env.VITE_BACKEND_URL + '/api/user', { withCredentials: true });
         if (response.data.role === requiredRole) {
           setIsLoading(false);  
         } else {
