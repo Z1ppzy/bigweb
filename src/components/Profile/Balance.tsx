@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Skeleton } from "@/components/ui/skeleton"
+
 
 interface BalanceResponse {
   balance: number;
@@ -35,9 +37,9 @@ export default function Balance () {
   return (
     <div>
       {loading ? (
-        <p>Загрузка...</p>
+        <Skeleton className="w-[110px] h-[20px] rounded-full" />
       ) : (
-        <p>Ваш баланс: {balance}</p>
+        <p>Ваш баланс: <span className='font-bold'>{balance}</span></p>
       )}
       <ToastContainer />
     </div>

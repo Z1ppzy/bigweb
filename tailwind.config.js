@@ -21,6 +21,10 @@ module.exports = {
         "montserrat": ['Montserrat', 'sans-serif'],
         "Logo": ['IBM Plex Mono', 'sans-serif'],
       },
+      backgroundImage: {
+        'glamorous-pattern': "url('/public/glamorous.svg')",
+        'footer-texture': "url('/img/footer-texture.png')",
+      },
       colors: {
         'footer': '#1b1b1b',
         'someblack': '#353535',

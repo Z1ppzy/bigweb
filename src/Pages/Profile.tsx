@@ -47,7 +47,7 @@ export default function Profile() {
 
   return (
     <>
-      <div className='py-4'>
+      <div className='py-4 bg-[url(/public/glamorous.svg)]'>
         {user && (
           <h1 className='font-bold text-someblack text-3xl px-8 text-center dark:text-white'>
             <Greeting /> {user?.name}!
