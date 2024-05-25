@@ -7,7 +7,7 @@ import ConfirmEmail from './ConfirmEmail';
 export function ProfileTabs() {
   return (
     <Tabs defaultValue='changepswd'>
-      <TabsList className='flex flex-col md:flex-row md:w-fit'>
+      <TabsList className='flex flex-col md:flex-row w-full'>
         <TabsTrigger value='changepswd'>Смена пароля</TabsTrigger>
         <TabsTrigger value='changeavatar'>Персонализация</TabsTrigger>
         <TabsTrigger value='promocode'>Активация промокода</TabsTrigger>

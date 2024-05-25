@@ -10,8 +10,12 @@ import Loader from '@/components/Global/Loader';
 import useCheckAuth from '@/hooks/useCheckAuth';
 import { ProfileTabs } from '@/components/Profile/ProfileTabs';
 import UserAvatar from '@/components/Profile/UserAvatar';
-import { Badge } from "@/components/ui/badge"
-
+import { Badge } from '@/components/ui/badge';
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card';
 
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
@@ -51,30 +55,47 @@ export default function Profile() {
         )}{' '}
         {!user && <Skeleton className='h-[20px] w-[250px] rounded-xl' />}
         <div className='flex flex-row justify-center'>
-          <div className='md:flex flex-col min-h-screen '>
+          <div className='md:flex flex-col min-h-screen p-6 border-2 dark:border-white rounded-lg shadow-lg'>
             <div className='py-5 px-8 text-left'>
               {user && (
                 <div className='flex flex-col items-center md:flex-row '>
                   <UserAvatar />
                   <div className='flex flex-col md:pl-6 text-md text-someblack text-lg'>
-                    <p className='font-medium dark:text-white'>
-                      Почта: <Badge variant="outline" className='border-purple-500'>{user.email}</Badge>
-                    </p>
-                    <p className='font-medium dark:text-white'>
-                      Роль: <Badge variant="outline" className='border-purple-500'>{user.role}</Badge>
-
-                    </p>
-                    <p className='font-medium dark:text-white'>
+                    <h1 className='font-medium dark:text-white'>
+                      Почта:{' '}
+                      <Badge variant='outline' className='border-purple-500'>
+                        {user.email}
+                      </Badge>
+                    </h1>
+                    <h1 className='font-medium dark:text-white'>
+                      Роль:{' '}
+                      <HoverCard>
+                        <HoverCardTrigger>
+                          <Badge
+                            variant='outline'
+                            className='border-purple-500 cursor-pointer'
+                          >
+                            {user.role}
+                          </Badge>
+                        </HoverCardTrigger>
+                        <HoverCardContent>
+                          elder, enigma, phantom, titan, moder, admin
+                        </HoverCardContent>
+                      </HoverCard>
+                    </h1>
+                    <h1 className='font-medium dark:text-white'>
                       Аккаунт создан:{' '}
-                      <Badge variant="outline" className='border-purple-500'>{format(user.created_at, { date: 'medium' })}</Badge>
-                    </p>
+                      <Badge variant='outline' className='border-purple-500'>
+                        {format(user.created_at, { date: 'medium' })}
+                      </Badge>
+                    </h1>
                   </div>
                 </div>
               )}
               {!user && <Skeleton className='h-[80px] w-[250px] rounded-xl' />}
             </div>
-            <div className=''>
-            <ProfileTabs />
+            <div>
+              <ProfileTabs />
             </div>
           </div>
         </div>
