@@ -39,23 +39,23 @@ export default function Profile() {
     };
     fetchUser();
   }, []);
-  const isLoading = useCheckAuth();
+  // const isLoading = useCheckAuth();
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   return (
     <>
-      <div className='py-4 bg-[url(/public/glamorous.svg)]'>
+      <div className='bg-[url(/public/glamorous.svg)] pb-6'>
         {user && (
-          <h1 className='font-bold text-someblack text-3xl px-8 text-center dark:text-white'>
+          <h1 className='font-bold text-someblack text-3xl px-8 py-6 text-center dark:text-white'>
             <Greeting /> {user?.name}!
           </h1>
         )}{' '}
-        {!user && <Skeleton className='h-[20px] w-[250px] rounded-xl' />}
+        {!user && <div className='flex justify-center p-6'><Skeleton className='h-[60px] w-[390px] rounded-xl' /></div>}
         <div className='flex flex-row justify-center'>
-          <div className='md:flex flex-col min-h-screen p-6 border-2 bg-white border-slate-400 dark:border-white rounded-lg shadow-lg'>
+          <div className='md:flex flex-col min-h-screen border-2 bg-white border-slate-400 dark:border-white rounded-lg shadow-lg'>
             <div className='py-5 px-8 text-left'>
               {user && (
                 <div className='flex flex-col items-center md:flex-row '>
@@ -92,7 +92,7 @@ export default function Profile() {
                   </div>
                 </div>
               )}
-              {!user && <Skeleton className='h-[80px] w-[250px] rounded-xl' />}
+              {!user && <div className='flex align-middle justify-center items-center'><Skeleton className='h-[100px] w-[350px] rounded-xl' /></div>}
             </div>
             <div>
               <ProfileTabs />
