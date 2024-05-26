@@ -55,7 +55,7 @@ export default function Profile() {
         )}{' '}
         {!user && <Skeleton className='h-[20px] w-[250px] rounded-xl' />}
         <div className='flex flex-row justify-center'>
-          <div className='md:flex flex-col min-h-screen p-6 border-2 dark:border-white rounded-lg shadow-lg'>
+          <div className='md:flex flex-col min-h-screen p-6 border-2 bg-white border-slate-400 dark:border-white rounded-lg shadow-lg'>
             <div className='py-5 px-8 text-left'>
               {user && (
                 <div className='flex flex-col items-center md:flex-row '>
