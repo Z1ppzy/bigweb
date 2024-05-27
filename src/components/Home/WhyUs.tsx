@@ -2,7 +2,7 @@ import { GiProcessor } from 'react-icons/gi';
 import { FaPeopleGroup } from 'react-icons/fa6';
 import { IoMdSettings } from 'react-icons/io';
 
-export default function WhyWe() {
+export default function WhyUs() {
   return (
       <div className='text-center'>
         <h1 className='mt-8 text-2xl'>

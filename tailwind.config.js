@@ -20,6 +20,7 @@ module.exports = {
       fontFamily:{
         "montserrat": ['Montserrat', 'sans-serif'],
         "Logo": ['IBM Plex Mono', 'sans-serif'],
+        "Welcome": ['Comfortaa', 'sans-serif'],
       },
       backgroundImage: {
         'glamorous-pattern': "url('/public/glamorous.svg')",
@@ -29,6 +30,7 @@ module.exports = {
         'footer': '#1b1b1b',
         'someblack': '#353535',
         'iney':'#AFDAFC',
+        'background':'#030612',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

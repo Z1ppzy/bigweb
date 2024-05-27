@@ -10,7 +10,6 @@ import Loader from '@/components/Global/Loader';
 import useCheckAuth from '@/hooks/useCheckAuth';
 import { ProfileTabs } from '@/components/Profile/ProfileTabs';
 import UserAvatar from '@/components/Profile/UserAvatar';
-import { Badge } from '@/components/ui/badge';
 import {
   HoverCard,
   HoverCardContent,
@@ -39,44 +38,38 @@ export default function Profile() {
     };
     fetchUser();
   }, []);
-  // const isLoading = useCheckAuth();
+  const isLoading = useCheckAuth();
 
-  // if (isLoading) {
-  //   return <Loader />;
-  // }
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <>
       <div className='bg-[url(/public/glamorous.svg)] pb-6'>
         {user && (
-          <h1 className='font-bold text-someblack text-3xl px-8 py-6 text-center dark:text-white'>
+          <h1 className='font-extrabold font-Welcome text-black text-3xl px-8 py-6 text-center dark:text-white'>
             <Greeting /> {user?.name}!
           </h1>
         )}{' '}
         {!user && <div className='flex justify-center p-6'><Skeleton className='h-[60px] w-[390px] rounded-xl' /></div>}
         <div className='flex flex-row justify-center'>
-          <div className='md:flex flex-col min-h-screen border-2 bg-white border-slate-400 dark:border-white rounded-lg shadow-lg'>
+          <div className='md:flex flex-col min-h-screen border bg-white dark:bg-background p-10 border-slate-400 dark:border-purple-900 rounded-lg shadow-lg'>
             <div className='py-5 px-8 text-left'>
               {user && (
                 <div className='flex flex-col items-center md:flex-row '>
                   <UserAvatar />
-                  <div className='flex flex-col md:pl-6 text-md text-someblack text-lg'>
+                  <div className='flex flex-col md:pl-6 text-md text-someblack text-lg border border-slate-400 px-10 py-4 ml-6 rounded-xl'>
                     <h1 className='font-medium dark:text-white'>
                       Почта:{' '}
-                      <Badge variant='outline' className='border-purple-500'>
                         {user.email}
-                      </Badge>
+
                     </h1>
                     <h1 className='font-medium dark:text-white'>
                       Роль:{' '}
                       <HoverCard>
                         <HoverCardTrigger>
-                          <Badge
-                            variant='outline'
-                            className='border-purple-500 cursor-pointer'
-                          >
                             {user.role}
-                          </Badge>
                         </HoverCardTrigger>
                         <HoverCardContent>
                           elder, enigma, phantom, titan, moder, admin
@@ -85,9 +78,7 @@ export default function Profile() {
                     </h1>
                     <h1 className='font-medium dark:text-white'>
                       Аккаунт создан:{' '}
-                      <Badge variant='outline' className='border-purple-500'>
                         {format(user.created_at, { date: 'medium' })}
-                      </Badge>
                     </h1>
                   </div>
                 </div>

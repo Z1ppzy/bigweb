@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import useCheckAuth from '@/hooks/useCheckAuth';
 import { Loader } from 'lucide-react';
+import NotificationList from '@/components/Profile/NotificationList';
 
 interface Notification {
   id: number;
@@ -33,7 +34,7 @@ export default function Notifications() {
             всегда в курсе всех событий!
           </p>
         </div>
-        <div className='md:pr-52 mt-8'>
+        {/* <div className='md:pr-52 mt-8'>
           {notifications.length === 0 ? (
             <p className='font-bold text-2xl text-center md:text-left'>У вас нет уведомлений.</p>
           ) : (
@@ -45,7 +46,8 @@ export default function Notifications() {
               </div>
             ))
           )}
-        </div>
+        </div> */}
+              <NotificationList />
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import SliderImg from '@/components/Home/SliderImg';
 import SuggestionBox from '@/components/Home/SuggestionBox';
 import AccordionServer from '@/components/Home/AccordionServer';
 import ServerInfo from '@/components/Home/ServerInfo';
-import WhyWe from '@/components/Home/WhyWe';
+import WhyUs from '@/components/Home/WhyUs';
 
 export default function Home() {
   return (
@@ -42,7 +42,7 @@ export default function Home() {
           <ServerInfo />
         </div>
         <div>
-          <WhyWe />
+          <WhyUs />
         </div>
         <div>
           <AccordionServer />
