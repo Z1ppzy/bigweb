@@ -6,6 +6,7 @@ import Loader from '@/components/Global/Loader';
 import RoleChangeCard from '@/components/AdminDashBoard/RoleChangeCard';
 import { NewsCard } from '@/components/AdminDashBoard/NewsCard';
 import { PlayerSearchCard } from '@/components/AdminDashBoard/PlayerSearchCard';
+import SendNotification from '@/components/AdminDashBoard/SendNotification';
 
 
 export default function AdminDashBoard() {
@@ -18,7 +19,7 @@ export default function AdminDashBoard() {
 
   return (
     <>
-      <div className=''>
+      <div className='bg-[url(/glamorous.svg)]'>
         <h1
           className='p-6 text-center md:text-left font-bold text-2xl mx-10 bg-clip-text text-transparent bg-gradient-to-r from-pink-900 to-purple-500'
           style={{ borderBottom: '3px solid', borderColor: '#6b46c1' }}
@@ -34,6 +35,9 @@ export default function AdminDashBoard() {
           </div>
           <div className='flex flex-col items-center'>
             <RoleChangeCard />
+          </div>
+          <div className='flex flex-col items-center'>
+            <SendNotification />
           </div>
         </div>
         <ToastContainer

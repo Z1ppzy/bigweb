@@ -26,8 +26,7 @@ const NotificationList: React.FC = () => {
     };
 
     return (
-        <div>
-            <h2>Notifications</h2>
+        <div className='border border-slate-500 dark:border-white rounded-lg p-4'>
             <ul>
                 {notifications.map(notification => (
                     <li key={notification.id} style={{ textDecoration: notification.read ? 'line-through' : 'none' }}>
