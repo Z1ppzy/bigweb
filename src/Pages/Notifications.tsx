@@ -1,20 +1,20 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import useCheckAuth from '@/hooks/useCheckAuth';
 import { Loader } from 'lucide-react';
 import NotificationList from '@/components/Profile/NotificationList';
 
-interface Notification {
-  id: number;
-  message: string;
-}
+// interface Notification {
+//   id: number;
+//   message: string;
+// }
 
 export default function Notifications() {
   const isLoading = useCheckAuth();
-  const [notifications] = useState<Notification[]>([
+  // const [notifications] = useState<Notification[]>([
 
-    // { id: 1, message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, asperiores.' },
-    // { id: 2, message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, asperiores.' },
-  ]);
+  //   { id: 1, message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, asperiores.' },
+  //   { id: 2, message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, asperiores.' },
+  // ]);
 
   if (isLoading) {
     return <Loader />;
