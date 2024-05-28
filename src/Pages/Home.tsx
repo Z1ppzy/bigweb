@@ -6,6 +6,7 @@ import SuggestionBox from '@/components/Home/SuggestionBox';
 import AccordionServer from '@/components/Home/AccordionServer';
 import ServerInfo from '@/components/Home/ServerInfo';
 import WhyUs from '@/components/Home/WhyUs';
+import NewsPost from '@/components/Home/NewsPost';
 
 export default function Home() {
   return (
@@ -43,6 +44,9 @@ export default function Home() {
         </div>
         <div>
           <WhyUs />
+        </div>
+        <div>
+          <NewsPost />
         </div>
         <div>
           <AccordionServer />
