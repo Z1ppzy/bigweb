@@ -24,7 +24,7 @@ export default function AccordionServer() {
   };
   return (
     <>
-      <div className='mx-4 lg:mx-40 mb-10'>
+      <div className='mx-4 lg:mx-40 mb-10 mt-6'>
         <Accordion type='single' collapsible className='w-full'>
           <AccordionItem value='item-1'>
             <AccordionTrigger>Как подключиться к серверу?</AccordionTrigger>

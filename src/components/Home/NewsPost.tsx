@@ -49,7 +49,7 @@ const NewsPost: React.FC = () => {
           <div key={index} className='flex w-full h-[300px]'>
             <div>
               <img
-                className='w-96 h-full rounded-xl'
+                className='w-96 h-[250px] rounded-xl'
                 src={`${import.meta.env.VITE_BACKEND_URL}${
                   newsItem.image_path
                 }`}
