@@ -44,7 +44,7 @@ const NewsPost: React.FC = () => {
   return (
     <div className='w-full flex flex-wrap gap-6 px-10'>
       <h1 className='font-bold text-xl font-Welcome'>Новости нашего проекта</h1>
-      {news.length > 0 ? (
+      {news ? (
         news.map((newsItem: NewsItem, index: number) => (
           <div key={index} className='flex w-full h-[300px]'>
             <div>
@@ -56,16 +56,16 @@ const NewsPost: React.FC = () => {
                 alt={newsItem.title}
               />
             </div>
-            <div className='w-[300px]'>
+            <div className='w-[400px] p-10'>
               <h1>{newsItem.title}</h1>
-              <p>{newsItem.content}</p>
+              <p className='font-Welcome'>{newsItem.content}</p>
             </div>
           </div>
         ))
       ) : (
         <div className='w-full h-full flex justify-center items-center'>
           <p className='font-bold text-xl'>Нет доступных новостей!!!</p>
-        </div>
+        </div>  
       )}
     </div>
   );
