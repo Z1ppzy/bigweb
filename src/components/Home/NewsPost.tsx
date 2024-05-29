@@ -1,25 +1,58 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import LoaderComponents from '@/components/Global/LoaderComponents';
 
 interface NewsItem {
-  image: string;
+  id: number;
+  image_path: string;
   title: string;
   content: string;
+  created_at: string;
+  updated_at: string;
 }
 
-interface NewsPostProps {
-  news: NewsItem[];
-}
+const NewsPost: React.FC = () => {
+  const [news, setNews] = useState<NewsItem[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
-const NewsPost: React.FC<NewsPostProps> = ({ news }) => {
+  useEffect(() => {
+    axios
+      .get(import.meta.env.VITE_BACKEND_URL + '/api/news')
+      .then((response) => {
+        setNews(response.data.news);
+        setLoading(false);
+      })
+      .catch(() => {
+        setError('Ошибка при загрузке новостей');
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return (
+      <>
+       <LoaderComponents /> 
+      </>
+    );
+  }
+
+  if (error) {
+    return <p className='font-bold text-xl text-center p-20'>Ошибка при загрузке новостей!!!</p>;
+  }
+
   return (
-    <div className='w-full h-[300px] flex'>
+    <div className='w-full flex flex-wrap gap-6 px-10'>
+      <h1 className='font-bold text-xl font-Welcome'>Новости нашего проекта</h1>
       {news.length > 0 ? (
         news.map((newsItem: NewsItem, index: number) => (
-          <div key={index} className='flex w-full h-full'>
+          <div key={index} className='flex w-full h-[300px]'>
             <div>
               <img
-                className='w-96 h-full'
-                src={newsItem.image}
+                className='w-96 h-full rounded-xl'
+                src={`${import.meta.env.VITE_BACKEND_URL}${
+                  newsItem.image_path
+                }`}
                 alt={newsItem.title}
               />
             </div>
@@ -38,18 +71,4 @@ const NewsPost: React.FC<NewsPostProps> = ({ news }) => {
   );
 };
 
-const news: NewsItem[] = [
-  {
-    image: '/background2.jpg',
-    title:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, rerum.',
-    content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nobis asperiores quaerat possimus molestiae quisquam dolore, quas voluptates. ',
-  },
-];
-
-const App: React.FC = () => {
-  return <NewsPost news={news} />;
-};
-
-export default App;
+export default NewsPost;

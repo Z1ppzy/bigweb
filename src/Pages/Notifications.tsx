@@ -1,7 +1,7 @@
 // import { useState } from 'react';
 import useCheckAuth from '@/hooks/useCheckAuth';
-import { Loader } from 'lucide-react';
 import NotificationList from '@/components/Profile/NotificationList';
+import Loader from '@/components/Global/Loader';
 
 // interface Notification {
 //   id: number;
