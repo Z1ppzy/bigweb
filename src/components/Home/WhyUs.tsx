@@ -4,14 +4,14 @@ import { IoMdSettings } from 'react-icons/io';
 
 export default function WhyUs() {
   return (
-      <div className='text-center'>
-        <h1 className='mt-8 text-2xl'>
-          <b>Почему именно мы?</b>
+      <div className=''>
+        <h1 className='mt-8 text-xl px-10 font-Welcome'>
+          Почему именно мы?
         </h1>
-        <div className='mx-6 lg:mx-20 place-items-center md:grid grid-cols-3 mb-10 gap-20'>
+        <div className='mx-6 lg:mx-20 place-items-center md:grid grid-cols-3 mb-10 gap-20 text-center'>
           <div className='flex flex-col items-center mt-5'>
             <GiProcessor className='text-8xl text-purple-950 ' />
-            <p className='font-light'>
+            <p className='font-light '>
               Мы тщательно оптимизируем сервер для обеспечения плавного и
               быстрого геймплея, даже на больших дистанциях и при большом
               количестве игроков.

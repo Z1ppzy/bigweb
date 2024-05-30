@@ -7,6 +7,7 @@ import AccordionServer from '@/components/Home/AccordionServer';
 import ServerInfo from '@/components/Home/ServerInfo';
 import WhyUs from '@/components/Home/WhyUs';
 import NewsPost from '@/components/Home/NewsPost';
+import ServerStatus from '@/components/Home/ServerStatus';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <div className='lg:grid grid-cols-2 min-h-screen mt-16'>
           <div>
             <SliderImg />
+            <ServerStatus />
           </div>
           <div className='px-5 md:px-10 mt-10 md:mt-0'>
             <h1 className='font-semibold text-xl text-center md:text-2xl'>
@@ -36,6 +38,7 @@ export default function Home() {
               >
                 Начать играть
               </Link>
+
             </div>
           </div>
         </div>
