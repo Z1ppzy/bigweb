@@ -12,6 +12,7 @@ import AdminDashboard from './Pages/AdminDashboard';
 import Shop from './Pages/Shop';
 import Rewards from './Pages/Rewards';
 import Notifications from './Pages/Notifications';
+import ContactUs from './Pages/ContactUs';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+      },
+      {
+        path: '/ContactUs',
+        element: <ContactUs />,
       },
       {
         path: '/login',
