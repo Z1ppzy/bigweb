@@ -4,7 +4,6 @@ import LoaderComponents from '@/components/Global/LoaderComponents';
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
