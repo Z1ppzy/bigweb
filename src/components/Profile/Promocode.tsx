@@ -11,22 +11,31 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Dialog, Transition } from '@headlessui/react';
+import axios from 'axios';
 import { Fragment } from 'react';
-
-const validPromoCodes = ['PROMO2024', 'DISCOUNT50', 'BONUS30']; 
 
 export default function Promocode() {
   const [promoCode, setPromoCode] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState({ message: '', isError: false });
+  const [modalContent, setModalContent] = useState({
+    message: '',
+    isError: false,
+  });
 
   const handleActivate = () => {
-    if (validPromoCodes.includes(promoCode)) {
-      setModalContent({ message: 'Промокод активирован!', isError: false });
-    } else {
-      setModalContent({ message: 'Такого промокода не существует!', isError: true });
-    }
-    setIsModalOpen(true);
+    axios
+      .post(import.meta.env.VITE_BACKEND_URL + '/api/activate-promo', {
+        promoCode,
+      })
+      .then((response) => {
+        setModalContent({ message: response.data.message, isError: false });
+      })
+      .catch((error) => {
+        setModalContent({ message: error.message, isError: true });
+      })
+      .finally(() => {
+        setIsModalOpen(true);
+      });
   };
 
   return (
@@ -35,7 +44,8 @@ export default function Promocode() {
         <CardHeader>
           <CardTitle>Активация промокода</CardTitle>
           <CardDescription>
-            Введите определенное слово, которое даст вам небольшой бонус на нашем сервере :)
+            Введите определенное слово, которое даст вам небольшой бонус на
+            нашем сервере :)
           </CardDescription>
         </CardHeader>
         <CardContent className='space-y-2'>
@@ -46,18 +56,19 @@ export default function Promocode() {
               value={promoCode}
               onChange={(e) => setPromoCode(e.target.value)}
             />
-          </div>                                                            
+          </div>
         </CardContent>
         <CardFooter>
           <Button onClick={handleActivate}>Активировать</Button>
         </CardFooter>
       </Card>
 
-
-
-
       <Transition appear show={isModalOpen} as={Fragment}>
-        <Dialog as='div' className='relative z-10' onClose={() => setIsModalOpen(false)}>
+        <Dialog
+          as='div'
+          className='relative z-10'
+          onClose={() => setIsModalOpen(false)}
+        >
           <Transition.Child
             as={Fragment}
             enter='ease-out duration-300'
@@ -95,7 +106,9 @@ export default function Promocode() {
                     {modalContent.message}
                   </Dialog.Title>
                   <div className='mt-4'>
-                    <Button onClick={() => setIsModalOpen(false)}>Закрыть</Button>
+                    <Button onClick={() => setIsModalOpen(false)}>
+                      Закрыть
+                    </Button>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
