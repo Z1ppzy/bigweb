@@ -25,18 +25,13 @@ import {
 } from '@/components/ui/select';
 import { Input } from '@headlessui/react';
 
-
 const FormSchema = z.object({
-  name: z
-    .string()
-    .min(6, {
-      message: 'Name must be at least 6 characters.',
-    }),
-  email: z
-    .string()
-    .email({
-      message: 'Must be a valid email.',
-    }),
+  name: z.string().min(6, {
+    message: 'Name must be at least 6 characters.',
+  }),
+  email: z.string().email({
+    message: 'Must be a valid email.',
+  }),
   picture: z
     .instanceof(File, {
       message: 'You must upload a file.',
@@ -78,7 +73,10 @@ export default function ContactUs() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col gap-4'>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className='flex flex-col gap-4'
+      >
         <FormField
           control={form.control}
           name='name'
@@ -86,13 +84,17 @@ export default function ContactUs() {
             <FormItem className='flex flex-col'>
               <FormLabel>Ник в игре</FormLabel>
               <FormControl>
-                <Input className='text-black w-72 h-8 rounded-md' placeholder='Никнейм' {...field} />
+                <Input
+                  className='text-black w-72 h-8 rounded-md'
+                  placeholder='Никнейм'
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        
+
         <FormField
           control={form.control}
           name='email'
@@ -100,7 +102,12 @@ export default function ContactUs() {
             <FormItem className='flex flex-col'>
               <FormLabel>Почта для ответа</FormLabel>
               <FormControl>
-                <Input id='email' className='text-black w-72 h-8 rounded-md' placeholder='Почта' {...field} />
+                <Input
+                  id='email'
+                  className='text-black w-72 h-8 rounded-md'
+                  placeholder='Почта'
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -128,13 +135,14 @@ export default function ContactUs() {
           )}
         />
 
-
-                <FormField
+        <FormField
           control={form.control}
           name='picture'
           render={({ field }) => (
             <FormItem className='flex flex-col'>
-              <FormLabel htmlFor='picture'>Загрузите фотографию для пруфа</FormLabel>
+              <FormLabel htmlFor='picture'>
+                Загрузите фотографию для пруфа
+              </FormLabel>
               <FormControl>
                 <Input
                   id='picture'
@@ -164,7 +172,7 @@ export default function ContactUs() {
                   onValueChange={field.onChange}
                   defaultValue={field.value}
                 >
-                  <SelectTrigger  className='w-[220px]'>
+                  <SelectTrigger className='w-[220px]'>
                     <SelectValue placeholder='Выберите вид жалобы' />
                   </SelectTrigger>
                   <SelectContent>
