@@ -30,6 +30,7 @@ export default function DropDownMenu() {
     { path: '/admindashboard', label: 'Панель управления' },
     { path: '/shop', label: 'Магазин' },
     { path: '/rewards', label: 'Награды' },
+    { path: '/contactus', label: 'Связь с нами' },
   ];
 
   return (
