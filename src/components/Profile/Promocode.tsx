@@ -1,25 +1,28 @@
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
+import React from 'react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 import {
   Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
 } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Dialog, Transition } from '@headlessui/react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 import axios from 'axios';
-import { Fragment } from 'react';
-
-export default function Promocode() {
-  const [promoCode, setPromoCode] = useState('');
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState({
-    message: '',
+function PromoCodeCard() {
+  const [promoCode, setPromoCode] = React.useState('');
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [modalContent, setModalContent] = React.useState({
     isError: false,
+    message: '',
   });
 
   const handleActivate = () => {
@@ -63,59 +66,24 @@ export default function Promocode() {
         </CardFooter>
       </Card>
 
-      <Transition appear show={isModalOpen} as={Fragment}>
-        <Dialog
-          as='div'
-          className='relative z-10'
-          onClose={() => setIsModalOpen(false)}
-        >
-          <Transition.Child
-            as={Fragment}
-            enter='ease-out duration-300'
-            enterFrom='opacity-0'
-            enterTo='opacity-100'
-            leave='ease-in duration-200'
-            leaveFrom='opacity-100'
-            leaveTo='opacity-0'
-          >
-            <div className='fixed inset-0 bg-black bg-opacity-25' />
-          </Transition.Child>
-
-          <div className='fixed inset-0 overflow-y-auto'>
-            <div className='flex min-h-full items-center justify-center p-4 text-center'>
-              <Transition.Child
-                as={Fragment}
-                enter='ease-out duration-300'
-                enterFrom='opacity-0 scale-95'
-                enterTo='opacity-100 scale-100'
-                leave='ease-in duration-200'
-                leaveFrom='opacity-100 scale-100'
-                leaveTo='opacity-0 scale-95'
-              >
-                <Dialog.Panel
-                  className={`w-full max-w-md transform overflow-hidden rounded-2xl p-6 text-left align-middle shadow-xl transition-all ${
-                    modalContent.isError ? 'bg-red-100' : 'bg-green-100'
-                  }`}
-                >
-                  <Dialog.Title
-                    as='h3'
-                    className={`text-lg font-medium leading-6 ${
-                      modalContent.isError ? 'text-red-900' : 'text-green-900'
-                    }`}
-                  >
-                    {modalContent.message}
-                  </Dialog.Title>
-                  <div className='mt-4'>
-                    <Button onClick={() => setIsModalOpen(false)}>
-                      Закрыть
-                    </Button>
-                  </div>
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle
+              className={
+                modalContent.isError ? 'text-red-900' : 'text-green-900'
+              }
+            >
+              {modalContent.message}
+            </DialogTitle>
+          </DialogHeader>
+          <div className='mt-4'>
+            <Button onClick={() => setIsModalOpen(false)}>Закрыть</Button>
           </div>
-        </Dialog>
-      </Transition>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
+
+export default PromoCodeCard;

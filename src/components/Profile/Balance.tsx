@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Skeleton } from "@/components/ui/skeleton"
 
@@ -26,7 +25,6 @@ export default function Balance () {
             setLoading(false);
         } catch (error) {
             console.error('Error fetching balance:', error); 
-            toast.error('Ошибка при получении баланса');
             setLoading(false);
         }
     };
@@ -39,11 +37,8 @@ export default function Balance () {
       {loading ? (
         <Skeleton className="w-[110px] h-[20px] rounded-full" />
       ) : (
-        <p>Ваш баланс: <span className='font-bold'>{balance}</span></p>
+        <p>Ваш баланс: <span className='font-bold'>{balance}</span> рублей</p>
       )}
-      <ToastContainer />
     </div>
   );
 };
-
-

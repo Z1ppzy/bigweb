@@ -1,7 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -23,37 +22,39 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Input } from '@headlessui/react';
 import axios from 'axios';
+import { Input } from '@/components/ui/input';
+
+
 
 const FormSchema = z.object({
   name: z.string().min(6, {
-    message: 'Name must be at least 6 characters.',
+    message: 'Имя должно содержать не менее 6 символов.',
   }),
   email: z.string().email({
-    message: 'Must be a valid email.',
+    message: 'Должен быть действительный адрес электронной почты.',
   }),
   picture: z
     .instanceof(File, {
       message: 'You must upload a file.',
     })
     .refine((file) => file.size <= 2 * 1024 * 1024, {
-      message: 'File size should be less than 2MB.',
+      message: 'Размер файла должен быть не более 2 МБ.',
     }),
   bio: z
     .string()
     .min(10, {
-      message: 'Bio must be at least 10 characters.',
+      message: 'Описание должно быть не менее 10 символов.',
     })
-    .max(160, {
-      message: 'Bio must not be longer than 160 characters.',
+    .max(240, {
+      message: 'Длина описания не должна превышать 240 символов.',
     }),
   complaintType: z
     .string()
     .min(1, {
-      message: 'Please select a complaint type.',
+      message: 'Пожалуйста, выберите тип жалобы.',
     })
-    .nonempty({ message: 'Complaint type is required.' }),
+    .nonempty({ message: 'Требуется указать тип жалобы.' }),
 });
 
 export default function ContactUs() {
@@ -81,24 +82,23 @@ export default function ContactUs() {
   }
 
   return (
-    <div className='flex justify-center align-middle h-screen items-center'>
+    <div className='flex justify-center align-middle  items-center my-20'>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className='flex flex-col gap-4 border-2 p-20 rounded-2xl'
+          className='flex flex-col gap-4 md:border-2 md:p-20 rounded-2xl'
         >
+          <h1 className='text-2xl font-bold text-white text-center mb-4'>
+            Форма обратной связи
+          </h1>
           <FormField
             control={form.control}
             name='name'
             render={({ field }) => (
               <FormItem className='flex flex-col'>
-                <FormLabel>Ник в игре</FormLabel>
+                <FormLabel>Ваш ник</FormLabel>
                 <FormControl>
-                  <Input
-                    className='text-black w-72 h-8 rounded-md'
-                    placeholder='Никнейм'
-                    {...field}
-                  />
+                  <Input placeholder='Example' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -110,12 +110,11 @@ export default function ContactUs() {
             name='email'
             render={({ field }) => (
               <FormItem className='flex flex-col'>
-                <FormLabel>Почта для ответа</FormLabel>
+                <FormLabel>Ваша почта</FormLabel>
                 <FormControl>
                   <Input
                     id='email'
-                    className='text-black w-72 h-8 rounded-md'
-                    placeholder='Почта'
+                    placeholder='example@gmail.com'
                     {...field}
                   />
                 </FormControl>
@@ -132,13 +131,14 @@ export default function ContactUs() {
                 <FormLabel>Описание проблемы</FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder='Опишите более подробно вашу ситуацию'
+                    placeholder='Я строил дом и мне его взорвали..'
                     className='resize-none w-96'
                     {...field}
                   />
                 </FormControl>
-                <FormDescription>
-                  You can <span>@mention</span> other users and organizations.
+                <FormDescription className='w-96'>
+                  Постарайтесь максимально подробно расписать вашу проблему, для
+                  более быстрого и четкого решения.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -182,15 +182,17 @@ export default function ContactUs() {
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                   >
-                    <SelectTrigger className='w-[220px]'>
+                    <SelectTrigger>
                       <SelectValue placeholder='Выберите вид жалобы' />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup>
                         <SelectLabel>Вид жалоб</SelectLabel>
-                        <SelectItem value='bug'>Bug/Cheats</SelectItem>
-                        <SelectItem value='complaint'>Complaint</SelectItem>
-                        <SelectItem value='unban'>Unban Request</SelectItem>
+                        <SelectItem value='bug'>Баги/Читы</SelectItem>
+                        <SelectItem value='complaint'>Жалоба</SelectItem>
+                        <SelectItem value='unban'>
+                          Прошение о разбане
+                        </SelectItem>
                       </SelectGroup>
                     </SelectContent>
                   </Select>
@@ -201,7 +203,7 @@ export default function ContactUs() {
           />
 
           <div className='flex justify-start'>
-            <Button type='submit'>Отправить</Button>
+            <Button type='submit' className='w-full h-10 bg-purple-600 text-white rounded-md hover:bg-purple-700'>Отправить</Button>
           </div>
         </form>
       </Form>
