@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/card';
 import { Label } from '@radix-ui/react-label';
 import { toast } from 'react-toastify';
+import { IoTrashBinOutline } from 'react-icons/io5';
 
 interface PromoCode {
   id?: number;
@@ -65,6 +66,18 @@ export default function PromoCodeManager() {
       toast.error('Произошла ошибка при создании промокода');
     }
   };
+  const handleDelete = async (id: number) => {
+    try {
+      await axios.delete(
+        import.meta.env.VITE_BACKEND_URL + `/api/promo-codes/${id}`
+      );
+      toast.success('Промокод был успешно удалён');
+      fetchPromoCodes();
+    } catch (error) {
+      console.error('Error deleting promo code:', error);
+      toast.error('Произошла ошибка при удалении промокода');
+    }
+  };
 
   return (
     <Card className='w-[350px]'>
@@ -113,9 +126,21 @@ export default function PromoCodeManager() {
 
         <ul className='text-sm text-muted-foreground'>
           {promoCodes.map((promoCode) => (
-            <li key={promoCode.id}>
-              {promoCode.code} - Сумма : {promoCode.amount} - Кол-во использ:{' '}
-              {promoCode.max_usage ?? 'Unlimited'}
+            <li
+              key={promoCode.id}
+              className='flex justify-between items-center'
+            >
+              <span>
+                {promoCode.code} - Сумма : {promoCode.amount} - Кол-во использ:{' '}
+                {promoCode.max_usage ?? 'Unlimited'}
+              </span>
+              <Button
+                variant='ghost'
+                onClick={() => handleDelete(promoCode.id!)}
+                
+              >
+                <IoTrashBinOutline className='text-xl' />
+              </Button>
             </li>
           ))}
         </ul>
