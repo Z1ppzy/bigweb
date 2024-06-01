@@ -40,7 +40,6 @@ export default function AdminDashBoard() {
             <SendNotification />
           </div>
           <div className='flex flex-col items-center'>
-            {' '}
             <RoleChangeCard />
           </div>
         </div>

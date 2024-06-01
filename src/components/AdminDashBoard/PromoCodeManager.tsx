@@ -3,12 +3,12 @@ import axios from 'axios';
 import { Input } from '../ui/input';
 import { Button } from '@/components/ui/button';
 import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-  } from '@/components/ui/card';
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Label } from '@radix-ui/react-label';
 import { toast } from 'react-toastify';
 
@@ -71,12 +71,12 @@ export default function PromoCodeManager() {
       <CardHeader>
         <CardTitle>Управление промокодами</CardTitle>
         <CardDescription>
-          Тут вы можете поощерять любимых игроков! 
+          Тут вы можете поощерять любимых игроков!
         </CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleFormSubmit}>
-        <div className='flex flex-col space-y-2.5'>
+          <div className='flex flex-col space-y-2.5'>
             <Label>Название промокода:</Label>
             <Input
               type='text'
@@ -106,21 +106,19 @@ export default function PromoCodeManager() {
             />
           </div>
           <div className='flex justify-between mt-6'>
-          <Button type='submit'>Создать промокод</Button>
+            <Button type='submit'>Создать промокод</Button>
           </div>
         </form>
         <CardTitle className='mt-5'>Существующие промокоды</CardTitle>
-        <CardDescription>
 
-        <ul>
+        <ul className='text-sm text-muted-foreground'>
           {promoCodes.map((promoCode) => (
-              <li key={promoCode.id}>
+            <li key={promoCode.id}>
               {promoCode.code} - Сумма : {promoCode.amount} - Кол-во использ:{' '}
               {promoCode.max_usage ?? 'Unlimited'}
             </li>
           ))}
         </ul>
-          </CardDescription>
       </CardContent>
     </Card>
   );
