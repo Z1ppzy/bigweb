@@ -7,7 +7,7 @@ import RoleChangeCard from '@/components/AdminDashBoard/RoleChangeCard';
 import { NewsCard } from '@/components/AdminDashBoard/NewsCard';
 import { PlayerSearchCard } from '@/components/AdminDashBoard/PlayerSearchCard';
 import SendNotification from '@/components/AdminDashBoard/SendNotification';
-
+import PromoCodeManager from '@/components/AdminDashBoard/PromoCodeManager';
 
 export default function AdminDashBoard() {
   const isLoadingAuth = useCheckAuth();
@@ -28,16 +28,20 @@ export default function AdminDashBoard() {
         </h1>
         <div className='flex flex-wrap md:grid grid-cols-3 p-10 gap-5 justify-center'>
           <div className='flex flex-col items-center'>
-           <NewsCard />
+            <NewsCard />
           </div>
           <div className='flex flex-col items-center '>
             <PlayerSearchCard />
           </div>
           <div className='flex flex-col items-center'>
-            <RoleChangeCard />
+            <PromoCodeManager />
           </div>
           <div className='flex flex-col items-center'>
             <SendNotification />
+          </div>
+          <div className='flex flex-col items-center'>
+            {' '}
+            <RoleChangeCard />
           </div>
         </div>
         <ToastContainer
