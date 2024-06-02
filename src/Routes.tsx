@@ -13,6 +13,7 @@ import Shop from './Pages/Shop';
 import Rewards from './Pages/Rewards';
 import Notifications from './Pages/Notifications';
 import ContactUs from './Pages/ContactUs';
+import HandlerContactUS from './Pages/HandlerContactUs';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: '/contactus',
         element: <ContactUs />,
+      },
+      {
+        path: '/handlercontactus',
+        element: <HandlerContactUS />,
       },
       {
         path: '/login',

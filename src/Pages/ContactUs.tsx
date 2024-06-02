@@ -151,7 +151,7 @@ export default function ContactUs() {
             render={({ field }) => (
               <FormItem className='flex flex-col'>
                 <FormLabel htmlFor='picture'>
-                  Загрузите фотографию для пруфа
+                  Загрузите фотографию с доказательством
                 </FormLabel>
                 <FormControl>
                   <Input
