@@ -61,13 +61,13 @@ export default function ServerStatus() {
 
   return (
     <div className='md:mx-7'>
-      <div className='flex flex-row justify-around items-center mt-10 p-5 bg-purple-700 rounded-lg'>
-        <div className='flex flex-col items-center text-white mx-4'>
+      <div className='flex flex-row justify-around items-center mt-10 p-5 bg-muted rounded-lg '>
+        <div className='flex flex-col items-center dark:text-white mx-4 '>
           <FaDiscord className='text-4xl mb-2' />
           <p className='text-xl font-bold'>Дискорд сервер</p>
           <p className='text-lg'><b>{discordOnlineUsers}</b> пользователей онлайн</p>
         </div>
-        <div className='flex flex-col items-center text-white mx-4'>
+        <div className='flex flex-col items-center dark:text-white mx-4'>
           <GoServer className='text-4xl mb-2' />
           <p className='text-xl font-bold'>Сервер Майнкрафта</p>
           <p className='text-lg'><b>{onlinePlayers}</b> игроков онлайн</p>
