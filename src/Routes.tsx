@@ -14,6 +14,7 @@ import Rewards from './Pages/Rewards';
 import Notifications from './Pages/Notifications';
 import ContactUs from './Pages/ContactUs';
 import HandlerContactUS from './Pages/HandlerContactUs';
+import SuggestionListCheck from './Pages/SuggestionListCheck';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: '/handlercontactus',
         element: <HandlerContactUS />,
+      },
+      {
+        path: '/suggestionlistcheck',
+        element: <SuggestionListCheck />,
       },
       {
         path: '/login',
