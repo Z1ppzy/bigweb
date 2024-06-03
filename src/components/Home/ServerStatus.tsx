@@ -7,10 +7,10 @@ export default function ServerStatus() {
   const discordServerId = '1114652277576302612';
 
   const [onlinePlayers, setOnlinePlayers] = useState<number | string>(
-    'Loading...'
+    'Загрузка...'
   );
   const [discordOnlineUsers, setDiscordOnlineUsers] = useState<number | string>(
-    'Loading...'
+    'Загрузка...'
   );
 
   const fetchOnlinePlayers = async () => {

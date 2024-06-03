@@ -17,11 +17,11 @@ export default function Home() {
             <SliderImg />
             <ServerStatus />
           </div>
-          <div className='px-5 md:px-10 mt-10 md:mt-0'>
-            <h1 className='font-semibold text-xl text-center md:text-2xl'>
+          <div className='px-5 md:px-10 mt-10 md:mt-20'>
+            <h1 className='font-semibold text-xl text-center md:text-4xl'>
               Начните свою историю в нашей виртуальной песочнице!
             </h1>
-            <p className='text-center font-light text-lg mt-4 md:mt-3'>
+            <p className='text-center font-light text-xl mt-4 md:mt-8'>
               Приветствуем Вас на нашем сервере Minecraft! Откройте для себя
               мир, где каждый шаг - это приключение. Уникальные плагины обогатят
               ваш игровой процесс, предоставляя возможности для творчества и
@@ -31,10 +31,10 @@ export default function Home() {
               невероятные сооружения и станьте частью сообщества, где каждый
               игрок ценится. Ваше следующее приключение начинается здесь!
             </p>
-            <div className='mt-10 md:mt-8 text-center'>
+            <div className='mt-10 md:mt-16 text-center'>
               <Link
                 to='/register'
-                className='bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-lg px-10 md:px-16 py-4 text-white hover:text-teal-400 duration-500'
+                className='bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-lg font-bold text-2xl px-10 md:px-16 py-4 text-white hover:text-slate-300 duration-500'
               >
                 Начать играть
               </Link>

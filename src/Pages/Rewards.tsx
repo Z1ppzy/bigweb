@@ -14,14 +14,6 @@ export default function Rewards () {
   const [rewards, setRewards] = useState<Reward[]>([
     { id: 1, name: 'Reward 1', claimed: false },
     { id: 2, name: 'Reward 2', claimed: false },
-    { id: 3, name: 'Reward 3', claimed: false },
-    { id: 4, name: 'Reward 4', claimed: false },
-    { id: 5, name: 'Reward 5', claimed: false },
-    { id: 6, name: 'Reward 6', claimed: false },
-    { id: 7, name: 'Reward 7', claimed: false },
-    { id: 8, name: 'Reward 8', claimed: false },
-    { id: 9, name: 'Reward 9', claimed: false },
-    { id: 10, name: 'Reward 10', claimed: false },
     
 
   ]);
