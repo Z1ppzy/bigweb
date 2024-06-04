@@ -60,18 +60,20 @@ export default function ServerStatus() {
   }, [serverIp, discordServerId]);
 
   return (
-    <div className='md:mx-7'>
-      <div className='flex flex-row justify-around items-center mt-10 p-5 bg-muted rounded-lg '>
-        <div className='flex flex-col items-center dark:text-white mx-4 '>
-          <FaDiscord className='text-4xl mb-2' />
-          <p className='text-xl font-bold'>Дискорд сервер</p>
-          <p className='text-lg'><b>{discordOnlineUsers}</b> пользователей онлайн</p>
-        </div>
-        <div className='flex flex-col items-center dark:text-white mx-4'>
-          <GoServer className='text-4xl mb-2' />
-          <p className='text-xl font-bold'>Сервер Майнкрафта</p>
-          <p className='text-lg'><b>{onlinePlayers}</b> игроков онлайн</p>
-        </div>
+    <div className='flex justify-center text-white items-center mt-10 bg-gradient-to-r from-violet-700 to-fuchsia-700 rounded-lg mx-8 md:mx-10 flex-wrap'>
+      <div className='flex flex-col text-center items-center m-4'>
+        <FaDiscord className='text-4xl mb-2' />
+        <p className='md:text-xl font-bold'>Дискорд сервер</p>
+        <p className='md:text-lg'>
+          <b>{discordOnlineUsers}</b> пользователей онлайн
+        </p>
+      </div>
+      <div className='flex flex-col text-center items-center md:m-4'>
+        <GoServer className='text-4xl mb-2' />
+        <p className='md:text-xl font-bold'>Сервер Майнкрафта</p>
+        <p className='md:text-lg'>
+          <b>{onlinePlayers}</b> игроков онлайн
+        </p>
       </div>
     </div>
   );
