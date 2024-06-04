@@ -22,7 +22,7 @@ export default function ServerStatus() {
       if (data.online) {
         setOnlinePlayers(data.players.online);
       } else {
-        setOnlinePlayers('None');
+        setOnlinePlayers('0');
       }
     } catch (e) {
       console.error('Error fetching online players:', e);
@@ -39,7 +39,7 @@ export default function ServerStatus() {
       if (data.presence_count !== undefined) {
         setDiscordOnlineUsers(data.presence_count);
       } else {
-        setDiscordOnlineUsers('None');
+        setDiscordOnlineUsers('0');
       }
     } catch (e) {
       console.error('Error fetching Discord online users:', e);
@@ -60,8 +60,8 @@ export default function ServerStatus() {
   }, [serverIp, discordServerId]);
 
   return (
-    <div className='flex justify-center text-white items-center mt-10 bg-gradient-to-r from-violet-700 to-fuchsia-700 rounded-lg mx-8 md:mx-10 flex-wrap'>
-      <div className='flex flex-col text-center items-center m-4'>
+    <div className='flex justify-center text-white items-center mt-10 py-6 md:py-0 bg-gradient-to-r from-violet-700 to-fuchsia-700 rounded-lg mx-8 md:mx-10 flex-wrap'>
+      <div className='flex flex-col text-center items-center md:m-4'>
         <FaDiscord className='text-4xl mb-2' />
         <p className='md:text-xl font-bold'>Дискорд сервер</p>
         <p className='md:text-lg'>
