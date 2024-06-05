@@ -12,7 +12,7 @@ import ServerStatus from '@/components/Home/ServerStatus';
 export default function Home() {
   return (
     <>
-        <div className='lg:grid grid-cols-2 min-h-screen mt-16'>
+        <div className='lg:grid grid-cols-2 min-h-screen mt-12 md:mt-16'>
           <div>
             <SliderImg />
             <ServerStatus />

@@ -60,7 +60,7 @@ export default function ServerStatus() {
   }, [serverIp, discordServerId]);
 
   return (
-    <div className='flex justify-center text-white items-center mt-10 py-6 md:py-0 bg-gradient-to-r from-violet-700 to-fuchsia-700 rounded-lg mx-8 md:mx-10 flex-wrap'>
+    <div className='flex justify-center text-white items-center mt-10 py-2 md:py-0 bg-stone-600 rounded-lg mx-8 md:mx-10 flex-wrap'>
       <div className='flex flex-col text-center items-center md:m-4'>
         <FaDiscord className='text-4xl mb-2' />
         <p className='md:text-xl font-bold'>Дискорд сервер</p>
