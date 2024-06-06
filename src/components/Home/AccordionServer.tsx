@@ -24,6 +24,9 @@ export default function AccordionServer() {
   };
   return (
     <>
+      <h1 className='mt-8 text-3xl md:text-4xl text-center md:text-left font-Welcome px-10 mb-6'>
+        Сервер FAQs
+      </h1>
       <div className='mx-4 lg:mx-40 mb-10 mt-6'>
         <Accordion type='single' collapsible className='w-full'>
           <AccordionItem value='item-1'>

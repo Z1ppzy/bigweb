@@ -88,7 +88,7 @@ export default function News() {
 
   return (
     <div>
-      <h1 className='mt-8 text-3xl md:text-4xl text-center md:text-left font-Welcome'>
+      <h1 className='mt-8 text-3xl md:text-4xl text-center md:text-left font-Welcome px-10 mb-6'>
         Новости проекта
       </h1>
       <div className='w-full flex flex-wrap gap-6 px-4 md:px-10'>
