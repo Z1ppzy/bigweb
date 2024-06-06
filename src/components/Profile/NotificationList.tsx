@@ -6,6 +6,7 @@ interface Notification {
     title: string;
     message: string;
     read: boolean;
+    type: string;
 }
 
 const NotificationList: React.FC = () => {
@@ -26,12 +27,13 @@ const NotificationList: React.FC = () => {
     };
 
     return (
-        <div className='border border-slate-500 dark:border-white rounded-lg p-4'>
+        <div className='border border-slate-500 dark:border-white rounded-lg p-4 bg-slate-600'>
             <ul>
                 {notifications.map(notification => (
                     <li key={notification.id} style={{ textDecoration: notification.read ? 'line-through' : 'none' }}>
                         <h3>{notification.title}</h3>
                         <p>{notification.message}</p>
+                        <p className='text-center'>{notification.type}</p>
                         {!notification.read && (
                             <button onClick={() => handleMarkAsRead(notification.id)}>Mark as Read</button>
                         )}
