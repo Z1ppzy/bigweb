@@ -87,69 +87,71 @@ export default function News() {
   }
 
   return (
-    <div className='w-full flex flex-wrap gap-6 px-4 md:px-10'>
-      <h1 className='mt-8 text-3xl md:text-4xl text-center md:text-left px-10 font-Welcome'>
+    <div>
+      <h1 className='mt-8 text-3xl md:text-4xl text-center md:text-left font-Welcome'>
         Новости проекта
       </h1>
-      {currentNews.length > 0 ? (
-        currentNews.map((newsItem: NewsItem) => (
-          <div
-            key={newsItem.id}
-            className='flex flex-col md:flex-row w-full h-auto md:h-[300px]'
-          >
-            <div className='flex-shrink-0'>
-              <img
-                className='w-full md:w-[500px] h-[270px] rounded-xl object-cover'
-                src={`${import.meta.env.VITE_BACKEND_URL}${
-                  newsItem.image_path
-                }`}
-                alt={newsItem.title}
-              />
-              <p className='text-gray-500 text-center md:text-left'>
-                {formatDate(newsItem.created_at)}
-              </p>
+      <div className='w-full flex flex-wrap gap-6 px-4 md:px-10'>
+        {currentNews.length > 0 ? (
+          currentNews.map((newsItem: NewsItem) => (
+            <div
+              key={newsItem.id}
+              className='flex flex-col md:flex-row w-full h-auto md:h-[300px]'
+            >
+              <div className='flex-shrink-0'>
+                <img
+                  className='w-full md:w-[500px] h-[270px] rounded-xl object-cover'
+                  src={`${import.meta.env.VITE_BACKEND_URL}${
+                    newsItem.image_path
+                  }`}
+                  alt={newsItem.title}
+                />
+                <p className='text-gray-500 text-center md:text-left'>
+                  {formatDate(newsItem.created_at)}
+                </p>
+              </div>
+              <div className='md:w-[600px] p-4 md:pl-10'>
+                <h1 className='text-center md:text-left font-extrabold'>
+                  {newsItem.title}
+                </h1>
+                <p className='font-Welcome px-2 md:px-5'>{newsItem.content}</p>
+              </div>
             </div>
-            <div className='md:w-[600px] p-4 md:pl-10'>
-              <h1 className='text-center md:text-left font-extrabold'>
-                {newsItem.title}
-              </h1>
-              <p className='font-Welcome px-2 md:px-5'>{newsItem.content}</p>
-            </div>
+          ))
+        ) : (
+          <div className='w-full h-full flex justify-center items-center'>
+            <p className='font-bold text-xl'>Нет доступных новостей!!!</p>
           </div>
-        ))
-      ) : (
-        <div className='w-full h-full flex justify-center items-center'>
-          <p className='font-bold text-xl'>Нет доступных новостей!!!</p>
-        </div>
-      )}
+        )}
 
-      <div className='w-full flex justify-center mt-4'>
-        <Pagination>
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious
-                onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
-              />
-            </PaginationItem>
-            {Array.from({ length: totalPages }, (_, index) => (
-              <PaginationItem key={index}>
-                <PaginationLink
-                  isActive={currentPage === index + 1}
-                  onClick={() => handlePageChange(index + 1)}
-                >
-                  {index + 1}
-                </PaginationLink>
+        <div className='w-full flex justify-center mt-4'>
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious
+                  onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
+                />
               </PaginationItem>
-            ))}
-            <PaginationItem>
-              <PaginationNext
-                onClick={() =>
-                  handlePageChange(Math.min(currentPage + 1, totalPages))
-                }
-              />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
+              {Array.from({ length: totalPages }, (_, index) => (
+                <PaginationItem key={index}>
+                  <PaginationLink
+                    isActive={currentPage === index + 1}
+                    onClick={() => handlePageChange(index + 1)}
+                  >
+                    {index + 1}
+                  </PaginationLink>
+                </PaginationItem>
+              ))}
+              <PaginationItem>
+                <PaginationNext
+                  onClick={() =>
+                    handlePageChange(Math.min(currentPage + 1, totalPages))
+                  }
+                />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
+        </div>
       </div>
     </div>
   );
