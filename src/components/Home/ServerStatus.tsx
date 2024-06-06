@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
 import { GoServer } from 'react-icons/go';
 import { FaDiscord } from 'react-icons/fa';
+import LoaderStatus from '@/components/Global/LoaderStatus'; 
 
 export default function ServerStatus() {
   const serverIp = 'mc.heavenlyweiner.ru';
   const discordServerId = '1114652277576302612';
 
-  const [onlinePlayers, setOnlinePlayers] = useState<number | string>(
-    'Загрузка...'
+  const [onlinePlayers, setOnlinePlayers] = useState<number | JSX.Element>(
+    <LoaderStatus />
   );
-  const [discordOnlineUsers, setDiscordOnlineUsers] = useState<number | string>(
-    'Загрузка...'
+  const [discordOnlineUsers, setDiscordOnlineUsers] = useState<number | JSX.Element>(
+    <LoaderStatus />
   );
 
   const fetchOnlinePlayers = async () => {
@@ -22,11 +23,11 @@ export default function ServerStatus() {
       if (data.online) {
         setOnlinePlayers(data.players.online);
       } else {
-        setOnlinePlayers('0');
+        setOnlinePlayers(0);
       }
     } catch (e) {
       console.error('Error fetching online players:', e);
-      setOnlinePlayers('None');
+      setOnlinePlayers(<span>None</span>);
     }
   };
 
@@ -39,11 +40,11 @@ export default function ServerStatus() {
       if (data.presence_count !== undefined) {
         setDiscordOnlineUsers(data.presence_count);
       } else {
-        setDiscordOnlineUsers('0');
+        setDiscordOnlineUsers(0);
       }
     } catch (e) {
       console.error('Error fetching Discord online users:', e);
-      setDiscordOnlineUsers('None');
+      setDiscordOnlineUsers(<span>None</span>);
     }
   };
 
