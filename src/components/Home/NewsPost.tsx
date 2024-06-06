@@ -75,15 +75,20 @@ export default function News() {
 
   if (error) {
     return (
-      <p className='font-bold text-xl text-center p-20'>
-        Ошибка при загрузке новостей!!!
-      </p>
+      <div>
+        <h1 className='mt-8 text-3xl md:text-4xl text-center md:text-left px-10 font-Welcome'>
+          Новости проекта
+        </h1>
+        <p className='font-bold text-xl text-center p-20'>
+          Ошибка при загрузке новостей!!!
+        </p>
+      </div>
     );
   }
 
   return (
     <div className='w-full flex flex-wrap gap-6 px-4 md:px-10'>
-      <h1 className='font-bold text-xl font-Welcome w-full md:text-left'>
+      <h1 className='mt-8 text-3xl md:text-4xl text-center md:text-left px-10 font-Welcome'>
         Новости проекта
       </h1>
       {currentNews.length > 0 ? (
