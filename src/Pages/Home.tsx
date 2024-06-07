@@ -17,7 +17,7 @@ export default function Home() {
           <SliderImg />
           <ServerStatus />
         </div>
-        <div className='px-5 md:px-10 mt-10 md:mt-20'>
+        <div className='px-5 md:px-10 mt-10 md:mt-18'>
           <h1 className='font-semibold text-xl text-center md:text-4xl'>
             Начните свою историю в нашей виртуальной песочнице!
           </h1>

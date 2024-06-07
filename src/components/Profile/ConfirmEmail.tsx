@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -16,18 +17,28 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function ConfirmEmail() {
   const [email, setEmail] = useState('');
 
-  const validateEmail = (email: String) => {
+  const validateEmail = (email: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!email) {
       toast.error('Введите почту');
     } else if (!validateEmail(email)) {
       toast.error('Введите действительную почту');
     } else {
-      toast.success('Дальнейшие действия были отправлены в письме');
+      try {
+        const response = await axios.post(import.meta.env.VITE_BACKEND_URL + '/api/send-verification-email', { email });
+
+        if (response.status === 200) {
+          toast.success('Письмо с дальнейшими инструкциями было отправлено на вашу почту');
+        } else {
+          toast.error('Ошибка при отправке письма');
+        }
+      } catch (error) {
+        toast.error('Произошла ошибка');
+      }
     }
   };
 
@@ -38,17 +49,17 @@ export default function ConfirmEmail() {
         <CardHeader>
           <CardTitle>Подтвердить электронную почту</CardTitle>
           <CardDescription>
-            Введите определенное слово, которое даст вам небольшой бонус на нашем сервере :)
+            Введите актуальную почту для получения письма с подтверждением.
           </CardDescription>
         </CardHeader>
-        <CardContent className='space-y-2'>
-          <div className='space-y-1'>
-            <Label htmlFor='email'>Введите актуальную почту</Label>
+        <CardContent className="space-y-2">
+          <div className="space-y-1">
+            <Label htmlFor="email">Введите актуальную почту</Label>
             <Input
-              id='email'
-              type='email'
-              placeholder='example@mail.ru'
-              autoComplete='email'
+              id="email"
+              type="email"
+              placeholder="example@mail.ru"
+              autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />

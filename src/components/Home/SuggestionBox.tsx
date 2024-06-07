@@ -58,7 +58,7 @@ export default function SuggestionBox() {
             onChange={handleChange}
             className='w-full'
           />
-          <Button className='w-fit' type='submit'>
+          <Button className='w-fit' type='submit' variant='outline'>
             Отправить
           </Button>
         </form>

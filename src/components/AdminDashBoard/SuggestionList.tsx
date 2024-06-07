@@ -34,11 +34,11 @@ export default function SuggestionList() {
     <div>
       <h1>Все предложения</h1>
       {error && <p>{error}</p>}
-      <ul className='w-[600px] h-[600px]'>
+      <div className='md:w-[600px] md:h-[600px] '>
         {suggestions.map((suggestion) => (
-          <li key={suggestion.id}>{suggestion.suggestion}</li>
+          <p key={suggestion.id} className='break-words whitespace-pre-wrap'>{suggestion.suggestion}</p>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

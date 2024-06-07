@@ -6,8 +6,8 @@ import {
   PaginationContent,
   PaginationItem,
   PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
+  // PaginationNext,
+  // PaginationPrevious,
 } from '@/components/ui/pagination';
 
 interface NewsItem {
@@ -100,7 +100,7 @@ export default function News() {
             >
               <div className='flex-shrink-0'>
                 <img
-                  className='w-full md:w-[500px] h-[270px] rounded-xl object-cover'
+                  className='w-full md:w-[500px] md:h-[270px] rounded-xl object-cover'
                   src={`${import.meta.env.VITE_BACKEND_URL}${
                     newsItem.image_path
                   }`}
@@ -110,11 +110,11 @@ export default function News() {
                   {formatDate(newsItem.created_at)}
                 </p>
               </div>
-              <div className='md:w-[600px] p-4 md:pl-10'>
-                <h1 className='text-center md:text-left font-extrabold'>
+              <div className='md:w-[600px] pl-4'>
+                <h1 className='md:text-left font-extrabold text-xl'>
                   {newsItem.title}
                 </h1>
-                <p className='font-Welcome px-2 md:px-5'>{newsItem.content}</p>
+                <p className='font-Welcome '>{newsItem.content}</p>
               </div>
             </div>
           ))
@@ -128,9 +128,9 @@ export default function News() {
           <Pagination>
             <PaginationContent>
               <PaginationItem>
-                <PaginationPrevious
+                {/* <PaginationPrevious
                   onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
-                />
+                /> */}
               </PaginationItem>
               {Array.from({ length: totalPages }, (_, index) => (
                 <PaginationItem key={index}>
@@ -143,11 +143,11 @@ export default function News() {
                 </PaginationItem>
               ))}
               <PaginationItem>
-                <PaginationNext
+                {/* <PaginationNext
                   onClick={() =>
                     handlePageChange(Math.min(currentPage + 1, totalPages))
                   }
-                />
+                /> */}
               </PaginationItem>
             </PaginationContent>
           </Pagination>

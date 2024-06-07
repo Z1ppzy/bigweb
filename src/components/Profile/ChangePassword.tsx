@@ -28,14 +28,20 @@ export function ChangePassword() {
 
   useEffect(() => {
     setIsLengthValid(newPassword.length >= 8);
-    setHasUpperCase(/[A-Z], [А-Я]/.test(newPassword));
-    setHasLowerCase(/[a-z], [а-я]/.test(newPassword));
+    setHasUpperCase(/[A-ZА-Я]/.test(newPassword));
+    setHasLowerCase(/[a-zа-я]/.test(newPassword));
     setHasNumber(/\d/.test(newPassword));
     setHasSpecialChar(/[!@#$%^&*(),.?":{}|<>]/.test(newPassword));
   }, [newPassword]);
 
   const handleNewPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNewPassword(e.target.value);
+    if (!isPasswordInputStarted) {
+      setIsPasswordInputStarted(true);
+    }
+  };
+
+  const handleFocus = () => {
     if (!isPasswordInputStarted) {
       setIsPasswordInputStarted(true);
     }
@@ -91,6 +97,7 @@ export function ChangePassword() {
             type='password'
             value={newPassword}
             onChange={handleNewPasswordChange}
+            onFocus={handleFocus}
           />
         </div>
         <div className='space-y-1'>
