@@ -5,6 +5,7 @@ import { Label } from '@radix-ui/react-label';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ButtonIcon } from '@radix-ui/react-icons';
+import { Link } from 'react-router-dom';
 
 export default function ForgotPassword(): JSX.Element {
   const [email, setEmail] = useState<string>('');
@@ -32,8 +33,8 @@ export default function ForgotPassword(): JSX.Element {
   };
 
   return (
-    <div className='flex flex-col justify-center text-center items-center h-screen'>
-      <form className='md:w-96 md:h-96 flex flex-col gap-2'>
+    <div className='flex flex-col justify-center text-center items-center h-screen px-10'>
+      <form className='md:w-96 md:h-96 flex flex-col gap-2 font-light text-base'>
         <h1 className='font-bold text-2xl'>Забыли пароль?</h1>
         <Label htmlFor='email'>
           Пожалуйста, введите ваш адрес электронной почты, чтобы мы могли
@@ -49,8 +50,8 @@ export default function ForgotPassword(): JSX.Element {
           onChange={handleEmailChange}
         />
         <p>
-          Если у вас возникли проблемы, <a href='#'>свяжитесь с нами</a> или
-          посетите наши <a href='#'>социальные сети</a>.
+          Если у вас возникли проблемы, <Link to='/contactus' className='text-purple-800'>свяжитесь с нами</Link> или
+          посетите наши <span className='text-purple-800'>социальные сети</span>.
         </p>
         <Button>Отправить</Button>
       </form>
