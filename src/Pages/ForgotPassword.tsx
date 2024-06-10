@@ -1,10 +1,9 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Label } from '@radix-ui/react-label';
+import { Label } from '@/components/ui/label';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { ButtonIcon } from '@radix-ui/react-icons';
 import { Link } from 'react-router-dom';
 
 export default function ForgotPassword(): JSX.Element {
@@ -34,7 +33,10 @@ export default function ForgotPassword(): JSX.Element {
 
   return (
     <div className='flex flex-col justify-center text-center items-center h-screen px-10'>
-      <form className='md:w-96 md:h-96 flex flex-col gap-2 font-light text-base'>
+      <form
+        className='md:w-96 md:h-96 flex flex-col gap-4'
+        onSubmit={handleSubmit}
+      >
         <h1 className='font-bold text-2xl'>Забыли пароль?</h1>
         <Label htmlFor='email'>
           Пожалуйста, введите ваш адрес электронной почты, чтобы мы могли
@@ -49,10 +51,14 @@ export default function ForgotPassword(): JSX.Element {
           placeholder='example@mail.ru'
           onChange={handleEmailChange}
         />
-        <p>
-          Если у вас возникли проблемы, <Link to='/contactus' className='text-purple-800'>свяжитесь с нами</Link> или
-          посетите наши <span className='text-purple-800'>социальные сети</span>.
-        </p>
+        <Label>
+          Если у вас возникли проблемы,{' '}
+          <Link to='/contactus' className='text-purple-600'>
+            свяжитесь с нами
+          </Link>{' '}
+          или посетите наши{' '}
+          <Link to='/' className='text-purple-600'>социальные сети</Link>.
+        </Label>
         <Button>Отправить</Button>
       </form>
       <ToastContainer />
