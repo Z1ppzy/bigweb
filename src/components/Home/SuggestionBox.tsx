@@ -3,6 +3,7 @@ import { Button } from '../ui/button';
 import { Textarea } from '../ui/textarea';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { Label } from '@/components/ui/label';
 
 export default function SuggestionBox() {
   const [text, setText] = useState<string>('');
@@ -48,15 +49,17 @@ export default function SuggestionBox() {
             <h1 className='text-center font-bold text-2xl'>
               Предложить идею по улучшению сервера
             </h1>
-            <p className='font-light md:dark:font-extralight  mt-0'>
+            <Label htmlFor='suggestion'>
               Идея должна быть адекватной и правильно выраженной!
-            </p>
+            </Label>
           </div>
           <Textarea
             placeholder='Снять зипзи с админа...'
             value={text}
             onChange={handleChange}
             className='w-full'
+            name='suggestion'
+            id='suggestion'
           />
           <Button className='w-fit' type='submit' variant='outline'>
             Отправить

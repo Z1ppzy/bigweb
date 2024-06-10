@@ -34,7 +34,7 @@ export default function ForgotPassword(): JSX.Element {
   return (
     <div className='flex flex-col justify-center text-center items-center h-screen px-10'>
       <form
-        className='md:w-96 md:h-96 flex flex-col gap-4'
+        className='md:w-[450px] md:h-96 flex flex-col gap-4'
         onSubmit={handleSubmit}
       >
         <h1 className='font-bold text-2xl'>Забыли пароль?</h1>
