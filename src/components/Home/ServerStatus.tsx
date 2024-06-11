@@ -35,6 +35,9 @@ export default function ServerStatus() {
     try {
       const apiWidgetUrl = `https://discord.com/api/guilds/${discordServerId}/widget.json`;
       const response = await fetch(apiWidgetUrl);
+      if (!response.ok) {
+        throw new Error(`Error ${response.status}: ${response.statusText}`);
+      }
       const data = await response.json();
 
       if (data.presence_count !== undefined) {
@@ -61,7 +64,7 @@ export default function ServerStatus() {
   }, [serverIp, discordServerId]);
 
   return (
-    <div className='flex justify-center md:justify-between  md:px-20 items-center mt-10 py-2 md:py-0 bg- rounded-lg mx-8 md:mx-10 flex-wrap'>
+    <div className='flex justify-center  md:px-20 items-center mt-10 py-2 md:py-0 bg- rounded-lg mx-8 md:mx-10 flex-wrap'>
       <div className='flex flex-col text-center items-center md:m-4'>
         <FaDiscord className='text-4xl mb-2' />
         <p className='md:text-xl font-bold'>Дискорд сервер</p>
