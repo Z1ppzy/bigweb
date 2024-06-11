@@ -15,6 +15,7 @@ import Notifications from './Pages/Notifications';
 import ContactUs from './Pages/ContactUs';
 import HandlerContactUS from './Pages/HandlerContactUs';
 import SuggestionListCheck from './Pages/SuggestionListCheck';
+import VotingList from './Pages/VotingList';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: '/shop',
         element: <Shop />,
+      },
+      {
+        path: '/voting',
+        element: <VotingList />,
       },
       {
         path: '/terms',
