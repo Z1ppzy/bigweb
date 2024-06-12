@@ -17,7 +17,7 @@ interface LinkItem {
   label: string;
 }
 
-export default function DropDownMenu() {
+export default function SheetNavigation() {
   const location = useLocation();
   const isActiveLink = (path: string) => location.pathname === path;
 
@@ -31,6 +31,7 @@ export default function DropDownMenu() {
     { path: '/shop', label: 'Магазин' },
     { path: '/rewards', label: 'Награды' },
     { path: '/contactus', label: 'Связь с нами' },
+    { path: '/voting', label: 'Голосуйте за нас' },
   ];
 
   return (

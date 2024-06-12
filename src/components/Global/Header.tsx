@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import DropDownMenu from './DropDownMenu';
+import SheetNavigation from './SheetNavigation';
 import TypeIt from "typeit-react";
 
 export default function Header() {
@@ -11,7 +11,7 @@ export default function Header() {
           <TypeIt>HeavenlyWeiner</TypeIt>
         </Link>
       </div>
-      <DropDownMenu />
+      <SheetNavigation />
     </div>
   );
 }
