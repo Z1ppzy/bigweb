@@ -1,8 +1,7 @@
 import React from 'react';
 import { Task } from '@/types/Task';
-import { Button } from '@/components/ui/button';
-import { FaRegTrashCan } from "react-icons/fa6";
-
+import { FaRegTrashCan } from 'react-icons/fa6';
+import { Button } from '../ui/button';
 
 interface TaskItemProps {
   task: Task;
@@ -17,10 +16,10 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onDelete }) => {
         <p className='text-sm'>{task.description}</p>
       </div>
       <Button
-      className='w-fit flex'
+        className='w-fit'
         onClick={() => onDelete(task.id)}
       >
-        <FaRegTrashCan />
+        <FaRegTrashCan className='text-xl' />
       </Button>
     </div>
   );

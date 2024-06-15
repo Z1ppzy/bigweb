@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { TaskForm as ITaskForm } from '@/types/Task';
-import { Button } from '@/components/ui/button';
 
 interface TaskFormProps {
   onSubmit: (task: ITaskForm) => void;
@@ -46,12 +45,12 @@ const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
         <option value='in-progress'>В процессе</option>
         <option value='completed'>Завершенные</option>
       </select>
-      <Button
+      <button
         type='submit'
-        className='w-full py-2 rounded'
+        className='w-full bg-blue-500 text-white py-2 rounded'
       >
         Добавить задачу
-      </Button>
+      </button>
     </form>
   );
 };
