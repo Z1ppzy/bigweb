@@ -16,7 +16,7 @@ import ContactUs from './Pages/ContactUs';
 import HandlerContactUS from './Pages/HandlerContactUs';
 import SuggestionListCheck from './Pages/SuggestionListCheck';
 import VotingList from './Pages/VotingList';
-import ToDoSheetDevelop from './Pages/ToDoSheetDevelop';
+import Tasks from './Pages/Tasks';
 
 const router = createBrowserRouter([
   {
@@ -84,8 +84,8 @@ const router = createBrowserRouter([
         element: <AdminDashboard />,
       },
       {
-        path: '/todosheetdevelop',
-        element: <ToDoSheetDevelop />,
+        path: '/task',
+        element: <Tasks />,
       },
     ],
   },

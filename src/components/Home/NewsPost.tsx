@@ -100,7 +100,7 @@ export default function News() {
             >
               <div className='flex-shrink-0'>
                 <img
-                  className='w-full md:w-[500px] md:h-[270px] rounded-xl object-cover'
+                  className='w-full md:w-[500px] md:h-[270px] h-52 rounded-xl object-cover'
                   src={`${import.meta.env.VITE_BACKEND_URL}${
                     newsItem.image_path
                   }`}
