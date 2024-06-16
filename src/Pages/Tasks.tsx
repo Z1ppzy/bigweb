@@ -42,17 +42,6 @@ export default function Tasks() {
       });
   };
 
-  const updateTaskStatus = (task: Task, status: string) => {
-    axios
-      .put(import.meta.env.VITE_BACKEND_URL + `/api/tasks/${task.id}`, {
-        ...task,
-        status,
-      })
-      .then((response) => {
-        setTasks(tasks.map((t) => (t.id === task.id ? response.data : t)));
-      });
-  };
-
   const onDragEnd = (result: DropResult) => {
     const { source, destination } = result;
 
@@ -69,7 +58,15 @@ export default function Tasks() {
 
     const newTasks = Array.from(tasks);
     const [movedTask] = newTasks.splice(source.index, 1);
-    movedTask.status = destination.droppableId;
+
+    if (
+      destination.droppableId === 'pending' ||
+      destination.droppableId === 'in-progress' ||
+      destination.droppableId === 'completed'
+    ) {
+      movedTask.status = destination.droppableId as 'pending' | 'in-progress' | 'completed';
+    }
+
     newTasks.splice(destination.index, 0, movedTask);
 
     setTasks(newTasks);
@@ -102,7 +99,7 @@ export default function Tasks() {
   }
 
   return (
-    <>
+    <div className='h-screen'>
       <div className='md:w-[500px]'>
         <h1 className='font-bold text-xl'>Создать задачу</h1>
         <TaskForm onSubmit={addTask} />
@@ -215,6 +212,6 @@ export default function Tasks() {
           </div>
         </div>
       </DragDropContext>
-    </>
+    </div>
   );
 }
