@@ -17,6 +17,7 @@ import HandlerContactUS from './Pages/HandlerContactUs';
 import SuggestionListCheck from './Pages/SuggestionListCheck';
 import VotingList from './Pages/VotingList';
 import Tasks from './Pages/Tasks';
+import Wiki from './Pages/Wiki';
 
 const router = createBrowserRouter([
   {
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
       {
         path: '/task',
         element: <Tasks />,
+      },
+      {
+        path: '/wiki',
+        element: <Wiki />,
       },
     ],
   },
