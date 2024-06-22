@@ -88,15 +88,15 @@ const router = createBrowserRouter([
         path: '/task',
         element: <Tasks />,
       },
-      {
-        path: '/wiki',
-        element: <Wiki />,
-      },
     ],
   },
   {
     path: '*',
     element: <NotFoundPage />,
+  },
+  {
+    path: '/wiki',
+    element: <Wiki />,
   },
 ]);
 
