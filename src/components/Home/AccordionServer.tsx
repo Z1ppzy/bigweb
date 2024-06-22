@@ -27,7 +27,7 @@ export default function AccordionServer() {
       <h1 className='mt-8 text-3xl md:text-4xl text-center md:text-left font-Welcome mb-3'>
         Сервер FAQs
       </h1>
-      <p>
+      <p className='text-sm md:text-lg'>
         Добро пожаловать в раздел{' '}
         <span className='text-purple-800'>
           <b>FAQ</b>

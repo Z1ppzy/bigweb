@@ -7,7 +7,7 @@ export default function ServerInfo() {
           <h1 className='font-bold text-left text-2xl'>Semi-Classic</h1>
           <p className='bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 py-0.5 px-20 w-fit rounded-lg'></p>
           <div className='flex-1'>
-            <p className='font-light text-left mt-4 indent-2'>
+            <p className='text-sm md:text-lg text-left mt-4 indent-2'>
               Мы стремимся создать атмосферу, близкую к классическому выживанию
               в Minecraft.Здесь установлен только небольшой набор плагинов,
               чтобы сохранить ощущение ванильной игры. Одним из интересных
@@ -29,7 +29,7 @@ export default function ServerInfo() {
           <h1 className='font-bold text-left text-2xl'>Survival</h1>
           <p className='bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 py-0.5 px-20 w-fit rounded-lg'></p>
           <div className='flex-1'>
-            <p className='font-light text-left mt-4 indent-2 '>
+            <p className='text-sm md:text-lg text-left mt-4 indent-2 '>
               На нашем сервере установлен плагин Aurelium Skills, добавляющий
               прокачку вашего персонажа, углубляя ваш игровой процесс. Большие
               приваты дадут вам простор и позволят вам свободно развиваться и

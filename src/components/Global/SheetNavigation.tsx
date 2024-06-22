@@ -37,7 +37,7 @@ export default function SheetNavigation() {
   return (
     <Sheet>
       <SheetTrigger>
-        <div className="text-3xl pr-4 mt-4 text-white cursor-pointer">
+        <div className="text-3xl pr-4 mt-4 cursor-pointer">
           <TfiAlignRight />
         </div>
       </SheetTrigger>

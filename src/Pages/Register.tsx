@@ -62,7 +62,7 @@ export default function Register() {
   }
 
   return (
-    <div className=' md:w-96 m-auto h-screen'>
+    <div className='md:w-96 m-auto h-screen'>
       <Link to='/'>
         <img src='logo.png' className='float-end animate-bounce' alt='' />
       </Link>
