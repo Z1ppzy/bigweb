@@ -1,7 +1,7 @@
 export default function ServerInfo() {
   return (
     <>
-      <h1 className='mt-8 text-3xl md:text-4xl text-center md:text-left px-10 font-Welcome'>Наши сервера</h1>
+      <h1 className='mt-8 md:mt-28 text-3xl md:text-4xl text-center md:text-left px-10 font-Welcome'>Наши сервера</h1>
       <div className='md:grid grid-cols-2 mt-10 md:px-10 px-4 gap-20'>
         <div className='flex flex-col'>
           <h1 className='font-bold text-left text-2xl'>Semi-Classic</h1>
@@ -20,7 +20,7 @@ export default function ServerInfo() {
           </div>
           <div className='w-full md:h-52'>
             <img
-              src='/survival-minigames-image.jpg'
+              src='/semi-classic.png'
               className='rounded-tr-3xl rounded-bl-3xl w-full h-auto md:h-52 object-cover mt-4'
             />
           </div>

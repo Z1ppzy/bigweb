@@ -64,18 +64,18 @@ export default function ServerStatus() {
   }, [serverIp, discordServerId]);
 
   return (
-    <div className='flex justify-center  md:px-20 items-center mt-10 py-2 md:py-0 bg- rounded-lg mx-8 md:mx-10 flex-wrap'>
+    <div className='flex justify-center mt-6 items-center md:py-0 rounded-lg md:mx-10 flex-wrap'>
       <div className='flex flex-col text-center items-center md:m-4'>
-        <FaDiscord className='text-4xl mb-2' />
-        <p className='md:text-xl font-bold'>Дискорд сервер</p>
-        <p className='md:text-lg'>
+        <FaDiscord className='text-5xl mb-2' />
+        <p className='md:text-xl font-bold text-xl'>Дискорд сервер</p>
+        <p className='md:text-xl text-xl'>
           <b>{discordOnlineUsers}</b> пользователей онлайн
         </p>
       </div>
       <div className='flex flex-col text-center items-center md:m-4'>
-        <GoServer className='text-4xl mb-2' />
-        <p className='md:text-xl font-bold'>Сервер Майнкрафта</p>
-        <p className='md:text-lg'>
+        <GoServer className='text-5xl mb-2' />
+        <p className='md:text-xl font-bold text-xl'>Сервер Майнкрафта</p>
+        <p className='md:text-xl text-xl'>
           <b>{onlinePlayers}</b> игроков онлайн
         </p>
       </div>
