@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getNotifications, markAsRead } from '@/services/notificationService';
 import { Button } from '../ui/button';
 
@@ -10,7 +10,7 @@ interface Notification {
   type: string;
 }
 
-const NotificationList: React.FC = () => {
+export default function NotificationList() {
   const [notifications, setNotifications] = useState<Notification[]>([]);
 
   useEffect(() => {
@@ -50,5 +50,3 @@ const NotificationList: React.FC = () => {
     </ul>
   );
 };
-
-export default NotificationList;
