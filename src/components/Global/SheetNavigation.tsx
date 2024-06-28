@@ -11,6 +11,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ThemeSwitch } from './ThemeSwitch';
 import LoginButton from './LoginButton';
 import RegisterButton from './RegisterButton';
+import { motion } from 'framer-motion';
 
 interface LinkItem {
   path: string;
@@ -37,9 +38,13 @@ export default function SheetNavigation() {
   return (
     <Sheet>
       <SheetTrigger>
-        <div className="text-3xl pr-4 mt-4 cursor-pointer">
+      <motion.div
+          className="text-3xl pr-4 dark:text-white duration-200 mt-4 cursor-pointer"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+        >
           <TfiAlignRight />
-        </div>
+        </motion.div>
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>

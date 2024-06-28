@@ -1,4 +1,4 @@
-import image1 from '@/assets/slide1.png';
+// import image1 from '@/assets/slide1.png';
 import image2 from '@/assets/slide2.png';
 import image3 from '@/assets/slide3.png';
 import Slider from 'react-slick';
@@ -34,14 +34,14 @@ export default function SliderImg() {
   };
 
   return (
-    <Slider className='mx-7 ' {...settings}>
-      <div>
+    <Slider className='mx-4' {...settings}>
+      {/* <div>
         <img
           className='float-right rounded-xl scale-100'
           src={image1}
           alt='Slide 1'
         />
-      </div>
+      </div> */}
       <div>
         <img
           className='float-right rounded-xl scale-100'

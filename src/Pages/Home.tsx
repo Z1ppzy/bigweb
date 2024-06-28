@@ -11,8 +11,8 @@ import ServerStatus from '@/components/Home/ServerStatus';
 
 export default function Home() {
   return (
-    <>
-      <div className='lg:grid grid-cols-2  mt-6 md:mt-10'>
+    <div>
+      <div className='lg:grid grid-cols-2 mt-6 md:mt-10'>
         <div>
           <SliderImg />
           <ServerStatus />
@@ -58,6 +58,6 @@ export default function Home() {
         <SuggestionBox />
       </div>
       <ToastContainer />
-    </>
+    </div>
   );
 }
