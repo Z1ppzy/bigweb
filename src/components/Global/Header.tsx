@@ -11,7 +11,7 @@ export default function Header() {
           <TypeIt>HeavenlyWeiner</TypeIt>
         </div>
         <div className='block md:hidden'>
-          <img src='/public/logo.png' alt='HeavenlyWeiner' className='w-auto h-14' />
+          <img src='/logo.png' alt='HeavenlyWeiner' className='w-auto h-14' />
         </div>
       </Link>
       <div className='flex'>

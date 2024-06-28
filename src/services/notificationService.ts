@@ -1,11 +1,21 @@
 
-import api from '@/components/api/api';
+import axios from 'axios';
 
 export const getNotifications = async () => {
-    const response = await api.get('/notifications');
+  try {
+    const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/notifications`);
     return response.data;
+  } catch (error) {
+    console.error('Error fetching notifications:', error);
+    throw error;
+  }
 };
 
 export const markAsRead = async (id: number) => {
-    await api.post(`/notifications/${id}/read`);
+  try {
+    await axios.post(`${import.meta.env.VITE_BACKEND_URL}/notifications/${id}/read`);
+  } catch (error) {
+    console.error(`Error marking notification ${id} as read:`, error);
+    throw error;
+  }
 };
