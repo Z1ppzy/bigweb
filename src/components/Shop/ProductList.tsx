@@ -76,16 +76,21 @@ const ProductList: React.FC = () => {
   return (
     <div className="relative">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-        {products.map((product) => (
-          <ProductItem
-            key={product.id}
-            image={product.image}
-            name={product.name}
-            price={product.price}
-            onClick={() => handleProductClick(product)}
-            onAddToCart={() => handleAddToCart(product)}
-          />
-        ))}
+        {products.map((product) => {
+          const isInCart = cart.some((item) => item.id === product.id);
+          return (
+            <ProductItem
+              key={product.id}
+              image={product.image}
+              name={product.name}
+              price={product.price}
+              onClick={() => handleProductClick(product)}
+              onAddToCart={() => handleAddToCart(product)}
+              onRemoveFromCart={() => handleRemoveFromCart(product.id)}
+              isInCart={isInCart}
+            />
+          );
+        })}
         {selectedProduct && (
           <ProductModal
             image={selectedProduct.image}
@@ -93,6 +98,7 @@ const ProductList: React.FC = () => {
             description={selectedProduct.description}
             price={selectedProduct.price}
             onClose={handleCloseModal}
+            onAddToCart={() => handleAddToCart(selectedProduct)}
           />
         )}
       </div>

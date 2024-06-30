@@ -12,7 +12,7 @@ const Cart: React.FC<CartProps> = ({ cartItems, onToggleCartModal }) => {
   return (
     <div className="fixed bottom-0 right-0 m-4 p-4 bg-white shadow-lg rounded-lg cursor-pointer" onClick={onToggleCartModal}>
       <h2 className="text-xl font-semibold flex items-center">
-        <FaShoppingCart />
+        <FaShoppingCart className='dark:text-black' />
         {totalItems > 0 && (
           <span className="ml-2 bg-red-500 text-white rounded-full px-2 text-sm">{totalItems}</span>
         )}
