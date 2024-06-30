@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ProductItem from './ProductItem';
 import ProductModal from './ProductModal';
 import Cart from './Cart';
+import CartModal from './CartModal';
 
 interface Product {
   id: number;
@@ -9,6 +10,13 @@ interface Product {
   name: string;
   price: number;
   description: string;
+}
+
+interface CartItem {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
 }
 
 const products: Product[] = [
@@ -24,7 +32,8 @@ const products: Product[] = [
 
 const ProductList: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [cart, setCart] = useState<Product[]>([]);
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
 
   const handleProductClick = (product: Product) => {
     setSelectedProduct(product);
@@ -35,11 +44,33 @@ const ProductList: React.FC = () => {
   };
 
   const handleAddToCart = (product: Product) => {
-    setCart((prevCart) => [...prevCart, product]);
+    setCart((prevCart) => {
+      const existingItem = prevCart.find((item) => item.id === product.id);
+      if (existingItem) {
+        return prevCart.map((item) =>
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      } else {
+        return [...prevCart, { id: product.id, name: product.name, price: product.price, quantity: 1 }];
+      }
+    });
   };
 
   const handleRemoveFromCart = (id: number) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+    setCart((prevCart) => {
+      const existingItem = prevCart.find((item) => item.id === id);
+      if (existingItem && existingItem.quantity > 1) {
+        return prevCart.map((item) =>
+          item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+        );
+      } else {
+        return prevCart.filter((item) => item.id !== id);
+      }
+    });
+  };
+
+  const handleToggleCartModal = () => {
+    setIsCartModalOpen(!isCartModalOpen);
   };
 
   return (
@@ -65,10 +96,12 @@ const ProductList: React.FC = () => {
           />
         )}
       </div>
-      <Cart cartItems={cart} onRemoveFromCart={handleRemoveFromCart} />
+      <Cart cartItems={cart} onToggleCartModal={handleToggleCartModal} />
+      {isCartModalOpen && (
+        <CartModal cartItems={cart} onRemoveFromCart={handleRemoveFromCart} onClose={handleToggleCartModal} />
+      )}
     </div>
   );
 };
 
 export default ProductList;
-    

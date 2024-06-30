@@ -1,36 +1,22 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { FaShoppingCart } from "react-icons/fa";
 
 interface CartProps {
-  cartItems: { id: number; name: string; price: number }[];
-  onRemoveFromCart: (id: number) => void;
+  cartItems: { id: number; name: string; price: number; quantity: number }[];
+  onToggleCartModal: () => void;
 }
 
-const Cart: React.FC<CartProps> = ({ cartItems, onRemoveFromCart }) => {
+const Cart: React.FC<CartProps> = ({ cartItems, onToggleCartModal }) => {
+  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+
   return (
-    <div className="fixed bottom-0 right-0 m-4 p-4 bg-white shadow-lg rounded-lg">
-      <h2 className="text-xl font-semibold">Корзина</h2>
-      <ul>
-        {cartItems.map((item) => (
-          <AnimatePresence key={item.id}>
-            <motion.li
-              className="flex justify-between items-center mt-4"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 50 }}
-            >
-              <span>{item.name}</span>
-              <span>{item.price} рублей</span>
-              <button
-                onClick={() => onRemoveFromCart(item.id)}
-                className="ml-4 px-2 py-1 bg-red-500 text-white rounded hover:bg-red-700"
-              >
-                Удалить
-              </button>
-            </motion.li>
-          </AnimatePresence>
-        ))}
-      </ul>
+    <div className="fixed bottom-0 right-0 m-4 p-4 bg-white shadow-lg rounded-lg cursor-pointer" onClick={onToggleCartModal}>
+      <h2 className="text-xl font-semibold flex items-center">
+        <FaShoppingCart />
+        {totalItems > 0 && (
+          <span className="ml-2 bg-red-500 text-white rounded-full px-2 text-sm">{totalItems}</span>
+        )}
+      </h2>
     </div>
   );
 };
