@@ -8,6 +8,7 @@ import ServerInfo from '@/components/Home/ServerInfo';
 import WhyUs from '@/components/Home/WhyUs';
 import NewsPost from '@/components/Home/NewsPost';
 import ServerStatus from '@/components/Home/ServerStatus';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
           <h1 className='font-semibold text-xl text-center md:text-4xl'>
             Начните свою историю в нашей виртуальной песочнице!
           </h1>
-          <p className='text-center text-base md:text-lg mt-4 md:mt-8'>
+          <p className='text-center text-base md:text-xl mt-4 md:mt-8'>
             Приветствуем Вас на нашем сервере Minecraft! Откройте для себя мир,
             где каждый шаг - это приключение. Уникальные плагины обогатят ваш
             игровой процесс, предоставляя возможности для творчества и
@@ -31,13 +32,10 @@ export default function Home() {
             невероятные сооружения и станьте частью сообщества, где каждый игрок
             ценится. Ваше следующее приключение начинается здесь!
           </p>
-          <div className='mt-10 md:mt-16 text-center'>
-            <Link
-              to='/register'
-              className='bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-lg font-bold text-lg md:text-2xl px-10 md:px-16 py-4 text-white hover:text-slate-300 duration-500'
-            >
-              Начать играть
-            </Link>
+          <div className='mt-10 md:mt-16 flex justify-center'>
+            <Button asChild className='bg-gradient-to-r from-violet-500 to-fuchsia-500 font-bold text-lg md:text-2xl px-12 py-7 md:px-20 hover:text-slate-300 duration-800'>
+              <Link to='/register'>Начать играть</Link>
+            </Button>
           </div>
         </div>
       </div>
