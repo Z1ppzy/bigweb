@@ -10,7 +10,7 @@ import {
 } from 'react-beautiful-dnd';
 import TaskItem from '@/components/Task/TaskItem';
 import TaskForm from '@/components/Task/TaskForm';
-import { Task, TaskForm as ITaskForm } from '@/types/Task';
+import { Task, TaskForm as ITaskForm } from '@/shared/Task';
 import useCheckAuth from '@/hooks/useCheckAuth';
 import useCheckRole from '@/hooks/useCheckRole';
 import Loader from '@/components/Global/Loader';

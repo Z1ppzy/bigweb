@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TaskForm as ITaskForm } from '@/types/Task';
+import { TaskForm as ITaskForm } from '@/shared/Task';
 
 interface TaskFormProps {
   onSubmit: (task: ITaskForm) => void;

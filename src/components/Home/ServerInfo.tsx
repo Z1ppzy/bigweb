@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -7,15 +7,11 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
+import { Server, ServerDetailsModalProps } from '@/shared/types';
 
 
-interface Server {
-  name: string;
-  description: string;
-  imgSrc: string;
-}
+
 
 const servers: Server[] = [
   {
@@ -89,10 +85,6 @@ export default function ServerInfo() {
   );
 }
 
-interface ServerDetailsModalProps {
-  server: Server;
-  onClose: () => void;
-}
 
 function ServerDetailsModal({ server, onClose }: ServerDetailsModalProps) {
   return (
