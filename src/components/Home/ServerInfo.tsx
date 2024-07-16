@@ -1,3 +1,16 @@
+import React, { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
+
 interface Server {
   name: string;
   description: string;
@@ -40,6 +53,8 @@ const servers: Server[] = [
 ];
 
 export default function ServerInfo() {
+  const [selectedServer, setSelectedServer] = useState<Server | null>(null);
+
   return (
     <>
       <h1 className='mt-8 md:mt-28 text-3xl md:text-4xl text-center md:text-left px-10 font-Welcome'>
@@ -61,9 +76,41 @@ export default function ServerInfo() {
                 className='rounded-tr-3xl rounded-bl-3xl w-full h-auto md:h-52 object-cover mt-4'
               />
             </div>
+            <Button variant="outline" className="mt-4" onClick={() => setSelectedServer(server)}>
+              Подробнее
+            </Button>
           </div>
         ))}
       </div>
+      {selectedServer && (
+        <ServerDetailsModal server={selectedServer} onClose={() => setSelectedServer(null)} />
+      )}
     </>
+  );
+}
+
+interface ServerDetailsModalProps {
+  server: Server;
+  onClose: () => void;
+}
+
+function ServerDetailsModal({ server, onClose }: ServerDetailsModalProps) {
+  return (
+    <Dialog open={true} onOpenChange={onClose}>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>{server.name}</DialogTitle>
+          <DialogDescription>{server.description}</DialogDescription>
+        </DialogHeader>
+        <div className="mt-4">
+          <img src={server.imgSrc} alt={server.name} className="w-full h-auto rounded-tr-3xl rounded-bl-3xl" />
+        </div>
+        <DialogFooter>
+          <Button variant="outline" onClick={onClose}>
+            Закрыть
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }
